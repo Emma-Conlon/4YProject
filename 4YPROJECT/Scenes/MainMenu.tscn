@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.988235, 0, 0, 0.345098 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.972549, 0, 0, 0.921569 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.5
+margin_right = 6.5
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.3454
+margin_top = 1.7818
+margin_right = -10.3454
+margin_bottom = 1.7818
+color = Color( 0.729412, 0.568627, 0.568627, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -147.0
+margin_top = 12.0
+margin_right = 147.5
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2"]
+margin_right = 295.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer2/CenterContainer"]
+margin_right = 295.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+text = "No Hope"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -84.0
+margin_right = 27.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Buttons"]
+margin_right = 101.0
+margin_bottom = 32.0
+focus_neighbour_top = NodePath("../Quit")
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
+text = "Start "
+
+[node name="Instructions" type="Button" parent="Buttons"]
+margin_top = 36.0
+margin_right = 101.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( -60.8017, -1.39498 )
+custom_fonts/font = SubResource( 5 )
+text = "Help"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Buttons"]
+margin_top = 72.0
+margin_right = 101.0
+margin_bottom = 104.0
+focus_neighbour_bottom = NodePath("../StartButton")
+custom_fonts/font = SubResource( 6 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Buttons/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]
