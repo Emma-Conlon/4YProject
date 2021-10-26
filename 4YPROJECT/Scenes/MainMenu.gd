@@ -10,7 +10,9 @@ extends Control
 func _ready():
 	$Buttons/StartButton.grab_focus()
 
-
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
