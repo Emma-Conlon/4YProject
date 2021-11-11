@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Back_pressed():
-	get_tree().change_scene("res://Scenes/M.tscn");
+	var _vase=get_tree().change_scene("res://Scenes/MainMenu.tscn");

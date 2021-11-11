@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pb45144.obj-fecbf50fb2025d8b2cdd38177e26f7c5.mesh"
+
+[deps]
+
+files=[ "res://.import/pb45144.obj-fecbf50fb2025d8b2cdd38177e26f7c5.mesh" ]
+
+source_file="res://uploads_files_2494896_Mini-Pack+1(1)/Mini-Pack 1/Model  (11)/pb45144.obj"
+dest_files=[ "res://.import/pb45144.obj-fecbf50fb2025d8b2cdd38177e26f7c5.mesh", "res://.import/pb45144.obj-fecbf50fb2025d8b2cdd38177e26f7c5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

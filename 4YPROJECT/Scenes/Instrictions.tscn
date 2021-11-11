@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Instrictions.gd" type="Script" id=1]
 [ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,16 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 44
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 4
+outline_color = Color( 0.921569, 0.713726, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
 font_data = ExtResource( 2 )
 
 [node name="Instrictions" type="Control"]
@@ -23,7 +33,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="VBoxContainer" parent="."]
 margin_left = -9.0
 margin_top = -4.0
 margin_right = 422.0
@@ -32,18 +50,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_right = 431.0
+[node name="CenterContainer" type="CenterContainer" parent="Title"]
+margin_right = 489.0
 margin_bottom = 80.0
 
-[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
-margin_left = 8.0
-margin_right = 422.0
+[node name="Label" type="Label" parent="Title/CenterContainer"]
+margin_right = 489.0
 margin_bottom = 80.0
+mouse_default_cursor_shape = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
-text = "How to Play"
+text = "How to Play :)"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
@@ -54,10 +72,72 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="Buttons"]
+[node name="Back" type="Button" parent="."]
+margin_top = 558.0
 margin_right = 101.0
-margin_bottom = 42.0
+margin_bottom = 600.0
 custom_fonts/font = SubResource( 2 )
 text = "Back"
 
-[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]
+[node name="Headings" type="VBoxContainer" parent="."]
+anchor_left = 0.252536
+anchor_top = 0.124255
+anchor_right = 0.646091
+anchor_bottom = 0.925922
+margin_top = 2.5034e-06
+margin_right = -7.62939e-06
+margin_bottom = -1.78814e-06
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Headings"]
+margin_right = 403.0
+margin_bottom = 481.0
+
+[node name="Label" type="Label" parent="Headings/CenterContainer"]
+margin_right = 403.0
+margin_bottom = 481.0
+custom_fonts/font = SubResource( 3 )
+text = "torch on/off
+
+torch light colour 
+
+MOVEMENT
+
+Jump
+
+pause 
+
+sprint"
+uppercase = true
+percent_visible = -0.0909091
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 269.936
+margin_top = 126.14
+margin_right = 672.936
+margin_bottom = 582.14
+custom_fonts/font = SubResource( 4 )
+text = "Press F 
+
+
+Press TAB
+
+
+
+Press WASD 
+
+
+Press SPACE	
+
+
+Press P
+
+
+Press Shift+WASD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

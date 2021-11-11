@@ -18,11 +18,11 @@ func _input(event):
 #	pass
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/Here.tscn");
+	 var _val = get_tree().change_scene("res://Scenes/GridMap.tscn");
 
 
 func _on_Instructions_pressed():
-	get_tree().change_scene("res://Scenes/Instrictions.tscn");
+	var _value = get_tree().change_scene("res://Scenes/Instrictions.tscn");
 
 
 func _on_Quit_pressed():
