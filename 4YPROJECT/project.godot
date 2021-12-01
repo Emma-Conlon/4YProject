@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ResourceFormatLoader",
+"class": "HTerrainDataLoader",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
+}, {
+"base": "ResourceFormatSaver",
+"class": "HTerrainDataSaver",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
+} ]
+_global_script_class_icons={
+"HTerrainDataLoader": "",
+"HTerrainDataSaver": ""
+}
+
 [application]
 
 config/name="4YPROJECT"
@@ -17,6 +33,10 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*res://gameManager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/zylann.hterrain/plugin.cfg" )
 
 [input]
 
@@ -88,6 +108,9 @@ PICKUP={
 [layer_names]
 
 3d_physics/layer_1=false
+3d_physics/layer_2="Player"
+3d_physics/layer_3="PathFindingAI"
+3d_physics/layer_4="World"
 
 [physics]
 

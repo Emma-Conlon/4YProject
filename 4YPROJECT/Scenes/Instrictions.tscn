@@ -111,7 +111,6 @@ pause
 
 sprint"
 uppercase = true
-percent_visible = -0.0909091
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 269.936

@@ -24,8 +24,10 @@ func _on_Area_mouse_exited():
 func _process(_delta):
 	if (Input.is_action_just_pressed("PICKUP"))and hovered:
 		GameManager.pickup=1
-		print("picked_up")
+		print("TORCH")
 		torch.hide()
+	if GameManager.pickup==1:
+		torch.visible=false
 		
 		
 

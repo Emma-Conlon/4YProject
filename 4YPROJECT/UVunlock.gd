@@ -27,6 +27,8 @@ func _process(_delta):
 			GameManager.uv=1
 			print("uv_unlocked")
 			uv.visible=false
+		if GameManager.uv==1:
+			uv.visible=false
 		
 		
 

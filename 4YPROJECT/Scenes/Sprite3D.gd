@@ -15,10 +15,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if GameManager.red==0:
-		text.visible==false
+		text.visible=false
 		
 	elif GameManager.red==1:
-		text.visible==false
+		text.visible=false
 	pass
 
 

@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://loadingimage - Copy.png" type="Texture" id=2]
+[ext_resource path="res://loadingimage.png" type="Texture" id=3]
+[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://blood.png" type="Texture" id=5]
+[ext_resource path="res://hd-white-circle-glowing-neon-frame-border-png-31625183731onxwkn7vwx.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0784314, 0, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="DynamicFont" id=4]
+
+[node name="LoadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+MainHall = "res://Scenes/MainHall.tscn"
+entrance = "res://test.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.56, 14.96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+position = Vector2( 20.0019, 20.1982 )
+scale = Vector2( 0.0872639, 0.154986 )
+texture = ExtResource( 5 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 781.434
+margin_top = 368.183
+margin_right = 1006.44
+margin_bottom = 593.183
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+tint_progress = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 254.622
+margin_top = 174.919
+margin_right = 751.622
+margin_bottom = 441.919
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.9375, 0.9375, 0.9375, 1 )
+text = "	LOADING...
+
+HINT:
+UV Drains your battery
+power much quicker than 
+normal light  :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_left = 456.099
+margin_top = 166.865
+margin_right = 756.099
+margin_bottom = 216.865
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.56, 14.96 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer2"]
+position = Vector2( 41.8019, 34.532 )
+scale = Vector2( 0.0125461, 0.0214908 )
+texture = ExtResource( 6 )
+offset = Vector2( -548.893, -118.803 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2"]
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer2/VBoxContainer2"]
+position = Vector2( 38.487, 33.5494 )
+scale = Vector2( 0.00650333, 0.0112168 )
+texture = ExtResource( 6 )
+offset = Vector2( -548.893, -118.803 )
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,6 +1,7 @@
 extends Control
 
-
+onready var clo=get_node(".")
+const Scene2=preload("res://LEVEL.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,7 +19,8 @@ func _input(event):
 #	pass
 
 func _on_StartButton_pressed():
-	 var _val = get_tree().change_scene("res://Scenes/GridMap.tscn");
+	 $Transition.trasntion()
+	 
 
 
 func _on_Instructions_pressed():
@@ -27,3 +29,8 @@ func _on_Instructions_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit();
+
+
+func _on_Transition_trasntioned():
+	var _value = get_tree().change_scene("res://test.tscn");
+

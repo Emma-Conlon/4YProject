@@ -1,8 +1,8 @@
 extends KinematicBody
-signal flashtoggle
+
 const GRAVITY = -24.8
 var vel = Vector3()
-const MAX_SPEED = 5
+const MAX_SPEED = 20
 const JUMP_SPEED = 18
 const ACCEL = 4.5
 var dir = Vector3()
@@ -50,7 +50,7 @@ func process_input(_delta):
 	if Input.is_action_pressed("move_right"):
 		input_movement_vector.x += 0.1
 		is_moving = true
-		GameManager.red;
+		
 
 	input_movement_vector = input_movement_vector.normalized()
 	sound(is_moving)
@@ -79,27 +79,35 @@ func process_input(_delta):
 
 func torch():
 	if GameManager.pickup==1:
-		
+		GameManager.pickup=1
+		torch_life();
 		if Input.is_action_just_pressed("toggle_flashlight") and light.visible == false:
 			 light.show()
 			 GameManager.lighting=1;#light is on 
-			
+			 
 		elif Input.is_action_just_pressed("toggle_flashlight") and light.visible == true:
 			 light.hide()
 			 GameManager.lighting=0; #if flashlight is off 
 			
 	if GameManager.pickup==1 and GameManager.uv==1:
 #---------------------------FLASHLIGHT COLOUR 
-		if Input.is_action_just_pressed("change_lightcolour") and GameManager.red==0:
+		torch_life()
+		if Input.is_action_just_pressed("change_lightcolour") and GameManager.red==0 and light.visible == true:
 			 light.light_color= Color(1,0,2)
 			 torchcoloursound()
 			 GameManager.red=1;
-		elif Input.is_action_just_pressed("change_lightcolour") and GameManager.red==1:
+		elif Input.is_action_just_pressed("change_lightcolour") and GameManager.red==1 and light.visible == true:
 			light.light_color= Color(1,1,1)	
 			torchcoloursound()
 			GameManager.red=0; #white light
-		
+	
 
+func torch_life():
+	if GameManager.life<=0:
+		light.visible=false
+		GameManager.red=0
+		
+		
 func sound(is_moving):
 	if is_moving:
 		if $Timer.time_left<=0:

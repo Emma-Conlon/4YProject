@@ -1,4 +1,34 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/Wall_arraymesh.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/Pillar_arraymesh.tres" type="ArrayMesh" id=2]
+[ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/WallCorner_arraymesh.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/Floor_arraymesh.tres" type="ArrayMesh" id=4]
+[ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/FailHouse_arraymesh.tres" type="ArrayMesh" id=5]
 
 [node name="Spatial" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9936, 0, 0 )
+
+[node name="Floor_arraymesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0054, 116.361, 0.0381241 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="FailHouse_arraymesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76605, 117.17, -4.57343 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="Pillar_arraymesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03758, 117.663, 2.16188 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="WallCorner_arraymesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53294, 115.917, -2.02512 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="Wall_arraymesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, -8.87537, 111.315, 9.76876 )
+mesh = ExtResource( 1 )
+material/0 = null
