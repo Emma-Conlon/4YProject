@@ -7,40 +7,40 @@
 [ext_resource path="res://LEVEL.gd" type="Script" id=6]
 [ext_resource path="res://Control.tscn" type="PackedScene" id=7]
 
-[sub_resource type="ViewportTexture" id=8]
+[sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Spatial/Sprite3D/Viewport")
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=2]
 size = 150
 font_data = ExtResource( 5 )
 
-[sub_resource type="ViewportTexture" id=10]
+[sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("Spatial/Sprite3D2/Viewport")
 
-[sub_resource type="ViewportTexture" id=11]
+[sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("Spatial/Game2/Viewport")
 
-[sub_resource type="ViewportTexture" id=12]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("Spatial/Game4/Viewport")
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=6]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.0196078, 0.0588235, 1, 1 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=8]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=9]
 size = 32
 font_data = ExtResource( 5 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.776471, 0, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=11]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.223529, 1, 0.0235294, 1 )
 
 [node name="LEVEL1" type="GridMap"]
@@ -61,7 +61,7 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74846, 2.86659, 5.07868 )
 flip_h = true
 axis = 0
-texture = SubResource( 8 )
+texture = SubResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="Spatial/Game1"]
 size = Vector2( 600, 114 )
@@ -71,12 +71,12 @@ render_target_v_flip = true
 [node name="Label" type="Label" parent="Spatial/Game1/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "MAZE GAME"
 
 [node name="Game3" type="Sprite3D" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4159, 2.71914, -30.7496 )
-texture = SubResource( 10 )
+texture = SubResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="Spatial/Game3"]
 size = Vector2( 600, 114 )
@@ -86,13 +86,13 @@ render_target_v_flip = true
 [node name="Label" type="Label" parent="Spatial/Game3/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Hide&Seek"
 
 [node name="Game2" type="Sprite3D" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5972, 2.74565, -2.49935 )
 axis = 0
-texture = SubResource( 11 )
+texture = SubResource( 4 )
 
 [node name="Viewport" type="Viewport" parent="Spatial/Game2"]
 size = Vector2( 400, 114 )
@@ -102,13 +102,13 @@ render_target_v_flip = true
 [node name="Label" type="Label" parent="Spatial/Game2/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Race"
 
 [node name="Game4" type="Sprite3D" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.88, 3.0444, 30.6673 )
 flip_h = true
-texture = SubResource( 12 )
+texture = SubResource( 5 )
 
 [node name="Viewport" type="Viewport" parent="Spatial/Game4"]
 size = Vector2( 600, 114 )
@@ -118,22 +118,22 @@ render_target_v_flip = true
 [node name="Label" type="Label" parent="Spatial/Game4/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "??????"
 
 [node name="Control" parent="." instance=ExtResource( 7 )]
 
 [node name="Maze_Game" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.94192, 0, 0, 0, 1, 2.98435, 3.06218, 1.01049 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
 [node name="Area" type="Area" parent="Maze_Game"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0379157, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Maze_Game/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10375e-08, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="Maze_Game"]
 margin_right = 40.0
@@ -147,21 +147,21 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 9 )
 text = "Start Maze Game"
 script = ExtResource( 3 )
 
 [node name="Race" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 3.77105, 0, 0, 0, 1, -47.0336, 1.45951, -6.96492 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 10 )
 
 [node name="Area" type="Area" parent="Race"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0379157, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Race/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10375e-08, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="Race"]
 margin_right = 40.0
@@ -175,21 +175,21 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 9 )
 text = "Start Race"
 script = ExtResource( 3 )
 
 [node name="FinalGame" type="MeshInstance" parent="."]
 transform = Transform( 2.15271, 0, 0, 0, 2.50999, 0, 0, 0, 1, -24.4129, 1.97115, 30.8173 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 11 )
 
 [node name="Area" type="Area" parent="FinalGame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0379157, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FinalGame/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0662537, 1.77515e-08, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="FinalGame"]
 margin_right = 40.0
@@ -203,21 +203,21 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 9 )
 text = "Start Final Game"
 script = ExtResource( 3 )
 
 [node name="Hide_Seek" type="MeshInstance" parent="."]
 transform = Transform( 1.46721, 0, 0, 0, 3.77105, 0, 0, 0, 1, -37.1686, 0.895756, -30.9509 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 12 )
 
 [node name="Area" type="Area" parent="Hide_Seek"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0379157, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Hide_Seek/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0662537, 1.77515e-08, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="Hide_Seek"]
 margin_right = 40.0
@@ -231,7 +231,7 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 9 )
 text = "Start Hide and Seek"
 script = ExtResource( 3 )
 

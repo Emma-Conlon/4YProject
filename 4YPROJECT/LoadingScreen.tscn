@@ -32,7 +32,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-MainHall = "res://Scenes/MainHall.tscn"
+MainHall = "res://Testing.tscn"
 entrance = "res://test.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

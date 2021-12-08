@@ -19,8 +19,8 @@ var MOUSE_SENSITIVITY = 0.05
 func _ready():
 	camera = $follow/Camera
 	rotation_helper = $follow
-
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _physics_process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://a.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=3]
@@ -21,14 +21,20 @@
 size = 32
 font_data = ExtResource( 3 )
 
-[sub_resource type="ViewportTexture" id=4]
+[sub_resource type="ProceduralSky" id=4]
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 4 )
+
+[sub_resource type="ViewportTexture" id=6]
 viewport_path = NodePath("Spatial/Sprite3D/Viewport")
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 150
 font_data = ExtResource( 3 )
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=8]
 viewport_path = NodePath("Spatial/Sprite3D2/Viewport2")
 
 [node name="MainHall" type="GridMap"]
@@ -41,7 +47,7 @@ data = {
 script = ExtResource( 7 )
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 1, 0, 0 )
+"_editor_floor_": Vector3( 1, 1, 0 )
 }
 
 [node name="Door" type="MeshInstance" parent="."]
@@ -77,10 +83,11 @@ script = ExtResource( 12 )
 script = ExtResource( 6 )
 
 [node name="NightTime" type="WorldEnvironment" parent="Spatial"]
+environment = SubResource( 5 )
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 transform = Transform( 5.16913e-09, 3.71844e-11, 0.966929, 0.00609227, 0.96691, 0.000140121, -0.96691, 0.00609227, -0.0222389, 43.2523, 3.20754, -15.1987 )
-texture = SubResource( 4 )
+texture = SubResource( 6 )
 script = ExtResource( 5 )
 
 [node name="Viewport" type="Viewport" parent="Spatial/Sprite3D"]
@@ -92,14 +99,14 @@ script = ExtResource( 4 )
 [node name="Label" type="Label" parent="Spatial/Sprite3D/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Turn Right"
 
 [node name="Sprite3D2" type="Sprite3D" parent="Spatial"]
 transform = Transform( 0.932143, -0.0755189, 0, 0.0755388, 0.931897, 0, 0, 0, 0.934704, 28.1776, 3.00688, -5.33663 )
 flip_h = true
-texture = SubResource( 6 )
+texture = SubResource( 8 )
 
 [node name="Viewport2" type="Viewport" parent="Spatial/Sprite3D2"]
 size = Vector2( 1127, 119 )
@@ -110,7 +117,7 @@ script = ExtResource( 9 )
 [node name="Label" type="Label" parent="Spatial/Sprite3D2/Viewport2"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "G3t L0st r1ght n0w!!!"
 
@@ -119,13 +126,10 @@ transform = Transform( 0.954522, 0, 0.298141, 0, 1, 0, -0.298141, 0, 0.954522, 5
 
 [node name="OmniLight" type="OmniLight" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15081, 7.0424, 8.6455 )
-light_energy = 4.52
-light_indirect_energy = 0.23
 omni_range = 8.6
 
 [node name="OmniLight2" type="OmniLight" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8565, 2.04588, -0.75702 )
-light_energy = 6.94
 omni_range = 6.3
 
 [node name="Control" parent="Spatial" instance=ExtResource( 10 )]
