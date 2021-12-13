@@ -2,7 +2,7 @@ extends Spatial
 
 onready var player = $Player
 onready var greyRock = $dull/progress
-onready var doneOne=$red
+onready var doneOne=$Game1Done
 onready var reding=$Collector
 
 func _on_Timer_timeout():

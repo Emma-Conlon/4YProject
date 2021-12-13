@@ -60,7 +60,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 25.7355, 14.4062 )
 theme = SubResource( 2 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,10 +109,10 @@ __meta__ = {
 }
 
 [node name="OBJECTIVE" type="Label" parent="ColorRect2"]
-margin_left = 10.8631
-margin_top = 92.129
-margin_right = 641.863
-margin_bottom = 225.129
+margin_left = 481.666
+margin_top = 3.42354
+margin_right = 935.666
+margin_bottom = 136.424
 rect_scale = Vector2( 1, 4.75373 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -122,10 +122,10 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="ColorRect2"]
-anchor_left = -0.0231213
-anchor_top = -0.0674821
-anchor_right = -0.0231213
-anchor_bottom = -0.0674821
+anchor_left = 2.89593
+anchor_top = -0.387593
+anchor_right = 2.89593
+anchor_bottom = -0.387593
 margin_left = 467.517
 margin_top = 117.304
 margin_right = 555.517

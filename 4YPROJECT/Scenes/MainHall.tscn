@@ -126,10 +126,12 @@ transform = Transform( 0.954522, 0, 0.298141, 0, 1, 0, -0.298141, 0, 0.954522, 5
 
 [node name="OmniLight" type="OmniLight" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15081, 7.0424, 8.6455 )
+visible = false
 omni_range = 8.6
 
 [node name="OmniLight2" type="OmniLight" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8565, 2.04588, -0.75702 )
+visible = false
 omni_range = 6.3
 
 [node name="Control" parent="Spatial" instance=ExtResource( 10 )]
