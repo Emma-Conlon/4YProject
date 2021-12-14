@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const GRAVITY = -24.8
+const GRAVITY = -1.98
 var vel = Vector3()
 const MAX_SPEED = 20
 const JUMP_SPEED = 18
@@ -8,7 +8,7 @@ const ACCEL = 4.5
 var dir = Vector3()
 var red=false
 const DEACCEL= 16
-const MAX_SLOPE_ANGLE = 40
+const MAX_SLOPE_ANGLE = 20
 onready var light = $follow/SpotLight
 var camera
 var rotation_helper

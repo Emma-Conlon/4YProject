@@ -87,6 +87,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ProgressBar"]
+visible = false
 margin_left = -140.092
 margin_top = 1.49831
 margin_right = -2.09167

@@ -14,22 +14,28 @@ onready var finally= $FinalGame/TextureRect/Label
 
 
 func ready():
+# warning-ignore:return_value_discarded
 	connect("mouse_entered", self, "_on_mouse_entered")
+# warning-ignore:return_value_discarded
 	connect("mouse_exited", self, "_on_mouse_exited")
 
 
 func _process(_delta):
 	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorOne:
 		GameManager.loading=0
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://LoadingScreen.tscn");
 	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorTwo:
 		GameManager.loading=0
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://LoadingScreen.tscn");
 	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorThree:
 		GameManager.loading=0
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://LoadingScreen.tscn");
 	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorFour:
 		GameManager.loading=0
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://LoadingScreen.tscn");
 		
 

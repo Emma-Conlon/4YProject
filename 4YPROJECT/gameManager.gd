@@ -20,3 +20,4 @@ var completedGameFour=false
 var redEmerladsCollected=0 #sees how much you have collected :) 
 var emerladsMax=457;
 var clicked=false
+var dead =false;

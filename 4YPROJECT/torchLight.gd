@@ -14,10 +14,10 @@ func _ready():
 func _process(_delta):
 	addBatteryPower()
 	
-	if  GameManager.pickup==0: # battery appears when torch is picked up 
-		torchLife.visible=false
-	else:
-		torchLife.visible=true
+	#'if  GameManager.pickup==0: # battery appears when torch is picked up 
+	#	torchLife.visible=false
+	#else:
+	#	torchLife.visible=true'
 	if GameManager.doorOpen==1:
 		torchLife.value=GameManager.battery
 		word.text=str(GameManager.redEmerladsCollected)
