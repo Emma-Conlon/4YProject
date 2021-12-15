@@ -10,24 +10,21 @@ onready var torch=$Door
 func _process(_delta):
 
 		
-	if (Input.is_action_just_pressed("PICKUP"))and GameManager.redEmerladsCollected==1 and hovered:
+	if GameManager.redEmerladsCollected == GameManager.emerladsMax and hovered==true:
 			GameManager.loading=1
 			life.text="Exit_Level"
-			#get_tree().change_scene("res://LoadingScreen.tscn");
-			GameManager.doorOpen=1
+			GameManager.completedGame0ne=true
+			if Input.is_action_pressed("CLICK"): 
+				get_tree().change_scene("res://LoadingScreen.tscn")
+				GameManager.doorOpen=1
+				
 			
 	if GameManager.redEmerladsCollected==0:
 		life.text="Get All Emeralds"
 		
-
 		
-		
-	
-
-
 func _on_Area_mouse_entered():
 	life.show()
-	print("GETSOME")
 	hovered=true
 
 

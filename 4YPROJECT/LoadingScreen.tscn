@@ -1,29 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LoadingScreen.gd" type="Script" id=1]
 [ext_resource path="res://loadingimage - Copy.png" type="Texture" id=2]
 [ext_resource path="res://loadingimage.png" type="Texture" id=3]
 [ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://blood.png" type="Texture" id=5]
 [ext_resource path="res://hd-white-circle-glowing-neon-frame-border-png-31625183731onxwkn7vwx.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 52
 font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0784314, 0, 1, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 0 )
-
-[sub_resource type="DynamicFont" id=4]
 
 [node name="LoadingScreen" type="Control"]
 anchor_right = 1.0
@@ -34,19 +19,16 @@ __meta__ = {
 }
 MainHall = "res://Scenes/Maze.tscn"
 entrance = "res://test.tscn"
+racing = "res://Scenes/race.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 25.56, 14.96 )
+rect_scale = Vector2( 25.5549, 15.0865 )
+color = Color( 0.215686, 0.211765, 0.309804, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 20.0019, 20.1982 )
-scale = Vector2( 0.0872639, 0.154986 )
-texture = ExtResource( 5 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 margin_left = 781.434
@@ -56,7 +38,6 @@ margin_bottom = 593.183
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
 fill_mode = 4
-tint_progress = Color( 1, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,19 +56,6 @@ text = "	LOADING...
 HINT:
 Keep Running Dont stop
 :)"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-margin_left = 456.099
-margin_top = 166.865
-margin_right = 756.099
-margin_bottom = 216.865
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

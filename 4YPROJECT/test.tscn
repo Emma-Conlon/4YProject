@@ -73,14 +73,12 @@ data = {
 
 [node name="PathFindingAI" parent="Navigation" instance=ExtResource( 10 )]
 transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -38.6643, 0, -22.2555 )
-collision_layer = 4
-collision_mask = 2
 
 [node name="Timer2" type="Timer" parent="Navigation/PathFindingAI"]
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 0.155166, 0, 0, 0, 0.291478, -32.8932, -4.60644, 0.577023 )
+transform = Transform( 0.380707, 0, 0, 0, 0.155166, 0, 0, 0, 0.282847, -32.8932, -4.60644, 0.577023 )
 
 [node name="Game1" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71579, -3.47857, 6.30783 )
@@ -115,7 +113,6 @@ custom_fonts/font = SubResource( 3 )
 text = "Hide&Seek"
 
 [node name="dull" type="Spatial" parent="."]
-visible = false
 
 [node name="progress" type="MeshInstance" parent="dull"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )
@@ -129,6 +126,7 @@ shape = SubResource( 6 )
 
 [node name="game2Done" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.059, 0, -17.8726 )
+visible = false
 
 [node name="progress" type="MeshInstance" parent="game2Done"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2636, -3.35994, 8.37502 )
@@ -146,7 +144,6 @@ light_energy = 16.0
 
 [node name="dull2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.393, 0.0912739, -8.40517 )
-visible = false
 
 [node name="progress" type="MeshInstance" parent="dull2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )
@@ -160,6 +157,7 @@ shape = SubResource( 6 )
 
 [node name="Game3Done" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3937, -0.531925, -59.0808 )
+visible = false
 
 [node name="progress" type="MeshInstance" parent="Game3Done"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20461, -3.08726, 28.7351 )
@@ -178,7 +176,6 @@ light_energy = 16.0
 
 [node name="dull3" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3771, -0.29322, -29.5404 )
-visible = false
 
 [node name="progress" type="MeshInstance" parent="dull3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )
@@ -192,7 +189,6 @@ shape = SubResource( 6 )
 
 [node name="dull4" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8485, -0.321181, 31.9125 )
-visible = false
 
 [node name="progress" type="MeshInstance" parent="dull4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )
@@ -205,6 +201,7 @@ material/0 = SubResource( 11 )
 shape = SubResource( 6 )
 
 [node name="Game1Done" type="Spatial" parent="."]
+visible = false
 
 [node name="progress" type="MeshInstance" parent="Game1Done"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )
@@ -230,6 +227,7 @@ material/0 = ExtResource( 7 )
 
 [node name="LastGame" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8854, -0.309939, 31.6341 )
+visible = false
 
 [node name="progress" type="MeshInstance" parent="LastGame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81159, -3.35994, -1.2226 )

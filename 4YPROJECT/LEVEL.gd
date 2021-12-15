@@ -21,30 +21,25 @@ func ready():
 
 
 func _process(_delta):
-	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorOne:
-		GameManager.loading=0
-# warning-ignore:return_value_discarded
+	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorOne:
 		get_tree().change_scene("res://LoadingScreen.tscn");
-	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorTwo:
-		GameManager.loading=0
-# warning-ignore:return_value_discarded
+		
+	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorTwo:
 		get_tree().change_scene("res://LoadingScreen.tscn");
-	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorThree:
-		GameManager.loading=0
-# warning-ignore:return_value_discarded
+		
+	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorThree:
 		get_tree().change_scene("res://LoadingScreen.tscn");
-	if (Input.is_action_just_pressed("PICKUP"))and GameManager.doorFour:
-		GameManager.loading=0
-# warning-ignore:return_value_discarded
+		
+	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorFour:
 		get_tree().change_scene("res://LoadingScreen.tscn");
 		
 
 #Maze-----------------
 func _on_Area_mouse_entered_Game1():
 	life.show()
-	print(GameManager.pickup)
 	GameManager.doorOne=true
-	
+	if GameManager.completedGame0ne==true:
+		life.text="Game Completed Want to try again?"
 
 func _on_Area_mouse_exited_Game1():
 	life.hide()
@@ -54,6 +49,7 @@ func _on_Area_mouse_exited_Game1():
 func _on_Area_mouse_entered_Game2():
 	if GameManager.completedGame0ne==true:
 		GameManager.doorTwo=true
+		GameManager.doorOne=false
 		race.text="Start Race"
 		race.show()
 	else:

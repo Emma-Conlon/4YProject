@@ -25,4 +25,3 @@ func move_to_target():
 func get_target_path(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 
-

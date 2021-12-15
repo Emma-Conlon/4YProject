@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Score.gd" type="Script" id=2]
+[ext_resource path="res://Score2.gd" type="Script" id=3]
 [ext_resource path="res://torchLight.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -43,10 +44,10 @@ font_data = ExtResource( 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.618898
-margin_top = 2.3811
-margin_right = 2.3811
-margin_bottom = -13.6189
+margin_left = -1.67835
+margin_top = 2.91083
+margin_right = 1.32165
+margin_bottom = -13.0892
 rect_scale = Vector2( 0.995685, 0.149185 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -98,22 +99,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="RED" type="ColorRect" parent="."]
 material = SubResource( 7 )
-margin_left = 2.0
+margin_left = -0.128141
 margin_top = 10.0433
-margin_right = 166.0
+margin_right = 163.872
 margin_bottom = 178.043
 color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OBJECTIVE" type="Label" parent="ColorRect2"]
-margin_left = 481.666
-margin_top = 3.42354
-margin_right = 935.666
-margin_bottom = 136.424
+[node name="OBJECTIVE" type="Label" parent="RED"]
+margin_left = 451.727
+margin_top = -45.9008
+margin_right = 905.727
+margin_bottom = 87.1001
 rect_scale = Vector2( 1, 4.75373 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -122,11 +123,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="ColorRect2"]
-anchor_left = 2.89593
-anchor_top = -0.387593
-anchor_right = 2.89593
-anchor_bottom = -0.387593
+[node name="Score" type="Label" parent="RED"]
+anchor_left = 2.67392
+anchor_top = -0.747288
+anchor_right = 2.67392
+anchor_bottom = -0.747288
 margin_left = 467.517
 margin_top = 117.304
 margin_right = 555.517
@@ -135,6 +136,48 @@ rect_scale = Vector2( 1, 3.41311 )
 custom_fonts/font = SubResource( 9 )
 text = "0"
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Green" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 7 )
+margin_left = 8.25622
+margin_top = 12.9849
+margin_right = 172.256
+margin_bottom = 180.985
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2nd" type="Label" parent="Green"]
+margin_left = 349.578
+margin_top = -35.2483
+margin_right = 873.578
+margin_bottom = 97.7527
+rect_scale = Vector2( 1, 4.75373 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+text = "Green_Emeralds:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Label" parent="Green"]
+anchor_left = 2.47927
+anchor_top = -0.831831
+anchor_right = 2.47927
+anchor_bottom = -0.831831
+margin_left = 467.517
+margin_top = 117.304
+margin_right = 555.517
+margin_bottom = 276.304
+rect_scale = Vector2( 1, 3.41311 )
+custom_fonts/font = SubResource( 9 )
+text = "0"
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
 }

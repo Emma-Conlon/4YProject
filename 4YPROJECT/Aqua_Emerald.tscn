@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://green-chaos-emerald/model/model.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://green-chaos-emerald/cyan.png" type="Texture" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 1, 1, 1 )
+albedo_texture = ExtResource( 2 )
 roughness_texture_channel = 1
 refraction_enabled = true
 refraction_scale = 1.0

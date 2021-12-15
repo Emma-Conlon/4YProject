@@ -22,6 +22,7 @@ extents = Vector3( 1, 1, 0.812524 )
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00512886, 0.0113651, 0.577023 )
 collision_layer = 6
+collision_mask = 9
 script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -64,7 +65,7 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="follow"]
-transform = Transform( -10.1659, 0, -1.535e-06, 0, 3, 0, 3.53512e-06, 0, -23.412, 0.166336, 7, 0 )
+transform = Transform( -7.02493, 0, -1.06073e-06, 0, 3, 0, 3.53512e-06, 0, -23.412, 0.166336, 7, 0 )
 layers = 2
 axis = 1
 texture = ExtResource( 5 )
