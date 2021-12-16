@@ -20,6 +20,7 @@ __meta__ = {
 MainHall = "res://Scenes/Maze.tscn"
 entrance = "res://test.tscn"
 racing = "res://Scenes/race.tscn"
+hide_seek = "res://Scenes/Hide&seek.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0

@@ -6,19 +6,19 @@
 
 [sub_resource type="Theme" id=1]
 
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 100
 font_data = ExtResource( 2 )
 
@@ -53,7 +53,7 @@ __meta__ = {
 margin_right = 151.0
 margin_bottom = 32.0
 focus_neighbour_top = NodePath("../Quit")
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_constants/hseparation = 0
@@ -64,7 +64,7 @@ margin_top = 36.0
 margin_right = 151.0
 margin_bottom = 68.0
 rect_pivot_offset = Vector2( -60.8017, -1.39498 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "Help"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -75,7 +75,7 @@ margin_top = 72.0
 margin_right = 151.0
 margin_bottom = 104.0
 focus_neighbour_bottom = NodePath("../StartButton")
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -118,7 +118,7 @@ __meta__ = {
 margin_left = 72.0
 margin_right = 436.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 text = "Lost Hope"

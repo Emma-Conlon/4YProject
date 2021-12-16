@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Purple Emerald.fbx-324bc3306cc37d687af3beb2bb6d38a6.scn"
+path="res://.import/Purple Emerald.fbx-5599f6fe13628245484d71b7490c384d.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Purple Emerald/Purple Emerald.fbx"
-dest_files=[ "res://.import/Purple Emerald.fbx-324bc3306cc37d687af3beb2bb6d38a6.scn" ]
+source_file="res://addons/The Chaos Emeralds/Purple Emerald/Purple Emerald.fbx"
+dest_files=[ "res://.import/Purple Emerald.fbx-5599f6fe13628245484d71b7490c384d.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Red Emerald.fbx-564a2c533a432d40c696644db1ae5557.scn"
+path="res://.import/Red Emerald.fbx-71dee123c335fe509d2e1a5d47aaae1f.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Red Emerald/Red Emerald.fbx"
-dest_files=[ "res://.import/Red Emerald.fbx-564a2c533a432d40c696644db1ae5557.scn" ]
+source_file="res://addons/The Chaos Emeralds/Red Emerald/Red Emerald.fbx"
+dest_files=[ "res://.import/Red Emerald.fbx-71dee123c335fe509d2e1a5d47aaae1f.scn" ]
 
 [params]
 

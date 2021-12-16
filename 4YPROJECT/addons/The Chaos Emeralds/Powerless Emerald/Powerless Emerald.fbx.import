@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Powerless Emerald.fbx-0b09ecc5c39aea609c84f34cde1128b5.scn"
+path="res://.import/Powerless Emerald.fbx-ddc07d3ce3646877ae4ef29f3e8ca34c.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Powerless Emerald/Powerless Emerald.fbx"
-dest_files=[ "res://.import/Powerless Emerald.fbx-0b09ecc5c39aea609c84f34cde1128b5.scn" ]
+source_file="res://addons/The Chaos Emeralds/Powerless Emerald/Powerless Emerald.fbx"
+dest_files=[ "res://.import/Powerless Emerald.fbx-ddc07d3ce3646877ae4ef29f3e8ca34c.scn" ]
 
 [params]
 

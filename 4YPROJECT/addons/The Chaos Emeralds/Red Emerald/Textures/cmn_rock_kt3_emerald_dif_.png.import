@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cmn_rock_kt3_emerald_dif_.png-e87341397146b07dc29d1a814da86d11.stex"
+path="res://.import/cmn_rock_kt3_emerald_dif_.png-fba5ebe1c2100ad76b5e1c698b0ed845.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Red Emerald/Textures/cmn_rock_kt3_emerald_dif_.png"
-dest_files=[ "res://.import/cmn_rock_kt3_emerald_dif_.png-e87341397146b07dc29d1a814da86d11.stex" ]
+source_file="res://addons/The Chaos Emeralds/Red Emerald/Textures/cmn_rock_kt3_emerald_dif_.png"
+dest_files=[ "res://.import/cmn_rock_kt3_emerald_dif_.png-fba5ebe1c2100ad76b5e1c698b0ed845.stex" ]
 
 [params]
 

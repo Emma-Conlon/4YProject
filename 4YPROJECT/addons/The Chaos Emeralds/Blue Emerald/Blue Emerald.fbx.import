@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Blue Emerald.fbx-6563d51f196ab492eaed94a3aa65666c.scn"
+path="res://.import/Blue Emerald.fbx-7d00e97605a23ce7229fc028088d790c.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Blue Emerald/Blue Emerald.fbx"
-dest_files=[ "res://.import/Blue Emerald.fbx-6563d51f196ab492eaed94a3aa65666c.scn" ]
+source_file="res://addons/The Chaos Emeralds/Blue Emerald/Blue Emerald.fbx"
+dest_files=[ "res://.import/Blue Emerald.fbx-7d00e97605a23ce7229fc028088d790c.scn" ]
 
 [params]
 

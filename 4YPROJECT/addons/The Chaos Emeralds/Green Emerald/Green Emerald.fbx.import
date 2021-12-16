@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Green Emerald.fbx-f55dac51ba6ac90d9c390a4238954091.scn"
+path="res://.import/Green Emerald.fbx-63197c0eaab48da8c3e333cd9c35caf4.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Green Emerald/Green Emerald.fbx"
-dest_files=[ "res://.import/Green Emerald.fbx-f55dac51ba6ac90d9c390a4238954091.scn" ]
+source_file="res://addons/The Chaos Emeralds/Green Emerald/Green Emerald.fbx"
+dest_files=[ "res://.import/Green Emerald.fbx-63197c0eaab48da8c3e333cd9c35caf4.scn" ]
 
 [params]
 

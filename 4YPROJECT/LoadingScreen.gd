@@ -33,6 +33,6 @@ func _on_Timer_timeout():
 			if GameManager.loading==1:
 				get_tree().change_scene(entrance)
 			if GameManager.doorTwo==true:
-				get_tree().change_scene(racing)
+				get_tree().change_scene(hide_seek)
 				GameManager.completedGame0ne=true
 	pass # Replace with function body.

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/event_rock_km_emeraldBl01_ref.png-cdf40d5971702dec3d729e62737726c3.stex"
+path="res://.import/event_rock_km_emeraldBl01_ref.png-b1add8040952483591d1d777200eb0bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Powerless Emerald/Textures/event_rock_km_emeraldBl01_ref.png"
-dest_files=[ "res://.import/event_rock_km_emeraldBl01_ref.png-cdf40d5971702dec3d729e62737726c3.stex" ]
+source_file="res://addons/The Chaos Emeralds/Powerless Emerald/Textures/event_rock_km_emeraldBl01_ref.png"
+dest_files=[ "res://.import/event_rock_km_emeraldBl01_ref.png-b1add8040952483591d1d777200eb0bb.stex" ]
 
 [params]
 

@@ -50,7 +50,7 @@ func _on_Area_mouse_entered_Game2():
 	if GameManager.completedGame0ne==true:
 		GameManager.doorTwo=true
 		GameManager.doorOne=false
-		race.text="Start Race"
+		race.text="Start Hide&Seek"
 		race.show()
 	else:
 		race.text="LOCKED: Play 1st Game to unlock"
@@ -68,7 +68,7 @@ func _on_Area_mouse_exited_Game2():
 func _on_Area_mouse_entered_Game3():
 	if GameManager.completedGame0ne==true and GameManager.completedGameTwo==true:
 		GameManager.doorThree=true
-		seek.text="Start Hide & Seek"
+		seek.text="Start Race"
 		seek.show()
 	else:
 		seek.text="LOCKED: Play 1st and 2nd Game to unlock"

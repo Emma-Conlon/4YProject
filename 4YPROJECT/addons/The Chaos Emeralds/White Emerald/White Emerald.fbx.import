@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/White Emerald.fbx-12ddd7e52e6089d330f823af4e6059c1.scn"
+path="res://.import/White Emerald.fbx-b8b30391e630ad0c94d66e7a2a0e5763.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/White Emerald/White Emerald.fbx"
-dest_files=[ "res://.import/White Emerald.fbx-12ddd7e52e6089d330f823af4e6059c1.scn" ]
+source_file="res://addons/The Chaos Emeralds/White Emerald/White Emerald.fbx"
+dest_files=[ "res://.import/White Emerald.fbx-b8b30391e630ad0c94d66e7a2a0e5763.scn" ]
 
 [params]
 

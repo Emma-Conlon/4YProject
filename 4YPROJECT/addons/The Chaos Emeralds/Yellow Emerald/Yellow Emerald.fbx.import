@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Yellow Emerald.fbx-7f34265d42d5c1b9fa73ab4a78270c90.scn"
+path="res://.import/Yellow Emerald.fbx-4064e5183a61509a2b941a532b33579c.scn"
 
 [deps]
 
-source_file="res://The Chaos Emeralds/Yellow Emerald/Yellow Emerald.fbx"
-dest_files=[ "res://.import/Yellow Emerald.fbx-7f34265d42d5c1b9fa73ab4a78270c90.scn" ]
+source_file="res://addons/The Chaos Emeralds/Yellow Emerald/Yellow Emerald.fbx"
+dest_files=[ "res://.import/Yellow Emerald.fbx-4064e5183a61509a2b941a532b33579c.scn" ]
 
 [params]
 
