@@ -38,6 +38,10 @@ GameManager="*res://gameManager.gd"
 
 enabled=PoolStringArray( "res://addons/zylann.hterrain/plugin.cfg" )
 
+[global]
+
+view=false
+
 [input]
 
 move_forward={

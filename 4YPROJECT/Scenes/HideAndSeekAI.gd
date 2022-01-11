@@ -6,6 +6,7 @@ enum {
 	PATROL,
 	CHASE,
 	ATTACK
+
 }
 
 var state = IDLE

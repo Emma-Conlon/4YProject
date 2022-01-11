@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var player = $Player
+onready var player = $Navigation/Player
 onready var AI=$Navigation/PathFindingAI2
 
 func _on_Timer_timeout():

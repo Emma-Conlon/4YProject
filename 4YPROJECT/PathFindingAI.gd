@@ -1,6 +1,11 @@
 extends KinematicBody
+enum {
+	IDLE,
+	ATTACK
+}
 
-export var speed = 10
+var state = IDLE
+export var speed = 5
 var target=null
 var path = []
 var cur_path_idx = 0
@@ -9,7 +14,16 @@ var threshold = .5
 
 onready var nav = get_parent()
 
+
+		
 func _physics_process(_delta):
+	
+	if state==ATTACK: 
+		print("PLAYER_DEAD")
+		var material = SpatialMaterial.new()
+		material.albedo_color = Color(1, 0, 0)#Red
+		$MeshInstance.set_surface_material(0, material)
+		
 	if path.size() > 0:
 		move_to_target()
 		
@@ -25,3 +39,11 @@ func move_to_target():
 func get_target_path(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 
+
+
+
+
+
+func _on_HIT_body_entered(body):
+	if body.name=="Player":
+		state = ATTACK

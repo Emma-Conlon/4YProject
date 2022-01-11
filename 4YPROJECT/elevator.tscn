@@ -1,0 +1,621 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://TexturesCom_ConcreteBunker0159_1_seamless_S.jpg" type="Texture" id=1]
+[ext_resource path="res://TexturesCom_WoodPlanksBare0467_2_seamless_S.jpg" type="Texture" id=2]
+[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://TexturesCom_WoodFine0086_7_seamless_S.png" type="Texture" id=4]
+[ext_resource path="res://TextureRect.gd" type="Script" id=5]
+[ext_resource path="res://Label.gd" type="Script" id=6]
+[ext_resource path="res://elevator.gd" type="Script" id=7]
+[ext_resource path="res://arrow.png" type="Texture" id=8]
+[ext_resource path="res://Doors_Open.gd" type="Script" id=10]
+[ext_resource path="res://Metal_Rough.jpg" type="Texture" id=11]
+[ext_resource path="res://Astro_Lighting_Parma_160_Wall_fbx_obj/Astro_Lighting_Parma_160_Wall.obj" type="ArrayMesh" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "going_up"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lift:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5.265, -0.582, -7.432 ), Vector3( -5.265, 3.282, -7.432 ), Vector3( -5.26527, 5.63511, -7.43156 ), Vector3( -5.26527, 9.35331, -7.43156 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "going_up (copy)"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lift:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5.26527, -0.581598, -7.43156 ), Vector3( -5.26527, 3.28186, -7.43156 ), Vector3( -5.26527, 5.63511, -7.43156 ), Vector3( -5.26527, 9.35331, -7.43156 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Doors_Open"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lift/Doors/Door4:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.854844, -0.958324, -0.0875292 ), Vector3( -0.74, -0.958, -0.088 ), Vector3( -0.615, -0.958, -0.088 ), Vector3( -0.458, -0.958, -0.088 ), Vector3( -0.266, -0.958, -0.088 ), Vector3( -0.118063, -0.958, -0.0879981 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Lift/Doors/Door3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.854844, -0.958324, -0.0875292 ), Vector3( -0.74, -0.958, -0.088 ), Vector3( -0.615, -0.958, -0.088 ), Vector3( -0.458, -0.958, -0.088 ), Vector3( -0.266, -0.958, -0.088 ), Vector3( -0.128997, -0.958, -0.0879966 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Lift/Doors/Door3:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.539, 0.647, -0.794 ), Vector3( 1.539, 0.647, -0.794 ), Vector3( 1.539, 0.647, -1.052 ), Vector3( 1.539, 0.647, -1.218 ), Vector3( 1.539, 0.647, -1.36 ), Vector3( 1.539, 0.647, -1.614 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Lift/Doors/Door4:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.5389, 0.646765, 0.920868 ), Vector3( 1.539, 0.647, 0.921 ), Vector3( 1.539, 0.647, 1.108 ), Vector3( 1.545, 0.647, 1.197 ), Vector3( 1.545, 0.647, 1.409 ), Vector3( 1.597, 0.647, 1.655 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "moving"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lift:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5.265, -0.582, -7.432 ), Vector3( -5.265, 2.60743, -7.432 ), Vector3( -5.265, 5.74283, -7.432 ), Vector3( -5.265, 9.738, -7.432 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "player_Move"
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 10, 10, 10 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+albedo_texture = ExtResource( 11 )
+metallic = 0.3
+metallic_specular = 0.0
+metallic_texture = ExtResource( 11 )
+roughness = 0.18
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 20, 20, 20 )
+
+[sub_resource type="ConcavePolygonShape" id=12]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ConcavePolygonShape" id=14]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="BoxShape" id=18]
+
+[sub_resource type="ViewportTexture" id=19]
+viewport_path = NodePath("Lift/nd_Floor/Sprite3D/Viewport")
+
+[sub_resource type="DynamicFont" id=20]
+size = 100
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="ViewportTexture" id=23]
+viewport_path = NodePath("Lift/G_Floor/Sprite3D/Viewport")
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="ViewportTexture" id=25]
+viewport_path = NodePath("Lift/Ist_Floor/Sprite3D/Viewport")
+
+[sub_resource type="ViewportTexture" id=26]
+viewport_path = NodePath("Lift/FloorNumber/Viewport")
+
+[sub_resource type="BoxShape" id=27]
+extents = Vector3( 0.438546, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=28]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=29]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=32]
+
+[sub_resource type="BoxShape" id=33]
+
+[node name="elevator" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61492, 0.882023, 0 )
+script = ExtResource( 7 )
+
+[node name="GoingUp" type="AnimationPlayer" parent="."]
+anims/going_up = SubResource( 1 )
+"anims/going_up (copy)" = SubResource( 30 )
+
+[node name="Doors_Open" type="AnimationPlayer" parent="."]
+anims/Doors_Open = SubResource( 2 )
+anims/moving = SubResource( 31 )
+anims/player_Move = SubResource( 34 )
+script = ExtResource( 10 )
+
+[node name="Lift" type="Spatial" parent="."]
+transform = Transform( 1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -5.265, -0.582, -7.432 )
+
+[node name="ROOF" type="MeshInstance" parent="Lift"]
+transform = Transform( 1.63339, -3.44918e-24, -2.14307e-10, -1.6799e-20, 0.0109563, 2.21288e-13, 3.06104e-09, -9.11896e-16, 1.81389, -0.0140438, 1.84392, -0.00461434 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/ROOF"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/ROOF/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Doors" type="Spatial" parent="Lift"]
+
+[node name="Door4" type="MeshInstance" parent="Lift/Doors"]
+transform = Transform( -0.00195177, 5.84877e-08, -0.0879861, 2.20652e-08, -0.958, -5.64511e-09, 0.118047, 1.80035e-07, -0.00145475, 1.597, 0.647, 1.655 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/Doors/Door4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Doors/Door4/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Door3" type="MeshInstance" parent="Lift/Doors"]
+transform = Transform( -0.0026768, 5.93014e-08, -0.0879777, 2.91449e-08, -0.958, -5.86092e-09, 0.128969, 2.17723e-07, -0.00182601, 1.539, 0.647, -1.614 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/Doors/Door3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Doors/Door3/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Door2" type="MeshInstance" parent="Lift"]
+transform = Transform( -0.00363769, 6.7031e-08, -0.0875291, 3.92296e-08, -0.958324, -2.38499e-09, 0.105588, -7.47553e-08, -1.43145e-05, 1.53888, 0.834631, -1.66316 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/Door2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Door2/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="Door" type="MeshInstance" parent="Lift"]
+transform = Transform( 8.57992e-06, -0.087373, 0.000206597, -0.956803, 5.89592e-07, 0.000129713, 0.00406372, 0.000236362, 0.0977801, 1.54996, 0.771295, 1.65541 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/Door"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Door/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Floor" type="MeshInstance" parent="Lift"]
+transform = Transform( 1.70176, 2.20085e-18, -4.49068e-09, -2.62598e-17, 0.00473143, 7.84851e-14, 4.37273e-10, -1.71566e-15, 1.94843, -0.0502392, -0.227956, 0.208246 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Floor/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="wall" type="MeshInstance" parent="Lift"]
+transform = Transform( 1.55112, -1.54122e-10, -2.4052e-18, 0, -2.76231e-09, -1.08367, -1.10461e-10, 0.113676, -8.52089e-08, -1.1865e-07, 0.760241, 1.681 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/wall/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="Number" type="MeshInstance" parent="Lift"]
+transform = Transform( -0.0245212, 1.6669e-07, -9.22573e-12, -2.23204e-07, -0.151368, -3.38237e-09, -2.48445e-10, -9.42687e-09, 0.421863, 1.63554, 1.68603, 0.0500441 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 15 )
+
+[node name="ROOF2" type="MeshInstance" parent="Lift"]
+transform = Transform( -2.37555e-07, -0.0446231, -1.6784e-11, 0.151368, -5.43273e-11, 7.19623e-14, -4.23181e-14, -1.01713e-09, 1.72787, 1.61149, 1.68386, 0.0113747 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 16 )
+
+[node name="nd_Floor" type="CSGBox" parent="Lift"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0454521, 1.25209, 1.541 )
+material = SubResource( 17 )
+
+[node name="Area" type="Area" parent="Lift/nd_Floor"]
+transform = Transform( 2.55772, 0, 0, 0, 1, 0, 0, 0, 1.87082, -2.31914e-07, -4.76837e-07, 2.80909e-07 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/nd_Floor/Area"]
+shape = SubResource( 18 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Lift/nd_Floor"]
+transform = Transform( -5.95055, 0, -5.20214e-07, 0, 3.6583, 0, 5.82818e-07, 0, -6.66667, -1.55982, -0.511526, -1.08517 )
+flip_v = true
+texture = SubResource( 19 )
+
+[node name="Viewport" type="Viewport" parent="Lift/nd_Floor/Sprite3D"]
+size = Vector2( 100, 100 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Lift/nd_Floor/Sprite3D/Viewport"]
+margin_right = 50.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Lift/nd_Floor"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lift/nd_Floor/TextureRect"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+text = "Second Floor"
+script = ExtResource( 6 )
+
+[node name="G_Floor" type="CSGBox" parent="Lift"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0535195, 0.444516, 1.51682 )
+material = SubResource( 22 )
+
+[node name="Area" type="Area" parent="Lift/G_Floor"]
+transform = Transform( 2.55772, 0, 0, 0, 1, 0, 0, 0, 1.87082, -2.31914e-07, -4.76837e-07, 2.80909e-07 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/G_Floor/Area"]
+shape = SubResource( 18 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Lift/G_Floor"]
+transform = Transform( -5.95055, 0, -5.20214e-07, 0, 3.6583, 0, 5.82818e-07, 0, -6.66667, -1.47537, -0.511526, -1.08517 )
+flip_v = true
+texture = SubResource( 23 )
+
+[node name="Viewport" type="Viewport" parent="Lift/G_Floor/Sprite3D"]
+size = Vector2( 100, 100 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Lift/G_Floor/Sprite3D/Viewport"]
+margin_right = 50.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Lift/G_Floor"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lift/G_Floor/TextureRect"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+text = "Ground Floor"
+script = ExtResource( 6 )
+
+[node name="Ist_Floor" type="CSGBox" parent="Lift"]
+transform = Transform( 0.106046, -0.000604615, 0, 0.000340096, 0.106046, 0, 0, 0, 0.106047, -0.0598282, 0.845873, 1.57318 )
+material = SubResource( 24 )
+
+[node name="Area" type="Area" parent="Lift/Ist_Floor"]
+transform = Transform( 2.55772, 1.69761e-09, 0, -2.3447e-10, 1.78084, 0, 0, 0, 1.94416, 1.20764e-06, 4.0903e-07, 4.56392e-06 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Ist_Floor/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65376e-07, -2.0923e-07, -2.67884e-08 )
+shape = SubResource( 18 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Lift/Ist_Floor"]
+transform = Transform( -5.95055, 6.90146e-10, -5.20214e-07, -1.24213e-09, 3.6583, -7.48605e-17, 5.82819e-07, 0, -6.66667, -1.55982, -0.511526, -1.08517 )
+flip_v = true
+texture = SubResource( 25 )
+
+[node name="Viewport" type="Viewport" parent="Lift/Ist_Floor/Sprite3D"]
+size = Vector2( 100, 100 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Lift/Ist_Floor/Sprite3D/Viewport"]
+margin_right = 50.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0.0235294, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Lift/Ist_Floor"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lift/Ist_Floor/TextureRect"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+text = "First Floor"
+script = ExtResource( 6 )
+
+[node name="FloorNumber" type="Sprite3D" parent="Lift"]
+transform = Transform( -2.91409e-08, 0, 0.666667, 0, 0.5, 0, -0.666667, 0, -2.91409e-08, 1.66643, 1.63561, -0.128825 )
+flip_v = true
+texture = SubResource( 26 )
+
+[node name="Viewport" type="Viewport" parent="Lift/FloorNumber"]
+size = Vector2( 100, 100 )
+size_override_stretch = true
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Lift/FloorNumber/Viewport"]
+margin_right = 50.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "G"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="elevatorButton" type="CSGBox" parent="Lift"]
+transform = Transform( 0.0077486, 0, 0, 0, 0.380879, 0, 0, 0, 0.282005, 1.71573, 1.00492, 2.49771 )
+
+[node name="UP" type="Sprite3D" parent="Lift/elevatorButton"]
+transform = Transform( -1.01515, 0, -31.476, 0, 0.32826, 0, 0.539185, 0, -0.0596026, 5.27167, 0.555435, -1.98351e-07 )
+texture = ExtResource( 8 )
+
+[node name="Area" type="Area" parent="Lift/elevatorButton/UP"]
+transform = Transform( 7.50545, 0, -0.54429, 0, 4.60998, 0, -0.1588, 0, 2.59917, -1.60532e-07, -3.10787e-07, -2.74452e-08 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/elevatorButton/UP/Area"]
+transform = Transform( 0.499004, 0, -0.00708836, 0, 0.292239, 0, -0.00206806, 0, 0.43511, -5.9079e-08, -5.86912e-08, 2.33437e-09 )
+shape = SubResource( 27 )
+
+[node name="TextureRect" type="TextureRect" parent="Lift/elevatorButton/UP"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lift/elevatorButton/UP/TextureRect"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+text = "Up"
+script = ExtResource( 6 )
+
+[node name="DOWN" type="Sprite3D" parent="Lift/elevatorButton"]
+transform = Transform( -1.01514, 0.000131508, -14.765, -0.000521418, -0.328261, 0, -0.539192, 6.98502e-05, 27.7982, 5.27168, -0.44117, -0.00358101 )
+texture = ExtResource( 8 )
+
+[node name="wall2" type="MeshInstance" parent="Lift"]
+transform = Transform( 1.52639, -3.84542e-17, -4.85684e-11, -1.29438e-22, -1.05562, 2.25984e-09, -2.09092e-09, -8.84895e-08, -0.0991458, -0.00312197, 0.783492, -1.66393 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/wall2/StaticBody"]
+shape = SubResource( 28 )
+
+[node name="wall3" type="MeshInstance" parent="Lift"]
+transform = Transform( -0.00362452, -1.00368e-08, -0.0872858, 5.69114e-12, -1.04275, 6.86209e-07, -1.71544, 2.71595e-11, 0.000236201, -1.47076, 0.800387, 0.0147616 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Lift/wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/wall3/StaticBody"]
+shape = SubResource( 29 )
+
+[node name="Astro_Lighting_Parma_160_Wall" type="MeshInstance" parent="Lift"]
+transform = Transform( 3.97496e-10, -0.0333333, 1.45705e-09, 0, -1.09278e-09, -0.025, 0.0333333, 3.97496e-10, -1.73751e-17, -1.32789, 1.14259, -0.543901 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight2" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 20, 0, 0, 0, -19.9997, 0.101576, 0, -0.101576, -19.9997, 0.170292, -2.46583, 0.0880513 )
+light_energy = 20.15
+spot_range = 2.0
+spot_angle = 26.6
+
+[node name="SpotLight" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 20, 0, 0, 0, 20, -2.84217e-14, 0, 2.84217e-14, 20, -0.847012, -0.986887, 2.48566 )
+light_energy = 20.15
+spot_range = 3.7
+spot_angle = 26.6
+
+[node name="Astro_Lighting_Parma_160_Wall2" type="MeshInstance" parent="Lift/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 1, 1.94963e-16, -8.52213e-24, -1.33221e-15, 1, -2.54609e-15, 1.82488e-23, -1.62255e-15, 1, 35.7972, 4.44281e-07, 1.14868e-06 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight2" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall2"]
+transform = Transform( 20, 0, 0, 0, -19.9997, 0.101576, 0, -0.101576, -19.9997, 0.170292, -2.46583, 0.0880513 )
+light_energy = 20.15
+spot_range = 2.0
+spot_angle = 26.6
+
+[node name="SpotLight" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall2"]
+transform = Transform( 20, 0, 0, 0, 20, -2.84217e-14, 0, 2.84217e-14, 20, -0.847012, -0.986887, 2.48566 )
+light_energy = 20.15
+spot_range = 3.7
+spot_angle = 26.6
+
+[node name="Astro_Lighting_Parma_160_Wall3" type="MeshInstance" parent="Lift/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 7.54979e-08, 1, 4.37114e-08, 1, -7.54979e-08, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 62.8916, -57.7423, 1.05974 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight2" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall3"]
+transform = Transform( 20, 0, 0, 0, -19.9997, 0.101576, 0, -0.101576, -19.9997, 0.170292, -2.46583, 0.0880513 )
+light_energy = 20.15
+spot_range = 2.0
+spot_angle = 26.6
+
+[node name="SpotLight" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall3"]
+transform = Transform( 20, 0, 0, 0, 20, -2.84217e-14, 0, 2.84217e-14, 20, -0.847012, -0.986887, 2.48566 )
+light_energy = 20.15
+spot_range = 3.7
+spot_angle = 26.6
+
+[node name="Astro_Lighting_Parma_160_Wall" type="MeshInstance" parent="Lift/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 1.19249e-08, -1, -4.37114e-08, -1, -1.19249e-08, -4.37114e-08, 4.37114e-08, 4.37114e-08, -1, -30.3564, -42.6398, 0.203984 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight2" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 20, 0, 0, 0, -19.9997, 0.101576, 0, -0.101576, -19.9997, 0.170292, -2.46583, 0.0880513 )
+light_energy = 20.15
+spot_range = 2.0
+spot_angle = 26.6
+
+[node name="SpotLight" type="SpotLight" parent="Lift/Astro_Lighting_Parma_160_Wall/Astro_Lighting_Parma_160_Wall"]
+transform = Transform( 20, 0, 0, 0, 20, -2.84217e-14, 0, 2.84217e-14, 20, -0.847012, -0.986887, 2.48566 )
+light_energy = 20.15
+spot_range = 3.7
+spot_angle = 26.6
+
+[node name="Check" type="MeshInstance" parent="Lift"]
+transform = Transform( 0.168414, 0, 0, 0, 0.510861, 0, 0, 0, 1.4165, 1.56569, 0.401023, 0.0208074 )
+visible = false
+mesh = SubResource( 32 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Lift/Check"]
+transform = Transform( 2.49481, 0, 0, 0, 1, 0, 0, 0, 1, 2.35104e-07, -2.33187e-08, 1.33633e-09 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Lift/Check/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06067e-08, -2.33187e-08, 1.33633e-09 )
+shape = SubResource( 33 )
+
+[connection signal="animation_finished" from="Doors_Open" to="." method="_on_Doors_Open_animation_finished"]
+[connection signal="mouse_entered" from="Lift/nd_Floor/Area" to="." method="_on_Area_mouse_entered_Second_Floor"]
+[connection signal="mouse_entered" from="Lift/nd_Floor/Area" to="Lift/nd_Floor/TextureRect" method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="Lift/nd_Floor/Area" to="." method="_on_Area_mouse_exited_Second_Floor"]
+[connection signal="mouse_exited" from="Lift/nd_Floor/Area" to="Lift/nd_Floor/TextureRect" method="_on_Area_mouse_exited"]
+[connection signal="mouse_entered" from="Lift/G_Floor/Area" to="." method="_on_Area_mouse_entered_G_floor"]
+[connection signal="mouse_entered" from="Lift/G_Floor/Area" to="Lift/G_Floor/TextureRect" method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="Lift/G_Floor/Area" to="." method="_on_Area_mouse_exited_G_floor"]
+[connection signal="mouse_exited" from="Lift/G_Floor/Area" to="Lift/G_Floor/TextureRect" method="_on_Area_mouse_exited"]
+[connection signal="mouse_entered" from="Lift/Ist_Floor/Area" to="." method="_on_Area_mouse_entered_first_floor"]
+[connection signal="mouse_entered" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/TextureRect" method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="Lift/Ist_Floor/Area" to="." method="_on_Area_mouse_exited_first_floor"]
+[connection signal="mouse_exited" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/TextureRect" method="_on_Area_mouse_exited"]
+[connection signal="mouse_entered" from="Lift/elevatorButton/UP/Area" to="." method="_on_Area_mouse_entered_Up_Button"]
+[connection signal="mouse_entered" from="Lift/elevatorButton/UP/Area" to="Lift/elevatorButton/UP/TextureRect" method="_on_Area_mouse_entered"]
+[connection signal="mouse_exited" from="Lift/elevatorButton/UP/Area" to="." method="_on_Area_mouse_exited_Up_Button"]
+[connection signal="mouse_exited" from="Lift/elevatorButton/UP/Area" to="Lift/elevatorButton/UP/TextureRect" method="_on_Area_mouse_exited"]
+[connection signal="body_entered" from="Lift/Check/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Lift/Check/Area" to="." method="_on_Area_body_exited"]

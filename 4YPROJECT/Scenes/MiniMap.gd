@@ -1,6 +1,6 @@
 extends Control
 
-onready var Target_XZ = get_parent().get_node("Player")
+onready var Target_XZ = get_parent().get_node("Navigation/Player")
 onready var Target_Y = get_parent().get_node("Navigation")
 onready var Target_X= get_parent().get_node("Collectables")
 

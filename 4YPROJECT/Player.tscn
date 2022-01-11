@@ -17,10 +17,10 @@ data = PoolVector3Array( 4.625, -7.25, 39.75, 4.625, -7.25, -15.625, 4.2729, -9.
 [sub_resource type="CubeMesh" id=3]
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 1, 1, 0.812524 )
+extents = Vector3( 1, 0.503386, 0.812524 )
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00512886, 0.0113651, 0.577023 )
+transform = Transform( 1, 0, 0, 0, 0.678885, 0, 0, 0, 1, 0.00512886, 0.0113651, 0.577023 )
 collision_layer = 6
 collision_mask = 9
 script = ExtResource( 1 )
@@ -44,7 +44,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.55378
 cull_mask = 1048573
 
 [node name="SpotLight" type="SpotLight" parent="follow"]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.41711, 4.50559, 3.08054 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1.473, 0, 1.50996e-07, 0, -1, 1.41711, 4.50559, 3.08054 )
 visible = false
 light_energy = 10.0
 shadow_enabled = true
@@ -80,5 +80,5 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.630619, 0, 0, 0, 4.28644, -1.08574e-15, 0, -4.4424e-14, 3.07847, 0.443762, 2.64332, -0.76966 )
+transform = Transform( 0.630619, 0, 0, 0, 7.44513, -1.88583e-15, 0, -3.83735e-14, 2.65919, 0.496822, 2.14148, -0.723959 )
 shape = SubResource( 4 )

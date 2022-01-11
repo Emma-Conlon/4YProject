@@ -126,7 +126,7 @@ mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
 [node name="Area" type="Area" parent="Maze_Game"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0379157, 0 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -0.932195, -0.0379157, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Maze_Game/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10375e-08, 0 )

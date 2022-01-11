@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Astro_Lighting_Parma_160_Wall.obj-66bc5fa73a6525d2476cf8619c986886.mesh"
+
+[deps]
+
+files=[ "res://.import/Astro_Lighting_Parma_160_Wall.obj-66bc5fa73a6525d2476cf8619c986886.mesh" ]
+
+source_file="res://Astro_Lighting_Parma_160_Wall_fbx_obj/Astro_Lighting_Parma_160_Wall.obj"
+dest_files=[ "res://.import/Astro_Lighting_Parma_160_Wall.obj-66bc5fa73a6525d2476cf8619c986886.mesh", "res://.import/Astro_Lighting_Parma_160_Wall.obj-66bc5fa73a6525d2476cf8619c986886.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

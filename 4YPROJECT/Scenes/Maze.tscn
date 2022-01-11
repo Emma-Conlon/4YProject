@@ -25,6 +25,11 @@ script = ExtResource( 4 )
 
 [node name="Navigation" type="Navigation" parent="."]
 
+[node name="Player" parent="Navigation" instance=ExtResource( 1 )]
+transform = Transform( 1.04565, 0, 0, 0, 0.268962, 0, 0, 0, 0.392492, 49.3257, 1.65714, -1.28474 )
+collision_layer = 2
+collision_mask = 12
+
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 1 )
 
@@ -36,17 +41,7 @@ data = {
 }
 
 [node name="PathFindingAI" parent="Navigation" instance=ExtResource( 2 )]
-transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 1.74364, 1.91077, -40.6486 )
-collision_layer = 4
-collision_mask = 10
-
-[node name="Timer" type="Timer" parent="Navigation/PathFindingAI"]
-autostart = true
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1.04565, 0, 0, 0, 0.268962, 0, 0, 0, 0.392492, 49.3257, 1.65714, -1.28474 )
-collision_layer = 2
-collision_mask = 12
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 38, 3, 0 )
 
 [node name="Collectables" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80061, 0, -0.639812 )
@@ -76,5 +71,3 @@ layers = 2
 flip_v = true
 axis = 1
 texture = ExtResource( 10 )
-
-[connection signal="timeout" from="Navigation/PathFindingAI/Timer" to="." method="_on_Timer_timeout"]
