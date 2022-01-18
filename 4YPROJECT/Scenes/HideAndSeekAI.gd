@@ -8,11 +8,55 @@ enum {
 	ATTACK
 
 }
+var rng = RandomNumberGenerator.new()
+var state = GameManager.IDLE
+var time: float
+var tim:float
+var minTime=5
+var maxTime=10
+var patorlTime=11
+var patrolMax=21
+var hi=true;
 
-var state = IDLE
-
+func enter():
+	if 	GameManager.love==GameManager.IDLE:
+		
+		if hi==true:
+				rng.randomize()
+				time=round(rng.randf_range(minTime,maxTime))
+		$IDLE.set_wait_time(time)		
+		$IDLE.start()
+		time=time-1
+		if time<=0:
+				GameManager.love=GameManager.PATROL
+		hi=false
+		print("IDLE",time,hi)
+	elif GameManager.love==GameManager.PATROL:
+			
+			if hi==false:
+				rng.randomize()
+				tim=round(rng.randf_range(patorlTime,patrolMax))
+			hi=true
+			
+			$PATROL.set_wait_time(tim)
+			tim=tim-1
+			if tim<=0:
+				GameManager.love=GameManager.IDLE
+			$PATROL.start()
+			print("patrol",tim,"hi",hi)
+		#$IDLE.start()
+		
+		
+	
+func pat():
+	if 	GameManager.love==GameManager.PATROL: 
+		
+		print("PATROL",tim)
+		GameManager.love=GameManager.IDLE
+	#state=PATROL
+	
 func _ready():
-	pass
+	enter()
 
 
 func _on_ATTACK_body_entered(body):
@@ -48,9 +92,11 @@ func _on_Area_body_exited(body):
 		
 func _process(_delta):
 	var material = SpatialMaterial.new()
-	if state==IDLE: 
-		print("Idle")
+	if 	GameManager.love==GameManager.IDLE: 
 		material.albedo_color = Color(0, 0, 1)#Blue
+	if GameManager.love==GameManager.PATROL:
+		
+		material.albedo_color = Color(1, 0, 1)#Blue
 	if state==CHASE: 
 		print("CHASE")
 		material.albedo_color = Color(0, 1, 0)#GREEN
@@ -60,14 +106,18 @@ func _process(_delta):
 
 	
 	$MeshInstance.set_surface_material(0, material)
-
-
-
-		
 	
-		
-			#action 
+	
+	
+#for IDLE 
+func _on_Timer_timeout():
+
+	enter()
+#
+func check():
+	pass
 
 
-
+func _on_PATROL_timeout():
+	pass
 	

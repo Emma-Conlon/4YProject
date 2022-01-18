@@ -1,5 +1,14 @@
 extends Node
 
+enum {
+	IDLE,
+	PATROL,
+	CHASE,
+	ATTACK
+
+}
+
+var love=IDLE;
 var red=0;
 var lighting=0;	#checks if flashlight
 var pickup=0;#check to see if you pickup the torch 
@@ -23,3 +32,4 @@ var emerladsMax=2;
 #var emerladsMax=457;
 var clicked=false
 var dead =false;
+var button1=false;

@@ -12,3 +12,5 @@ func _on_Area_mouse_entered():
 
 func _on_Area_mouse_exited():
 		$Label.hide()
+
+

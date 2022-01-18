@@ -37,7 +37,13 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="ATTACK"]
 shape = SubResource( 5 )
 
+[node name="IDLE" type="Timer" parent="."]
+
+[node name="PATROL" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Detection" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_Area_body_exited"]
 [connection signal="body_entered" from="ATTACK" to="." method="_on_ATTACK_body_entered"]
 [connection signal="body_exited" from="ATTACK" to="." method="_on_ATTACK_body_exited"]
+[connection signal="timeout" from="IDLE" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="PATROL" to="." method="_on_PATROL_timeout"]

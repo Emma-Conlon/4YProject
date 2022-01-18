@@ -17,12 +17,15 @@ var MOUSE_SENSITIVITY = 0.05
 
 
 func _ready():
+	get_node("Moving").connect("animation_finished",self,"on_anim_finished")
 	camera = $follow/Camera
 	rotation_helper = $follow
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-
+func on_anim_finished():
+	if (Input.is_action_just_pressed("A")):
+		get_node("Moving").play_backwards("goingup")
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
@@ -41,12 +44,14 @@ func process_input(_delta):
 	if Input.is_action_pressed("move_forward"):
 		input_movement_vector.y += 0.05
 		is_moving = true
+			
 	if Input.is_action_pressed("move_back"):
 		input_movement_vector.y -= 0.1
 		is_moving = true
 	if Input.is_action_pressed("move_left"):
 		input_movement_vector.x -=0.1
 		is_moving = true
+		
 	if Input.is_action_pressed("move_right"):
 		input_movement_vector.x += 0.1
 		is_moving = true
@@ -59,13 +64,14 @@ func process_input(_delta):
 	dir += cam_xform.basis.x * input_movement_vector.x
 	# ----------------------------------
 	torch()
+	on_anim_finished()
 	# ----------------------------------
 	# Jumping
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			$AudioStreamPlayer3D.stop()
+			$follow/AudioStreamPlayer3D.stop()
 			vel.y = JUMP_SPEED
-			$JUMP.play()
+			$follow/JUMP.play()
 	# ----------------------------------
 
 	# ----------------------------------
@@ -110,15 +116,15 @@ func torch_life():
 		
 func sound(is_moving):
 	if is_moving:
-		if $Timer.time_left<=0:
-			$AudioStreamPlayer3D.pitch_scale=rand_range(0.8,1.2)
-			$AudioStreamPlayer3D.play()
-			$Timer.start(0.5)
+		if $follow/Timer.time_left<=0:
+			$follow/AudioStreamPlayer3D.pitch_scale=rand_range(0.8,1.2)
+			$follow/AudioStreamPlayer3D.play()
+			$follow/Timer.start(0.5)
 
 
 func torchcoloursound():
-	$torchswitch.pitch_scale = rand_range(0.8,1.2)
-	$torchswitch.play()
+	$follow/torchswitch.pitch_scale = rand_range(0.8,1.2)
+	$follow/torchswitch.play()
 
 func process_movement(delta):
 	dir.y = 0
