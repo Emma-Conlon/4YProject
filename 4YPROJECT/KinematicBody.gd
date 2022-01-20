@@ -2,8 +2,9 @@ extends KinematicBody
 
 const GRAVITY =  -9.98
 var vel = Vector3()
-const MAX_SPEED = 20
+var MAX_SPEED = 20
 const JUMP_SPEED = 18
+var crouch_speed=5
 const ACCEL = 4.5
 var dir = Vector3()
 var red=false
@@ -12,9 +13,10 @@ const MAX_SLOPE_ANGLE = 20
 onready var light = $follow/SpotLight
 var camera
 var rotation_helper
-
+var crouch_height=0.5
+var default_height=1
 var MOUSE_SENSITIVITY = 0.05
-
+onready var pcap=$CollisionShape
 
 func _ready():
 	get_node("Moving").connect("animation_finished",self,"on_anim_finished")
@@ -33,6 +35,8 @@ func _physics_process(delta):
 
 func process_input(_delta):
 
+	
+	MAX_SPEED=20
 	# ----------------------------------
 	# Walking
 	var is_moving = false
@@ -41,21 +45,31 @@ func process_input(_delta):
 
 	var input_movement_vector = Vector2()
 
+	if Input.is_action_pressed("crouch"):
+			pcap.shape.height=crouch_speed*_delta
+			MAX_SPEED=crouch_speed
+			
+	else:
+		pcap.shape.height+=crouch_speed*_delta
+		pcap.shape.height=clamp(pcap.shape.height,crouch_height,default_height)
+	
 	if Input.is_action_pressed("move_forward"):
 		input_movement_vector.y += 0.05
 		is_moving = true
+		MAX_SPEED =20
 			
 	if Input.is_action_pressed("move_back"):
 		input_movement_vector.y -= 0.1
 		is_moving = true
+		MAX_SPEED =20
 	if Input.is_action_pressed("move_left"):
 		input_movement_vector.x -=0.1
 		is_moving = true
-		
+		MAX_SPEED =20
 	if Input.is_action_pressed("move_right"):
 		input_movement_vector.x += 0.1
 		is_moving = true
-		
+		MAX_SPEED =20
 
 	input_movement_vector = input_movement_vector.normalized()
 	sound(is_moving)

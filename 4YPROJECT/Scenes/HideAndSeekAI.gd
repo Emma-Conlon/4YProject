@@ -30,7 +30,7 @@ func enter():
 		if time<=0:
 				GameManager.love=GameManager.PATROL
 		hi=false
-		print("IDLE",time,hi)
+		
 	elif GameManager.love==GameManager.PATROL:
 			
 			if hi==false:
@@ -43,7 +43,7 @@ func enter():
 			if tim<=0:
 				GameManager.love=GameManager.IDLE
 			$PATROL.start()
-			print("patrol",tim,"hi",hi)
+			
 		#$IDLE.start()
 		
 		

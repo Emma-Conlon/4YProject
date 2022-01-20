@@ -45,4 +45,4 @@ depth = 0.495522
 material = SubResource( 2 )
 
 [node name="PathAI" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.33447, 0, 0, 0, 1.82576, 0, 0, 0, 0.605544, -36.5603, 12.3268, 6.48989 )
+transform = Transform( 1.33447, 0, 0, 0, 1.82576, 0, 0, 0, 0.605544, 2.80387, -17.1529, 6.48989 )

@@ -112,7 +112,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Lift:translation")
 tracks/0/interp = 1
@@ -120,10 +120,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -41.858, -0.582, -7.432 ), Vector3( -41.858, 2.607, -7.432 ), Vector3( -41.858, 5.743, -7.432 ), Vector3( -41.858, 9.738, -7.432 ), Vector3( -41.858, 11.7832, -7.432 ) ]
+"values": [ Vector3( -41.858, -0.582, -7.432 ), Vector3( -41.858, 2.607, -7.432 ), Vector3( -41.858, 5.743, -7.432 ), Vector3( -41.858, 9.738, -7.432 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -258,7 +258,7 @@ anims/player_Move = SubResource( 7 )
 script = ExtResource( 10 )
 
 [node name="Lift" type="Spatial" parent="."]
-transform = Transform( 1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -41.858, 11.7832, -7.432 )
+transform = Transform( 1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -41.858, -0.582, -7.432 )
 
 [node name="ROOF" type="MeshInstance" parent="Lift"]
 transform = Transform( 1.63339, -3.44918e-24, -2.14307e-10, -1.6799e-20, 0.0109563, 2.21288e-13, 3.06104e-09, -9.11896e-16, 1.81389, -0.0140438, 1.84392, -0.00461434 )
