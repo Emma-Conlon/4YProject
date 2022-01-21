@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/brick_wall_without_proxy.obj-3365f5504dd918df9678abacac4fa551.mesh"
+
+[deps]
+
+files=[ "res://.import/brick_wall_without_proxy.obj-3365f5504dd918df9678abacac4fa551.mesh" ]
+
+source_file="res://Brick_Wall_Geo_Piskas/OBJ/brick_wall_without_proxy.obj"
+dest_files=[ "res://.import/brick_wall_without_proxy.obj-3365f5504dd918df9678abacac4fa551.mesh", "res://.import/brick_wall_without_proxy.obj-3365f5504dd918df9678abacac4fa551.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
