@@ -83,9 +83,9 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
-anchor_left = 0.000410616
+anchor_left = 0.00106239
 anchor_top = 0.000700747
-anchor_right = 1.00041
+anchor_right = 1.00106
 anchor_bottom = 1.0007
 margin_left = -5.3454
 margin_top = 1.7818
