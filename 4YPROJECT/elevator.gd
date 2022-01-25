@@ -13,7 +13,7 @@ enum DOORS{
 var flooranim=DOORS.G
 var movinganim=null
 var dooranim=null
-onready var first_floor =$Lift/Ist_Floor/TextureRect/Label
+onready var first_floor =$Lift/Ist_Floor/Sprite3D/TextureRect/Label
 var selectOne=false
 var onesel=false
 var selectTWO=false
@@ -85,23 +85,7 @@ func on_anim_finished():
 			get_node("Doors_Open").play("Doors_Open")
 			dooranim=DOORS.OPEN
 			upsel=true
-#	if dooranim==DOORS.CLOSE and flooranim==DOORS.G and selectOne==true:
-#		$GoingUp.play("going_up")
-#		dooranim=DOORS.OPEN
-#	elif flooranim==DOORS.G and dooranim==DOORS.CLOSE:
-#		$Doors_Open.play_backwards("Doors_Open")
-#		dooranim=DOORS.OPEN
 #
-#	elif dooranim==DOORS.CLOSE and flooranim==DOORS.G and upSelected:
-#		$Doors_Open.play("Doors_Open")
-#		dooranim=DOORS.CLOSE
-#		upSelected=false
-#	elif dooranim==DOORS.CLOSE and selectOne==true:
-#		$Doors_Open.play("Doors_Open")
-#		dooranim=DOORS.CLOSE
-
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	on_anim_finished()
 	up_or_down()

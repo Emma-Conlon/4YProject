@@ -258,7 +258,7 @@ anims/player_Move = SubResource( 7 )
 script = ExtResource( 10 )
 
 [node name="Lift" type="Spatial" parent="."]
-transform = Transform( 1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -41.858, -0.582, -7.432 )
+transform = Transform( 1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -41.858, 18.263, -7.432 )
 
 [node name="ROOF" type="MeshInstance" parent="Lift"]
 transform = Transform( 1.63339, -3.44918e-24, -2.14307e-10, -1.6799e-20, 0.0109563, 2.21288e-13, 3.06104e-09, -9.11896e-16, 1.81389, -0.0140438, 1.84392, -0.00461434 )
@@ -273,7 +273,7 @@ shape = SubResource( 10 )
 [node name="Doors" type="Spatial" parent="Lift"]
 
 [node name="Door4" type="MeshInstance" parent="Lift/Doors"]
-transform = Transform( -0.014132, 5.85075e-08, -0.0875172, 1.59765e-07, -0.958324, -5.61502e-09, 0.854727, 1.80096e-07, -0.001447, 1.5389, 0.646765, 0.920868 )
+transform = Transform( -0.014132, 5.85075e-08, -0.0875172, 1.59765e-07, -0.958324, -5.61503e-09, 0.854727, 1.80097e-07, -0.001447, 1.5389, 0.646765, 0.920868 )
 mesh = SubResource( 8 )
 material/0 = SubResource( 11 )
 
@@ -462,7 +462,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Lift/Ist_Floor"]
+[node name="TextureRect" type="TextureRect" parent="Lift/Ist_Floor/Sprite3D"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 5 )
@@ -470,7 +470,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Lift/Ist_Floor/TextureRect"]
+[node name="Label" type="Label" parent="Lift/Ist_Floor/Sprite3D/TextureRect"]
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
@@ -645,6 +645,7 @@ spot_angle = 26.6
 
 [node name="Check" type="MeshInstance" parent="Lift"]
 transform = Transform( 0.168414, 0, 0, 0, 0.510861, 0, 0, 0, 1.4165, 1.56569, 0.401023, 0.0208074 )
+visible = false
 mesh = SubResource( 36 )
 material/0 = null
 
@@ -672,9 +673,9 @@ shape = SubResource( 32 )
 [connection signal="mouse_exited" from="Lift/G_Floor/Area" to="." method="_on_Area_mouse_exited_G_floor"]
 [connection signal="mouse_exited" from="Lift/G_Floor/Area" to="Lift/G_Floor/TextureRect" method="_on_Area_mouse_exited"]
 [connection signal="mouse_entered" from="Lift/Ist_Floor/Area" to="." method="_on_Area_mouse_entered_first_floor"]
-[connection signal="mouse_entered" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/TextureRect" method="_on_Area_mouse_entered"]
+[connection signal="mouse_entered" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/Sprite3D/TextureRect" method="_on_Area_mouse_entered"]
 [connection signal="mouse_exited" from="Lift/Ist_Floor/Area" to="." method="_on_Area_mouse_exited_first_floor"]
-[connection signal="mouse_exited" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/TextureRect" method="_on_Area_mouse_exited"]
+[connection signal="mouse_exited" from="Lift/Ist_Floor/Area" to="Lift/Ist_Floor/Sprite3D/TextureRect" method="_on_Area_mouse_exited"]
 [connection signal="mouse_entered" from="Lift/elevatorButton/UP/Area" to="." method="_on_Area_mouse_entered_Up_Button"]
 [connection signal="mouse_entered" from="Lift/elevatorButton/UP/Area" to="Lift/elevatorButton/UP/TextureRect" method="_on_Area_mouse_entered"]
 [connection signal="mouse_exited" from="Lift/elevatorButton/UP/Area" to="." method="_on_Area_mouse_exited_Up_Button"]

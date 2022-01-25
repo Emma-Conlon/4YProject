@@ -145,6 +145,7 @@ __meta__ = {
 }
 
 [node name="HIDE_AND_SEEK_TALK" type="ViewportContainer" parent="."]
+visible = false
 anchor_left = -0.0276213
 anchor_top = 0.985858
 anchor_right = 0.972379
@@ -173,6 +174,7 @@ custom_colors/font_color = Color( 1, 0.92549, 0.00784314, 1 )
 text = "Mystery Voice"
 
 [node name="Label" type="Label" parent="HIDE_AND_SEEK_TALK"]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 4 )
@@ -183,9 +185,9 @@ next game wont be.Let's Play
 HIDE & SEEK!!!!
 
 "
-percent_visible = 0.0
 
 [node name="Label2" type="Label" parent="HIDE_AND_SEEK_TALK"]
+visible = false
 margin_right = 173.0
 margin_bottom = 109.0
 rect_pivot_offset = Vector2( 313.317, -99.2964 )
@@ -195,7 +197,6 @@ This House has 3 floors with
 150 gems in total.The shadows 
 surround each floor, to win 
 get the gems,avoid dection"
-percent_visible = 0.0
 
 [node name="Label3" type="Label" parent="HIDE_AND_SEEK_TALK"]
 margin_right = 40.0
@@ -206,7 +207,6 @@ text = "
 see you, they hunt you so use
 the vents & furniture to hide 
 the best you can,GOOD LUCK"
-percent_visible = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HIDE_AND_SEEK_TALK"]
 anims/H&S_TEXT = SubResource( 6 )
@@ -214,7 +214,6 @@ anims/H&S_TEXT = SubResource( 6 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="MAZE_START" type="ViewportContainer" parent="."]
-visible = false
 anchor_left = 0.00553674
 anchor_top = 0.562765
 anchor_right = 1.00554
@@ -248,7 +247,6 @@ this game is called Collector,
 as in the name you must collect 
 all  the  450 gems within the 
 maze"
-percent_visible = 0.0
 
 [node name="Label2" type="Label" parent="MAZE_START"]
 visible = false
@@ -261,10 +259,8 @@ HOWEVER. within the maze there
 are shadows, these creatures
  know you are in the maze and 
 are hunting you  down!. "
-percent_visible = 0.0
 
 [node name="Label3" type="Label" parent="MAZE_START"]
-visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 5 )
@@ -273,7 +269,6 @@ the shadows won't stop chasing
 you, your only chance to survive 
 is to Run and RUN fast. 
 GOOD LUCK, you will need it."
-percent_visible = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MAZE_START"]
 anims/H&S_TEXT = SubResource( 9 )
