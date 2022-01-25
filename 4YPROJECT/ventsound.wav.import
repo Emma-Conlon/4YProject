@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ventsound.wav-ee9da4061c376653c2461427c41a849d.sample"
+
+[deps]
+
+source_file="res://ventsound.wav"
+dest_files=[ "res://.import/ventsound.wav-ee9da4061c376653c2461427c41a849d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -12,6 +12,8 @@ const DEACCEL= 16
 const MAX_SLOPE_ANGLE = 20
 onready var light = $follow/SpotLight
 var camera
+var vent = false
+onready var crawl = $follow/Vent
 var rotation_helper
 var crouch_height=0.5
 var default_height=1
@@ -39,13 +41,17 @@ func process_input(_delta):
 	MAX_SPEED=20
 	# ----------------------------------
 	# Walking
+	var is_vent = false
 	var is_moving = false
 	dir = Vector3()
 	var cam_xform = camera.get_global_transform()
 
 	var input_movement_vector = Vector2()
-
+	
+	
 	if Input.is_action_pressed("crouch"):
+			#is_vent = true
+			$follow/AudioStreamPlayer3D.stop()
 			pcap.shape.height=crouch_speed*_delta
 			MAX_SPEED=crouch_speed
 			
@@ -73,6 +79,7 @@ func process_input(_delta):
 
 	input_movement_vector = input_movement_vector.normalized()
 	sound(is_moving)
+	crawling(is_vent)
 	# Basis vectors are already normalized.
 	dir += -cam_xform.basis.z * input_movement_vector.y
 	dir += cam_xform.basis.x * input_movement_vector.x
@@ -127,7 +134,9 @@ func torch_life():
 		light.visible=false
 		GameManager.red=0
 		
-		
+func crawling(vent):
+	if vent:
+		crawl.play()
 func sound(is_moving):
 	if is_moving:
 		if $follow/Timer.time_left<=0:
