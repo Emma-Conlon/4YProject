@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.stex"
+path.s3tc="res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.s3tc.stex"
+path.etc2="res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Granite5.jpeg"
-dest_files=[ "res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.stex" ]
+dest_files=[ "res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.s3tc.stex", "res://.import/Granite5.jpeg-e27877cfe942f815f68c2258a4562b94.etc2.stex" ]
 
 [params]
 
@@ -28,6 +30,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
