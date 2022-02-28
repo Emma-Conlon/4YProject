@@ -1,25 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Instrictions.gd" type="Script" id=1]
-[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=2]
+[ext_resource path="res://matchup_pro.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 44
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 50
-outline_size = 4
-outline_color = Color( 0.921569, 0.713726, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 30
-font_data = ExtResource( 2 )
+size = 32
+outline_size = 2
+outline_color = Color( 0.34902, 0.356863, 0.690196, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Instrictions" type="Control"]
 anchor_right = 1.0
@@ -28,40 +17,50 @@ margin_left = -1.87288
 margin_top = -1.12373
 margin_right = -1.87288
 margin_bottom = -1.12373
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+[node name="Panel" type="Panel" parent="."]
+margin_left = -50.1934
+margin_top = -5.24405
+margin_right = -10.1934
+margin_bottom = 34.756
+rect_scale = Vector2( 27.77, 15.7288 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="VBoxContainer" parent="."]
+anchor_left = -0.0204846
+anchor_top = 0.0936442
+anchor_right = -0.264625
+anchor_bottom = -0.00802251
 margin_left = -9.0
 margin_top = -4.0
 margin_right = 422.0
 margin_bottom = 86.0
+rect_scale = Vector2( 2.47687, 3.75127 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="Title"]
+margin_right = 181.0
+margin_bottom = 26.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Title"]
-margin_right = 489.0
-margin_bottom = 80.0
-
-[node name="Label" type="Label" parent="Title/CenterContainer"]
-margin_right = 489.0
-margin_bottom = 80.0
-mouse_default_cursor_shape = 3
+[node name="Title" type="Label" parent="Title/CenterContainer2"]
+margin_left = 18.0
+margin_right = 162.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-text = "How to Play :)"
+text = "Instructions"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_top = 1.0
@@ -72,71 +71,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="."]
-margin_top = 558.0
+[node name="Back" type="Button" parent="Buttons"]
 margin_right = 101.0
-margin_bottom = 600.0
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 26.0
 text = "Back"
-
-[node name="Headings" type="VBoxContainer" parent="."]
-anchor_left = 0.252536
-anchor_top = 0.124255
-anchor_right = 0.646091
-anchor_bottom = 0.925922
-margin_top = 2.5034e-06
-margin_right = -7.62939e-06
-margin_bottom = -1.78814e-06
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="Headings"]
-margin_right = 403.0
-margin_bottom = 481.0
-
-[node name="Label" type="Label" parent="Headings/CenterContainer"]
-margin_right = 403.0
-margin_bottom = 481.0
-custom_fonts/font = SubResource( 3 )
-text = "torch on/off
-
-torch light colour 
-
-MOVEMENT
-
-Jump
-
-pause 
-
-sprint"
-uppercase = true
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 269.936
-margin_top = 126.14
-margin_right = 672.936
-margin_bottom = 582.14
-custom_fonts/font = SubResource( 4 )
-text = "Press F 
-
-
-Press TAB
-
-
-
-Press WASD 
-
-
-Press SPACE	
-
-
-Press P
-
-
-Press Shift+WASD"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]

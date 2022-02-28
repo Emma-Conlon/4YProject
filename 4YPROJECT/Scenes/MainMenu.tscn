@@ -1,39 +1,51 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Transition.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Theme" id=1]
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 2 )
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=2]
+[ext_resource path="res://matchup_pro.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=5]
-size = 100
-font_data = ExtResource( 2 )
+size = 32
+outline_size = 2
+outline_color = Color( 0.388235, 0.415686, 0.658824, 1 )
+font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 6.5
+margin_top = -0.749146
 margin_right = 6.5
-theme = SubResource( 1 )
+margin_bottom = -0.749146
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Transition" parent="." instance=ExtResource( 3 )]
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1027.0
+margin_bottom = 614.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+margin_left = 253.144
+margin_top = 0.707123
+margin_right = 367.144
+margin_bottom = 26.7071
+rect_scale = Vector2( 4.93205, 6.2393 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Panel/CenterContainer"]
+margin_right = 114.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Lost Hope"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -41,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -117.727
-margin_top = -95.7725
+margin_top = -49.8912
 margin_right = 33.2735
-margin_bottom = 10.2275
+margin_bottom = 56.1088
 rect_scale = Vector2( 1.60427, 2.08 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,79 +63,44 @@ __meta__ = {
 
 [node name="StartButton" type="Button" parent="Buttons"]
 margin_right = 151.0
-margin_bottom = 32.0
-focus_neighbour_top = NodePath("../Quit")
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_constants/hseparation = 0
-text = "Start "
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( -60.8017, -1.39498 )
+focus_mode = 0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Buttons"]
+margin_top = 30.0
+margin_right = 151.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( -60.8017, -1.39498 )
+disabled = true
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Instructions" type="Button" parent="Buttons"]
-margin_top = 36.0
+margin_top = 60.0
 margin_right = 151.0
-margin_bottom = 68.0
+margin_bottom = 86.0
 rect_pivot_offset = Vector2( -60.8017, -1.39498 )
-custom_fonts/font = SubResource( 3 )
 text = "Help"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quit" type="Button" parent="Buttons"]
-margin_top = 72.0
+margin_top = 90.0
 margin_right = 151.0
-margin_bottom = 104.0
-focus_neighbour_bottom = NodePath("../StartButton")
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 116.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-show_behind_parent = true
-anchor_left = 0.00106239
-anchor_top = 0.000700747
-anchor_right = 1.00106
-anchor_bottom = 1.0007
-margin_left = -5.3454
-margin_top = 1.7818
-margin_right = -10.3454
-margin_bottom = 1.7818
-color = Color( 0.00784314, 0.952941, 1, 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -253.002
-margin_top = 14.2339
-margin_right = 255.998
-margin_bottom = 94.2339
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2"]
-margin_right = 509.0
-margin_bottom = 80.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="VBoxContainer2/CenterContainer"]
-margin_left = 72.0
-margin_right = 436.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 5
-text = "Lost Hope"
-
-[connection signal="trasntioned" from="Transition" to="." method="_on_Transition_trasntioned"]
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Buttons/Instructions" to="." method="_on_Instructions_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]

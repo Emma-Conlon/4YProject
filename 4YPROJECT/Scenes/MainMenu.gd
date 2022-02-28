@@ -8,8 +8,6 @@ const Scene2=preload("res://LEVEL.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	$Buttons/StartButton.grab_focus()
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -19,12 +17,12 @@ func _input(event):
 #	pass
 
 func _on_StartButton_pressed():
-	 $Transition.trasntion()
+	var _vale = get_tree().change_scene("res://test.tscn");
 	 
 
 
 func _on_Instructions_pressed():
-	var _value = get_tree().change_scene("res://Scenes/Instrictions.tscn");
+	var _value = get_tree().change_scene("res://Scenes/Instructions.tscn");
 
 
 func _on_Quit_pressed():

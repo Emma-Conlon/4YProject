@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Pause.gd" type="Script" id=2]
+
+[node name="Pause" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 159.574
+margin_top = 70.151
+margin_right = 159.574
+margin_bottom = 70.151
+rect_scale = Vector2( 0.614002, 0.73221 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseScreen" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 26.3392, 15.7314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenteredTitleSection" type="CenterContainer" parent="PauseScreen"]
+anchor_right = 1.0
+margin_left = 12.1104
+margin_top = -2.45829
+margin_right = 40.1105
+margin_bottom = 23.5417
+rect_scale = Vector2( 0.210064, 0.415338 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="PauseScreen/CenteredTitleSection"]
+margin_right = 68.0
+margin_bottom = 26.0
+text = "Pause"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="PauseScreen"]
+margin_left = 13.0512
+margin_top = 12.9047
+margin_right = 109.051
+margin_bottom = 128.905
+rect_scale = Vector2( 0.134219, 0.157456 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="PauseScreen/buttons"]
+margin_right = 96.0
+margin_bottom = 26.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="PauseScreen/buttons"]
+margin_top = 30.0
+margin_right = 96.0
+margin_bottom = 56.0
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="PauseScreen/buttons"]
+margin_top = 60.0
+margin_right = 96.0
+margin_bottom = 86.0
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="PauseScreen/buttons"]
+margin_top = 90.0
+margin_right = 96.0
+margin_bottom = 116.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PauseScreen/buttons/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="PauseScreen/buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseScreen/buttons/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="PauseScreen/buttons/Exit" to="." method="_on_Exit_pressed"]
