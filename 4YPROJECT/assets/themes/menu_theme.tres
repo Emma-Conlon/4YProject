@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=13 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://matchup_pro.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/New folder/index.png" type="Texture" id=2]
+[ext_resource path="res://assets/New folder/cheched.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -82,6 +84,17 @@ Button/styles/focus = SubResource( 3 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 3 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = null
+CheckBox/icons/checked = ExtResource( 3 )
+CheckBox/icons/unchecked = ExtResource( 2 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
 CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 Label/colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 LineEdit/colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )

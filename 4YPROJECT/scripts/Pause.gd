@@ -1,10 +1,11 @@
 extends Control
 
-onready var clo = get_node(".")
+
 # ------------------------------------------------------------------------------
 func toggle() -> void:
-	self.visible = not get_tree().paused
-	get_tree().paused = self.visible
+	var pause_state = not get_tree().paused
+	get_tree().paused = pause_state
+	visible = pause_state
 
 
 # ------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ func _on_Exit_pressed():
 
 # ------------------------------------------------------------------------------
 func _on_Settings_pressed():
-	pass # Replace with function body.
+	$Settings.visible = true
 
 
 func _on_Resume_pressed():

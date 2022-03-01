@@ -17,7 +17,7 @@ func _input(event):
 #	pass
 
 func _on_StartButton_pressed():
-	var _vale = get_tree().change_scene("res://test.tscn");
+	var _vale = get_tree().change_scene("res://Scenes/save.tscn");
 	 
 
 
@@ -32,3 +32,7 @@ func _on_Quit_pressed():
 func _on_Transition_trasntioned():
 	var _value = get_tree().change_scene("res://test.tscn");
 
+
+
+func _on_Load_pressed():
+	var _v = get_tree().change_scene("res://Scenes/Load_game.tscn")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Settings_panel.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = -2.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 190.451
+margin_top = 72.4357
+margin_right = 733.451
+margin_bottom = 435.436
+rect_scale = Vector2( 1.1166, 1.33568 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+margin_left = 101.323
+margin_top = 157.495
+margin_right = 371.323
+margin_bottom = 183.495
+rect_scale = Vector2( 1.3358, 0.893407 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Panel/ProgressBar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -2.18951
+margin_top = -0.262283
+margin_right = 272.81
+margin_bottom = 24.7377
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 13.3334
+margin_top = 149.485
+margin_right = 95.3334
+margin_bottom = 175.485
+text = "Volume"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 16.5621
+margin_top = 218.247
+margin_right = 178.562
+margin_bottom = 244.247
+text = "Sound Effects"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+margin_left = 201.348
+margin_top = 219.236
+margin_right = 426.348
+margin_bottom = 444.236
+rect_scale = Vector2( 0.119695, 0.121786 )
+pressed = true
+
+[connection signal="value_changed" from="Panel/ProgressBar/HSlider" to="." method="_on_HSlider_value_changed"]

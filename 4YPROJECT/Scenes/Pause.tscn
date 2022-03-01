@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/Pause.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Settings_panel.tscn" type="PackedScene" id=3]
 
 [node name="Pause" type="Control"]
-visible = false
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 159.574
@@ -56,19 +57,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Settings" type="Button" parent="PauseScreen/buttons"]
+[node name="Resume" type="Button" parent="PauseScreen/buttons"]
 margin_right = 96.0
 margin_bottom = 26.0
-text = "Settings"
+text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Resume" type="Button" parent="PauseScreen/buttons"]
+[node name="Settings" type="Button" parent="PauseScreen/buttons"]
 margin_top = 30.0
 margin_right = 96.0
 margin_bottom = 56.0
-text = "Resume"
+text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,7 +92,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="PauseScreen/buttons/Settings" to="." method="_on_Settings_pressed"]
+[node name="Settings" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = -353.739
+margin_top = -114.973
+margin_right = -351.739
+margin_bottom = -116.973
+rect_scale = Vector2( 1.81298, 1.40943 )
+
+[node name="Button" type="Button" parent="Settings"]
+margin_left = 449.202
+margin_top = 409.202
+margin_right = 503.202
+margin_bottom = 435.202
+rect_scale = Vector2( 1.97371, 1.68314 )
+text = "Back"
+
+[node name="Label" type="Label" parent="Settings"]
+margin_left = 304.58
+margin_top = 71.4374
+margin_right = 400.58
+margin_bottom = 97.4374
+rect_scale = Vector2( 4.14795, 4.83736 )
+text = "Settings"
+
 [connection signal="pressed" from="PauseScreen/buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseScreen/buttons/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="PauseScreen/buttons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="PauseScreen/buttons/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Settings/Button" to="Settings" method="_on_Back_pressed"]

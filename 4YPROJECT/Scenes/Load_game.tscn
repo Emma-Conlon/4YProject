@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Load_game.gd" type="Script" id=2]
+[ext_resource path="res://assets/New folder/buttonselect.png" type="Texture" id=3]
+[ext_resource path="res://assets/New folder/button.png" type="Texture" id=4]
+[ext_resource path="res://assets/New folder/buttonhover.png" type="Texture" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.37842
+margin_top = 1.78387
+margin_right = 2.37842
+margin_bottom = 1.78387
+rect_pivot_offset = Vector2( 1499.24, -61.5721 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -15.749
+margin_top = -8.81946
+margin_right = 1062.25
+margin_bottom = 619.181
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 385.13
+margin_top = 17.3899
+margin_right = 505.13
+margin_bottom = 43.3899
+rect_scale = Vector2( 2.8736, 3.12489 )
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 906.388
+margin_top = 530.363
+margin_right = 960.388
+margin_bottom = 556.363
+rect_scale = Vector2( 1.84042, 2.51427 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save_one" type="TextureButton" parent="."]
+margin_left = 102.768
+margin_top = 110.714
+margin_right = 569.768
+margin_bottom = 553.714
+rect_scale = Vector2( 0.671566, 0.515177 )
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save_one"]
+margin_left = 70.3796
+margin_top = 56.9416
+margin_right = 224.38
+margin_bottom = 140.942
+rect_scale = Vector2( 1.65941, 3.45835 )
+text = "NAME : 
+LEVEL: 
+GEMS : "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save_two" type="TextureButton" parent="."]
+margin_left = 580.993
+margin_top = 102.584
+margin_right = 1047.99
+margin_bottom = 545.584
+rect_scale = Vector2( 0.671566, 0.515177 )
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save_two"]
+margin_left = 70.3796
+margin_top = 56.9416
+margin_right = 224.38
+margin_bottom = 140.942
+rect_scale = Vector2( 1.65941, 3.45835 )
+text = "	No Save Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save_three" type="TextureButton" parent="."]
+margin_left = 105.417
+margin_top = 341.147
+margin_right = 572.417
+margin_bottom = 784.147
+rect_scale = Vector2( 0.671566, 0.515177 )
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save_three"]
+margin_left = 70.3796
+margin_top = 56.9416
+margin_right = 224.38
+margin_bottom = 140.942
+rect_scale = Vector2( 1.65941, 3.45835 )
+text = " No Save Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save_four" type="TextureButton" parent="."]
+margin_left = 579.526
+margin_top = 343.796
+margin_right = 1046.53
+margin_bottom = 786.796
+rect_scale = Vector2( 0.671566, 0.515177 )
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save_four"]
+margin_left = 70.3796
+margin_top = 56.9416
+margin_right = 224.38
+margin_bottom = 140.942
+rect_scale = Vector2( 1.65941, 3.45835 )
+text = "No Save Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="save_one" to="." method="_on_save_one_pressed"]
