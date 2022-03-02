@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=2]
+[gd_resource type="Theme" load_steps=17 format=2]
 
 [ext_resource path="res://matchup_pro.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/New folder/index.png" type="Texture" id=2]
@@ -30,11 +30,29 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0156863, 0.952941, 1, 1 )
 
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.905882, 0.752941, 0.607843, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.678431, 0.580392, 0.894118, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.184314, 0.196078, 0.917647, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.466667, 0.886275, 0.603922, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 67
+outline_size = 5
+outline_color = Color( 0.384314, 0.454902, 0.705882, 1 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
 outline_size = 2
@@ -101,9 +119,12 @@ LineEdit/colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 LineEdit/styles/focus = SubResource( 11 )
 LineEdit/styles/normal = SubResource( 10 )
 Panel/styles/panel = SubResource( 2 )
+PopupMenu/styles/panel = SubResource( 14 )
 ProgressBar/colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 ProgressBar/styles/bg = SubResource( 4 )
 ProgressBar/styles/fg = SubResource( 5 )
+RichTextLabel/colors/default_color = Color( 0.886275, 0.839216, 0.466667, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 15 )
 TabContainer/colors/font_color_bg = Color( 0.886275, 0.839216, 0.466667, 1 )
 TabContainer/colors/font_color_fg = Color( 0.886275, 0.839216, 0.466667, 1 )
 TabContainer/fonts/font = SubResource( 7 )

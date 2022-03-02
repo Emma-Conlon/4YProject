@@ -1,24 +1,31 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+var load_path_one = "user://save_one.dat"
+var load_path_two = "user://save_two.dat"
+var load_path_three = "user://save_three.dat"
+var load_path_four = "user://save_four.dat"
+var file
+var result = {}
 func _on_Button_pressed():
 	var _value = get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 
-func _on_save_one_pressed():
-	pass # Replace with function body.
+func _ready():
+	result = Save.save_data
+	print(result)
+	loading()
+	
+	
+func label_edit_one(var res):
+	
+	$Panel/save_one/Label.text = "Name : " + res["player_name"]+"\n"+"Level : " + res["level"]+"\n"+"Gems : " + str(res["gems"])
+
+func loading():
+	file = File.new()
+	if file.file_exists(load_path_one):
+		file.open(load_path_one,File.READ)
+		result = file.get_var()
+		label_edit_one(result)
+		file.close()
+	else:
+		return

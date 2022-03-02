@@ -28,6 +28,10 @@ func _physics_process(delta):
 	get_input()
 	
 	
+	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+
+	

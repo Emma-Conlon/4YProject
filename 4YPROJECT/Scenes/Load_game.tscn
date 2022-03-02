@@ -40,18 +40,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 906.388
-margin_top = 530.363
-margin_right = 960.388
-margin_bottom = 556.363
-rect_scale = Vector2( 1.84042, 2.51427 )
-text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="save_one" type="TextureButton" parent="."]
+[node name="save_one" type="TextureButton" parent="Panel"]
 margin_left = 102.768
 margin_top = 110.714
 margin_right = 569.768
@@ -65,20 +54,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save_one"]
+[node name="Label" type="Label" parent="Panel/save_one"]
 margin_left = 70.3796
 margin_top = 56.9416
 margin_right = 224.38
 margin_bottom = 140.942
 rect_scale = Vector2( 1.65941, 3.45835 )
-text = "NAME : 
-LEVEL: 
-GEMS : "
+text = "No Load Data"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save_two" type="TextureButton" parent="."]
+[node name="save_two" type="TextureButton" parent="Panel"]
 margin_left = 580.993
 margin_top = 102.584
 margin_right = 1047.99
@@ -92,18 +79,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save_two"]
+[node name="Label" type="Label" parent="Panel/save_two"]
 margin_left = 70.3796
 margin_top = 56.9416
 margin_right = 224.38
 margin_bottom = 140.942
 rect_scale = Vector2( 1.65941, 3.45835 )
-text = "	No Save Data"
+text = "	No Load Data"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save_three" type="TextureButton" parent="."]
+[node name="save_three" type="TextureButton" parent="Panel"]
 margin_left = 105.417
 margin_top = 341.147
 margin_right = 572.417
@@ -117,18 +104,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save_three"]
+[node name="Label" type="Label" parent="Panel/save_three"]
 margin_left = 70.3796
 margin_top = 56.9416
 margin_right = 224.38
 margin_bottom = 140.942
 rect_scale = Vector2( 1.65941, 3.45835 )
-text = " No Save Data"
+text = " No Load Data"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save_four" type="TextureButton" parent="."]
+[node name="save_four" type="TextureButton" parent="Panel"]
 margin_left = 579.526
 margin_top = 343.796
 margin_right = 1046.53
@@ -142,16 +129,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save_four"]
+[node name="Label" type="Label" parent="Panel/save_four"]
 margin_left = 70.3796
 margin_top = 56.9416
 margin_right = 224.38
 margin_bottom = 140.942
 rect_scale = Vector2( 1.65941, 3.45835 )
-text = "No Save Data"
+text = "No Load Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 906.388
+margin_top = 530.363
+margin_right = 960.388
+margin_bottom = 556.363
+rect_scale = Vector2( 1.84042, 2.51427 )
+text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="save_one" to="." method="_on_save_one_pressed"]

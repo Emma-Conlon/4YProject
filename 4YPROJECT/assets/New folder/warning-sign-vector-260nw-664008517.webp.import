@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BaseColor_Brickwall.jpg-7f3f22f7d908f15a593310164f348144.stex"
+path="res://.import/warning-sign-vector-260nw-664008517.webp-4d41d48a8d9a00e24db895183adfdbc8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/BaseColor_Brickwall.jpg"
-dest_files=[ "res://.import/BaseColor_Brickwall.jpg-7f3f22f7d908f15a593310164f348144.stex" ]
+source_file="res://assets/New folder/warning-sign-vector-260nw-664008517.webp"
+dest_files=[ "res://.import/warning-sign-vector-260nw-664008517.webp-4d41d48a8d9a00e24db895183adfdbc8.stex" ]
 
 [params]
 

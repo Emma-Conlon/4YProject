@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/New folder/buttonselect.png" type="Texture" id=1]
 [ext_resource path="res://assets/New folder/button.png" type="Texture" id=2]
 [ext_resource path="res://assets/New folder/buttonhover.png" type="Texture" id=3]
 [ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=4]
 [ext_resource path="res://scripts/save.gd" type="Script" id=5]
+[ext_resource path="res://assets/New folder/warning-sign-vector-260nw-664008517.webp" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.905882, 0.843137, 0.619608, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -31,7 +44,7 @@ margin_top = 17.3899
 margin_right = 505.13
 margin_bottom = 43.3899
 rect_scale = Vector2( 2.8736, 3.12489 )
-text = "Load Game"
+text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -136,7 +149,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_left = 385.216
+margin_top = 145.194
+margin_right = 634.216
+margin_bottom = 326.194
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="PopupMenu"]
+margin_left = 27.8929
+margin_top = 69.4586
+margin_right = 210.893
+margin_bottom = 98.4586
+placeholder_text = " name..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PopupMenu"]
+margin_left = 19.3406
+margin_top = 9.24988
+margin_right = 223.341
+margin_bottom = 64.2499
+text = "Write your name 
+here:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PopupMenu"]
+margin_left = 75.2603
+margin_top = 125.714
+margin_right = 135.26
+margin_bottom = 151.714
+text = "close"
+
+[node name="overwrite" type="PopupMenu" parent="."]
+margin_left = 376.43
+margin_top = 192.853
+margin_right = 632.43
+margin_bottom = 379.853
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="overwrite"]
+position = Vector2( 127.749, 45.2236 )
+scale = Vector2( 0.326918, 0.27706 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="overwrite"]
+margin_left = 34.0378
+margin_top = 73.9749
+margin_right = 214.038
+margin_bottom = 99.9749
+text = "OverWrite file?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="overwrite"]
+margin_left = 42.8905
+margin_top = 127.716
+margin_right = 102.89
+margin_bottom = 153.716
+text = "YES"
+
+[node name="Button2" type="Button" parent="overwrite"]
+margin_left = 155.193
+margin_top = 128.289
+margin_right = 215.193
+margin_bottom = 154.289
+text = "NO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 448.926
+margin_top = 535.738
+margin_right = 513.926
+margin_bottom = 568.738
+rect_scale = Vector2( 1.35994, 1.44414 )
+text = "Back"
+
 [connection signal="pressed" from="save_one" to="." method="_on_save_one_pressed"]
 [connection signal="pressed" from="save_two" to="." method="_on_save_two_pressed"]
 [connection signal="pressed" from="save_three" to="." method="_on_save_three_pressed"]
 [connection signal="pressed" from="save_four" to="." method="_on_save_four_pressed"]
+[connection signal="pressed" from="PopupMenu/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="overwrite/Button" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="overwrite/Button2" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]

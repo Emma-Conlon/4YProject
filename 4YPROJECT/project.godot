@@ -33,10 +33,11 @@ config/icon="res://cred.png"
 [autoload]
 
 GameManager="*res://gameManager.gd"
+Save="*res://scripts/game_save.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/zylann.hterrain/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 

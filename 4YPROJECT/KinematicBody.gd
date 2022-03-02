@@ -36,8 +36,7 @@ func _physics_process(delta):
 
 
 func process_input(_delta):
-
-	
+	_get_save()
 	MAX_SPEED=20
 	# ----------------------------------
 	# Walking
@@ -103,7 +102,17 @@ func process_input(_delta):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
-
+func _get_save():
+	Save.save_data["players_position.x"] = global_transform.origin.x
+	Save.save_data["players_position.y"] = global_transform.origin.y
+	Save.save_data["players_position.z"] = global_transform.origin.z
+	return Save.save_data
+	
+func get_load():
+	global_transform.origin = Vector3(Save.save_data["players_position.x"],Save.save_data["players_position.y"],Save.save_data["players_position.z"])
+	
+	
+	
 func torch():
 	if GameManager.pickup==1:
 		GameManager.pickup=1

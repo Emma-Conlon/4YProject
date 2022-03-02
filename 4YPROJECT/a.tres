@@ -1,6 +1,6 @@
 [gd_resource type="MeshLibrary" load_steps=35 format=2]
 
-[ext_resource path="res://test_procedural_maze/models/materials/floor - Copy.tres" type="Material" id=1]
+[ext_resource path="res://test_procedural_maze/models/materials/floor.tres" type="Material" id=1]
 [ext_resource path="res://AGridMap_Pathfollow-2.02/assets/MeshConverted/Brickwall.material" type="Material" id=2]
 [ext_resource path="res://uploads_files_2494896_Mini-Pack+1(1)/Mini-Pack 1/Model  (12)/TexturesCom_ConcreteRough0076_1_seamless_S.jpg" type="Texture" id=3]
 [ext_resource path="res://uploads_files_2494896_Mini-Pack+1(1)/Mini-Pack 1/Model  (7)/TexturesCom_ConcreteRough0076_1_seamless_S.jpg" type="Texture" id=4]
