@@ -60,8 +60,9 @@ margin_right = 356.873
 margin_bottom = 138.485
 text = " Movement -> wasd
  Jump -> Space
- Pause -> ESC
+ Pause -> P
  Crouch -> CRTL
+ Save -> 1
  "
 __meta__ = {
 "_edit_use_anchors_": false

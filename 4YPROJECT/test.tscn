@@ -57,35 +57,35 @@ albedo_texture = ExtResource( 5 )
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.380707, 0, 0, 0, 0.457529, 0, 0, 0, 0.282847, -33.0016, -4.23848, 0.819993 )
+transform = Transform( 0.380707, 0, 0, 0, 0.457529, 0, 0, 0, 0.282847, 0, 0, 0 )
 
-[node name="Game1" type="Sprite3D" parent="."]
+[node name="Gameone" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70708, -3.47857, 6.29028 )
 flip_h = true
 axis = 0
 texture = SubResource( 2 )
 
-[node name="Viewport" type="Viewport" parent="Game1"]
+[node name="Viewport" type="Viewport" parent="Gameone"]
 size = Vector2( 600, 114 )
 transparent_bg = true
 render_target_v_flip = true
 
-[node name="Label" type="Label" parent="Game1/Viewport"]
+[node name="Label" type="Label" parent="Gameone/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 3 )
 text = "MAZE GAME"
 
-[node name="Game3" type="Sprite3D" parent="."]
+[node name="Gamethree" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.5276, -3.45794, -30.7496 )
 texture = SubResource( 4 )
 
-[node name="Viewport" type="Viewport" parent="Game3"]
+[node name="Viewport" type="Viewport" parent="Gamethree"]
 size = Vector2( 600, 114 )
 transparent_bg = true
 render_target_v_flip = true
 
-[node name="Label" type="Label" parent="Game3/Viewport"]
+[node name="Label" type="Label" parent="Gamethree/Viewport"]
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 3 )

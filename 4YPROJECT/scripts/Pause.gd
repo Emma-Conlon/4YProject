@@ -1,6 +1,5 @@
 extends Control
 
-
 # ------------------------------------------------------------------------------
 func toggle() -> void:
 	var pause_state = not get_tree().paused
@@ -33,5 +32,4 @@ func _on_Resume_pressed():
 
 
 func _on_Save_pressed():
-	pass # Replace with function body.
-
+	pass

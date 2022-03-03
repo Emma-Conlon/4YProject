@@ -21,6 +21,7 @@ var MOUSE_SENSITIVITY = 0.05
 onready var pcap=$CollisionShape
 
 func _ready():
+	get_load()
 	get_node("Moving").connect("animation_finished",self,"on_anim_finished")
 	camera = $follow/Camera
 	rotation_helper = $follow
@@ -36,7 +37,6 @@ func _physics_process(delta):
 
 
 func process_input(_delta):
-	_get_save()
 	MAX_SPEED=20
 	# ----------------------------------
 	# Walking
@@ -103,14 +103,50 @@ func process_input(_delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
 func _get_save():
-	Save.save_data["players_position.x"] = global_transform.origin.x
-	Save.save_data["players_position.y"] = global_transform.origin.y
-	Save.save_data["players_position.z"] = global_transform.origin.z
-	return Save.save_data
 	
+	var save_path_one = "user://save_one.dat"
+	var save_path_two = "user://save_two.dat"
+	var save_path_three = "user://save_three.dat"
+	var save_path_four = "user://save_four.dat"
+	var file = File.new()
+	if Save.loadpos == 1 and file.file_exists(save_path_one):
+		file.open(save_path_one,File.WRITE)
+		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 2 and file.file_exists(save_path_two):		
+		file.open(save_path_two,File.WRITE)
+		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+		file.store_var(Save.save_data)
+		file.close()
+		
+	if Save.loadpos == 3 and file.file_exists(save_path_three):
+		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+		
+	if Save.loadpos == 4 and file.file_exists(save_path_four):
+		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+
+		
 func get_load():
-	global_transform.origin = Vector3(Save.save_data["players_position.x"],Save.save_data["players_position.y"],Save.save_data["players_position.z"])
-	
+	var load_path_one = "user://save_one.dat"
+	var load_path_two = "user://save_two.dat"
+	var load_path_three = "user://save_three.dat"
+	var load_path_four = "user://save_four.dat"
+	var file = File.new()
+	var result2 = {}
+	if Save.loadpos == 2 and file.file_exists(load_path_two):
+		file.open(load_path_two,File.READ)
+		result2 = file.get_var()
+		print(result2)
+		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
+		file.close()
+		
+	if Save.loadpos == 1 and file.file_exists(load_path_one):
+		file.open(load_path_one,File.READ)
+		result2 = file.get_var()
+		print(result2)
+		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
+		file.close()
 	
 	
 func torch():
@@ -183,6 +219,9 @@ func process_movement(delta):
 
 
 func _input(event):
+	if Input.is_action_just_pressed("save"): 
+		_get_save()
+		print("saved")
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY))
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))

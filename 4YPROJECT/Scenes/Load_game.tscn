@@ -151,4 +151,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="Panel/save_one" to="." method="_on_load_one_pressed"]
+[connection signal="pressed" from="Panel/save_two" to="." method="_on_save_two_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

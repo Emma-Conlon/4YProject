@@ -2,9 +2,9 @@ extends Control
 
 
 var bar_green = preload("res://greem.png")
-onready var labeling=$ColorRect2/OBJECTIVE
+onready var labeling=$RED/OBJECTIVE
 onready var torchLife=$ProgressBar
-onready var word=$Red
+
 onready var level2= $Green
 
 var score=10
@@ -50,7 +50,6 @@ func _on_Timer_timeout():
 			
 #adds to Score
 func redEmeraldsCollected():
-	
 	if	 GameManager.emerladsMax==GameManager.redEmerladsCollected:
 		GameManager.completedGame0ne=true
 	

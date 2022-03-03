@@ -11,6 +11,10 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.447059, 0, 1, 1 )
 border_width_left = 10
@@ -22,10 +26,6 @@ border_blend = true
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 32
-font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 32
@@ -78,10 +78,10 @@ margin_right = 1014.41
 margin_bottom = 131.434
 rect_min_size = Vector2( 300, 0 )
 rect_scale = Vector2( 1, 8.77558 )
+custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+custom_fonts/font = SubResource( 5 )
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.964706, 0.964706, 0.964706, 1 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -116,8 +116,8 @@ margin_top = -45.9008
 margin_right = 905.727
 margin_bottom = 87.1001
 rect_scale = Vector2( 1, 4.75373 )
-custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Red_Emeralds:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -158,8 +158,8 @@ margin_top = -35.2483
 margin_right = 873.578
 margin_bottom = 97.7527
 rect_scale = Vector2( 1, 4.75373 )
-custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Green_Emeralds:"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -22,6 +22,9 @@ func ready():
 
 func _process(_delta):
 	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorOne:
+		var sec = "maze"
+		Save.level(sec)
+		Save.save_data["level"] = sec
 		get_tree().change_scene("res://LoadingScreen.tscn");
 		
 	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorTwo:
