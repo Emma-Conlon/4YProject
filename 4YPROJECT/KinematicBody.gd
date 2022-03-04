@@ -103,46 +103,56 @@ func process_input(_delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
 func _get_save():
-	
-	var save_path_one = "user://save_one.dat"
-	var save_path_two = "user://save_two.dat"
-	var save_path_three = "user://save_three.dat"
-	var save_path_four = "user://save_four.dat"
 	var file = File.new()
-	if Save.loadpos == 1 and file.file_exists(save_path_one):
-		file.open(save_path_one,File.WRITE)
+	if Save.loadpos == 1 and file.file_exists(Save.path_one):
+		file.open(Save.path_one,File.WRITE)
 		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
 		file.store_var(Save.save_data)
 		file.close()
-	if Save.loadpos == 2 and file.file_exists(save_path_two):		
-		file.open(save_path_two,File.WRITE)
+	if Save.loadpos == 2 and file.file_exists(Save.path_two):		
+		file.open(Save.path_two,File.WRITE)
 		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
 		file.store_var(Save.save_data)
 		file.close()
 		
-	if Save.loadpos == 3 and file.file_exists(save_path_three):
+	if Save.loadpos == 3 and file.file_exists(Save.path_three):
+		file.open(Save.path_three,File.WRITE)
 		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+		file.store_var(Save.save_data)
+		file.close()
 		
-	if Save.loadpos == 4 and file.file_exists(save_path_four):
+	if Save.loadpos == 4 and file.file_exists(Save.path_four):
+		file.open(Save.path_four,File.WRITE)
 		Save.pos(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+		file.store_var(Save.save_data)
+		file.close()
 
 		
 func get_load():
-	var load_path_one = "user://save_one.dat"
-	var load_path_two = "user://save_two.dat"
-	var load_path_three = "user://save_three.dat"
-	var load_path_four = "user://save_four.dat"
 	var file = File.new()
 	var result2 = {}
-	if Save.loadpos == 2 and file.file_exists(load_path_two):
-		file.open(load_path_two,File.READ)
+	if Save.loadpos == 4 and file.file_exists(Save.path_four):
+		file.open(Save.path_four,File.READ)
+		result2 = file.get_var()
+		print(result2)
+		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
+		file.close()
+	if Save.loadpos == 3 and file.file_exists(Save.path_three):
+		file.open(Save.path_three,File.READ)
 		result2 = file.get_var()
 		print(result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
 		file.close()
 		
-	if Save.loadpos == 1 and file.file_exists(load_path_one):
-		file.open(load_path_one,File.READ)
+	if Save.loadpos == 2 and file.file_exists(Save.path_two):
+		file.open(Save.path_two,File.READ)
+		result2 = file.get_var()
+		print(result2)
+		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
+		file.close()
+		
+	if Save.loadpos == 1 and file.file_exists(Save.path_one):
+		file.open(Save.path_one,File.READ)
 		result2 = file.get_var()
 		print(result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
@@ -179,9 +189,11 @@ func torch_life():
 		light.visible=false
 		GameManager.red=0
 		
-func crawling(vent):
+func crawling(_vent):
 	if vent:
 		crawl.play()
+		
+		
 func sound(is_moving):
 	if is_moving:
 		if $follow/Timer.time_left<=0:

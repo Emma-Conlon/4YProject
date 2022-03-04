@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathFindingAI.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://test_procedural_maze/models/materials/floor_albedo.png" type="Texture" id=9]
 [ext_resource path="res://hy.PNG" type="Texture" id=10]
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/HideAndSeekAI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 9 )
@@ -80,5 +81,8 @@ collision_mask = 12
 
 [node name="PathFindingAI" parent="Navigation" instance=ExtResource( 2 )]
 transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 38, 0.791506, 0 )
+
+[node name="KinematicBody" parent="Navigation" instance=ExtResource( 12 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 41.8541, 1.68054, 0 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

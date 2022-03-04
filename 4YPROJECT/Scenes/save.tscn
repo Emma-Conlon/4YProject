@@ -159,10 +159,10 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="PopupMenu"]
-margin_left = 27.8929
-margin_top = 69.4586
-margin_right = 210.893
-margin_bottom = 98.4586
+margin_left = 28.0
+margin_top = 69.0
+margin_right = 211.0
+margin_bottom = 130.0
 placeholder_text = " name..."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,10 +180,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="PopupMenu"]
-margin_left = 75.2603
-margin_top = 125.714
-margin_right = 135.26
-margin_bottom = 151.714
+margin_left = 30.0
+margin_top = 132.0
+margin_right = 198.0
+margin_bottom = 167.0
 text = "close"
 
 [node name="overwrite" type="PopupMenu" parent="."]

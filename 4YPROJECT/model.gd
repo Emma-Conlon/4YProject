@@ -11,17 +11,25 @@ func _ready():
 	Load()
 	dead = false
 
+func _input(event):
+		if event.is_action_pressed("save"):
+			if dead == false:
+				return
+			elif dead == true:
+				save()
+				print(Save.save_data["gem_x"])
+				
 func _on_Area_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and visible == true:
 			$Chime.play()
 			GameManager.redEmerladsCollected+=1
 			colleted = GameManager.redEmerladsCollected
 			GameManager.dead=true
-			Save.gem_dead(self)
-			print(Save.save_data["gem_gone"])
-			add_to_group("red_dead")
-			save()
+			dead=true
+			Save.gem_position(global_transform.origin.x,global_transform.origin.y,global_transform.origin.z)
+			Save.gem_count(colleted)
 			yield($Chime, "finished")
+			visible = false
 			hide()
 			
 			print("Emeralds Collected",colleted)
@@ -31,39 +39,34 @@ func _on_Area_body_entered(body):
 func save():
 	if Save.loadpos == 1 and file.file_exists(Save.path_one):
 		file.open(Save.path_one,File.WRITE)
-		Save.gem_count(colleted)
 		file.store_var(Save.save_data)
 		file.close()
 	if Save.loadpos == 2 and file.file_exists(Save.path_two):
 		file.open(Save.path_two,File.WRITE)
-		Save.gem_count(colleted)
-		if dead == true:
-			Save.gem_dead(true)
 		file.store_var(Save.save_data)
 		file.close()
 	if Save.loadpos == 3 and file.file_exists(Save.path_three):
 		file.open(Save.path_three,File.WRITE)
-		Save.gem_count(colleted)
-		if dead == true:
-			Save.gem_dead(true)
 		file.store_var(Save.save_data)
 		file.close()
 	if Save.loadpos == 4 and file.file_exists(Save.path_four):
 		file.open(Save.path_four,File.WRITE)
-		Save.gem_count(colleted)
-		if dead == true:
-			Save.gem_dead(true)
 		file.store_var(Save.save_data)
 		file.close()
 
 #sees if the object had collided or not
 func Load():
-
+	
 	if Save.loadpos == 1 and file.file_exists(Save.path_one):
 		file.open(Save.path_one,File.READ)
 		result2 = file.get_var()
-		for i in result2["gem_gone"]:
-			i.hide()
+		for i in result2["gem_x"]:
+			for k in result2["gem_y"]:
+				for z in result2["gem_z"]:
+					var pos = Vector3(i,k,z)
+					if global_transform.origin == pos :
+						visible = false
+		
 		file.close()
 	if Save.loadpos == 2 and file.file_exists(Save.path_two):
 		file.open(Save.path_two,File.READ)

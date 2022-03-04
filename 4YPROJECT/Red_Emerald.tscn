@@ -33,7 +33,7 @@ unit_size = 35.5
 max_db = 6.0
 
 [node name="Area" type="Area" parent="."]
-transform = Transform( 0.264, 0, 0, 0, 0.27, 0, 0, 0, 0.24, 0, -5.96046e-08, 0 )
+transform = Transform( 0.264, 0, 0, 0, 0.27, 0, 0, 0, 0.24, 0.0953953, -5.96046e-08, 0 )
 collision_layer = 16
 collision_mask = 2
 
@@ -51,4 +51,3 @@ light_energy = 16.0
 [node name="Spatial" type="Spatial" parent="."]
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]

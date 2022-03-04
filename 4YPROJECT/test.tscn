@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://LEVEL.tscn" type="PackedScene" id=1]
-[ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://green-chaos-emerald/163940508159687710.png" type="Texture" id=5]
@@ -10,16 +9,6 @@
 [ext_resource path="res://green-chaos-emerald/163940x508159687710.png" type="Texture" id=8]
 [ext_resource path="res://green-chaos-emerald/cyan.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=10]
-
-[sub_resource type="ViewportTexture" id=2]
-viewport_path = NodePath("Game1/Viewport")
-
-[sub_resource type="DynamicFont" id=3]
-size = 150
-font_data = ExtResource( 2 )
-
-[sub_resource type="ViewportTexture" id=4]
-viewport_path = NodePath("Game3/Viewport")
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -58,38 +47,6 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.380707, 0, 0, 0, 0.457529, 0, 0, 0, 0.282847, 0, 0, 0 )
-
-[node name="Gameone" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70708, -3.47857, 6.29028 )
-flip_h = true
-axis = 0
-texture = SubResource( 2 )
-
-[node name="Viewport" type="Viewport" parent="Gameone"]
-size = Vector2( 600, 114 )
-transparent_bg = true
-render_target_v_flip = true
-
-[node name="Label" type="Label" parent="Gameone/Viewport"]
-margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 3 )
-text = "MAZE GAME"
-
-[node name="Gamethree" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.5276, -3.45794, -30.7496 )
-texture = SubResource( 4 )
-
-[node name="Viewport" type="Viewport" parent="Gamethree"]
-size = Vector2( 600, 114 )
-transparent_bg = true
-render_target_v_flip = true
-
-[node name="Label" type="Label" parent="Gamethree/Viewport"]
-margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 3 )
-text = "Race"
 
 [node name="dull" type="Spatial" parent="."]
 

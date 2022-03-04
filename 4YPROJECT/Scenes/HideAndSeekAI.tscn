@@ -13,9 +13,7 @@ albedo_color = Color( 0, 0.227451, 1, 1 )
 
 [sub_resource type="BoxShape" id=5]
 
-[node name="KinematicBody" type="KinematicBody" groups=[
-"HideandSeek",
-]]
+[node name="KinematicBody" type="KinematicBody" groups=["HideandSeek"]]
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

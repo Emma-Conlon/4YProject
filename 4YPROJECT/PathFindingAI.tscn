@@ -12,9 +12,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 
 [sub_resource type="BoxShape" id=4]
 
-[node name="PathFindingAI" type="KinematicBody" groups=[
-"PathFindingAI",
-]]
+[node name="PathFindingAI" type="KinematicBody" groups=["PathFindingAI"]]
 transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 0, 0, 0 )
 script = ExtResource( 1 )
 
@@ -26,10 +24,13 @@ material/0 = SubResource( 2 )
 transform = Transform( 0.741175, 0, 0, 0, 0.954441, 0, 0, 0, 1.10951, -0.00330977, 0, 0 )
 shape = SubResource( 3 )
 
-[node name="HIT" type="Area" parent="."]
+[node name="HIT2" type="Area" parent="."]
+transform = Transform( 1.81463, 0, 0, 0, 5.93456, 0, 0, 0, 1, -0.117514, 5.33287, 0 )
+collision_layer = 16
+collision_mask = 2
 
-[node name="CollisionShape" type="CollisionShape" parent="HIT"]
+[node name="CollisionShape" type="CollisionShape" parent="HIT2"]
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 shape = SubResource( 4 )
 
-[connection signal="body_entered" from="HIT" to="." method="_on_HIT_body_entered"]
+[connection signal="body_entered" from="HIT2" to="." method="_on_HIT_body_entered"]
