@@ -21,6 +21,10 @@ func _physics_process(_delta):
 		var material = SpatialMaterial.new()
 		material.albedo_color = Color(1, 0, 0)#Red
 		$MeshInstance.set_surface_material(0, material)
+	if state==STAGE.IDLE: 
+		var material = SpatialMaterial.new()
+		material.albedo_color = Color(0, 0, 1)#Red
+		$MeshInstance.set_surface_material(0, material)
 		
 	if path.size() > 0:
 		move_to_target()
