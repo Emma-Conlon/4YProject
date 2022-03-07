@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Gameover.gd" type="Script" id=2]
+
+[node name="Gameover" type="Control"]
+margin_top = -11.0
+margin_right = 1033.0
+margin_bottom = 609.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 11.7858
+margin_right = 1043.79
+margin_bottom = 628.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 331.014
+margin_top = 17.2043
+margin_right = 459.014
+margin_bottom = 46.2043
+rect_scale = Vector2( 2.50296, 3.492 )
+text = "Game Over"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 295.963
+margin_top = 279.044
+margin_right = 529.963
+margin_bottom = 305.044
+rect_scale = Vector2( 1.74379, 2.36898 )
+text = "WANT TO TRY AGAIN?"
+
+[node name="talk" type="Label" parent="."]
+margin_left = 189.438
+margin_top = 161.591
+margin_right = 507.438
+margin_bottom = 187.591
+rect_scale = Vector2( 2.13756, 2.19329 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )

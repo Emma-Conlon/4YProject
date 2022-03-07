@@ -71,18 +71,30 @@ func Load():
 	if Save.loadpos == 2 and file.file_exists(Save.path_two):
 		file.open(Save.path_two,File.READ)
 		result2 = file.get_var()
-		#for i in save_nodes:
-		#	queue_free()
+		for i in result2["gem_x"]:
+			for k in result2["gem_y"]:
+				for z in result2["gem_z"]:
+					var pos = Vector3(i,k,z)
+					if global_transform.origin == pos :
+						visible = false
 		file.close()
 	if Save.loadpos == 3 and file.file_exists(Save.path_three):
 		file.open(Save.path_three,File.READ)
 		result2 = file.get_var()
-		#for i in save_nodes:
-		#	queue_free()
+		for i in result2["gem_x"]:
+			for k in result2["gem_y"]:
+				for z in result2["gem_z"]:
+					var pos = Vector3(i,k,z)
+					if global_transform.origin == pos :
+						visible = false
 		file.close()
 	if Save.loadpos == 4 and file.file_exists(Save.path_four):
 		file.open(Save.path_four,File.READ)
 		result2 = file.get_var()
-		#for i in save_nodes:
-		#	queue_free()
+		for i in result2["gem_x"]:
+			for k in result2["gem_y"]:
+				for z in result2["gem_z"]:
+					var pos = Vector3(i,k,z)
+					if global_transform.origin == pos :
+						visible = false
 		file.close()

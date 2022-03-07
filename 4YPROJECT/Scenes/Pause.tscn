@@ -15,9 +15,6 @@ margin_bottom = 70.151
 rect_scale = Vector2( 0.614002, 0.73221 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PauseScreen" type="Panel" parent="."]
 margin_right = 40.0
@@ -53,9 +50,6 @@ margin_top = 12.9047
 margin_right = 109.051
 margin_bottom = 128.905
 rect_scale = Vector2( 0.134219, 0.157456 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Resume" type="Button" parent="PauseScreen/buttons"]
 margin_right = 96.0

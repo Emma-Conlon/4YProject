@@ -53,6 +53,16 @@ func save_maze():
 		Save.pos(39.652,2.125,-9.85)
 		file.store_var(Save.save_data)
 		file.close()
-	pass
+	if Save.loadpos == 3 and file.file_exists(path_three):
+		file.open(path_two,File.WRITE)
+		Save.pos(39.652,2.125,-9.85)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 4 and file.file_exists(path_four):
+		file.open(path_four,File.WRITE)
+		Save.pos(39.652,2.125,-9.85)
+		file.store_var(Save.save_data)
+		file.close()
+
 func Load():
 	pass

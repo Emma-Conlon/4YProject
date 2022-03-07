@@ -13,7 +13,6 @@ const MAX_SLOPE_ANGLE = 20
 onready var light = $follow/SpotLight
 var camera
 var vent = false
-onready var crawl = $follow/Vent
 var rotation_helper
 var crouch_height=0.5
 var default_height=1
@@ -22,15 +21,12 @@ onready var pcap=$CollisionShape
 
 func _ready():
 	get_load()
-	get_node("Moving").connect("animation_finished",self,"on_anim_finished")
 	camera = $follow/Camera
 	rotation_helper = $follow
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func on_anim_finished():
-	if (Input.is_action_just_pressed("A")):
-		get_node("Moving").play_backwards("goingup")
+		
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
@@ -78,13 +74,11 @@ func process_input(_delta):
 
 	input_movement_vector = input_movement_vector.normalized()
 	sound(is_moving)
-	crawling(is_vent)
 	# Basis vectors are already normalized.
 	dir += -cam_xform.basis.z * input_movement_vector.y
 	dir += cam_xform.basis.x * input_movement_vector.x
 	# ----------------------------------
 	torch()
-	on_anim_finished()
 	# ----------------------------------
 	# Jumping
 	if is_on_floor():
@@ -189,11 +183,7 @@ func torch_life():
 		light.visible=false
 		GameManager.red=0
 		
-func crawling(_vent):
-	if vent:
-		crawl.play()
-		
-		
+
 func sound(is_moving):
 	if is_moving:
 		if $follow/Timer.time_left<=0:

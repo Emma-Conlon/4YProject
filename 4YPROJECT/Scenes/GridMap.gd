@@ -22,15 +22,15 @@ func _process(_delta):
 	if GameManager.redEmerladsCollected==0:
 		life.text="Get All Emeralds"
 		
-		
-func _on_Area_mouse_entered():
-	life.show()
-	hovered=true
+
+func _on_Area_body_entered(body):
+	if body.name == "Player":
+			life.show()
+			hovered=true
 
 
-func _on_Area_mouse_exited():
-	life.hide()
-	hovered=false
 
-
-	
+func _on_Area_body_exited(body):
+		if body.name == "Player":
+			life.hide()
+			hovered=false

@@ -111,14 +111,14 @@ __meta__ = {
 }
 
 [node name="OBJECTIVE" type="Label" parent="RED"]
-margin_left = 451.727
-margin_top = -45.9008
-margin_right = 905.727
-margin_bottom = 87.1001
+margin_left = 579.359
+margin_top = -32.5787
+margin_right = 874.359
+margin_bottom = 100.421
 rect_scale = Vector2( 1, 4.75373 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.627451, 0, 1, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Red_Emeralds:"
+text = "Emeralds:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

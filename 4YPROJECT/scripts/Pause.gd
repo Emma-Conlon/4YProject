@@ -1,5 +1,6 @@
 extends Control
 
+onready var end = false
 # ------------------------------------------------------------------------------
 func toggle() -> void:
 	var pause_state = not get_tree().paused
@@ -17,6 +18,7 @@ func _input(event):
 
 # ------------------------------------------------------------------------------
 func _on_Exit_pressed():
+	end = true
 	get_tree().paused = false
 	var _value = get_tree().change_scene("res://Scenes/MainMenu.tscn");
 

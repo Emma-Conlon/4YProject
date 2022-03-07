@@ -1,10 +1,10 @@
 extends KinematicBody
-enum {
+enum STAGE{
 	IDLE,
 	ATTACK
 }
 
-var state = IDLE
+var state = STAGE.IDLE
 export var speed = 5
 var target=null
 var path = []
@@ -17,8 +17,7 @@ onready var nav = get_parent()
 
 		
 func _physics_process(_delta):
-	if state==ATTACK: 
-		print("PLAYER_DEAD")
+	if state==STAGE.ATTACK: 
 		var material = SpatialMaterial.new()
 		material.albedo_color = Color(1, 0, 0)#Red
 		$MeshInstance.set_surface_material(0, material)
@@ -41,4 +40,4 @@ func get_target_path(target_pos):
 
 func _on_HIT_body_entered(body):
 	if body.name=="Player":
-		state = ATTACK
+		state = STAGE.ATTACK
