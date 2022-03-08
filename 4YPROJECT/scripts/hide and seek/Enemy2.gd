@@ -4,8 +4,7 @@ extends KinematicBody
 enum {
 	IDLE,
 	PATROL,
-	CHASE,
-	ATTACK
+	ATTACK,
 
 }
 var rng = RandomNumberGenerator.new()
@@ -78,14 +77,6 @@ func _on_ATTACK_body_exited(body):
 		pass
 		
 func _on_Area_body_entered(body):
-	if body.name=="Player":
-		state = CHASE
-	else: #condition 2:
-		#state = IDLE
-	#elif #condition 3:
-		#state = CHASE
-	#elif #condition 3:
-		#state = ATTACK
 		pass
 	
 func _on_Area_body_exited(body):
@@ -99,11 +90,7 @@ func _process(_delta):
 	if 	state==GameManager.IDLE: 
 		material.albedo_color = Color(0, 0, 1)#Blue
 	if GameManager.love==GameManager.PATROL:
-		
 		material.albedo_color = Color(1, 0, 1)#Blue
-	if state==CHASE: 
-		print("CHASE")
-		material.albedo_color = Color(0, 1, 0)#GREEN
 	if state==ATTACK: 
 		print("ATTACK")
 		material.albedo_color = Color(1, 0, 0)#Red
@@ -139,7 +126,7 @@ func walking():
 	$walk/box.global_transform.origin = $walk/Position3D.global_transform.origin
 	if count == 0:
 		start = true
-		$walk/Position3D.global_transform.origin = Vector3(8.577,0,-9.17)
+		$walk/Position3D.global_transform.origin = Vector3(0,0,-7.952)
 	if count == 1:
 		$walk/Position3D.global_transform.origin = Vector3(8.391,0,-20.742)
 	elif count == 2:

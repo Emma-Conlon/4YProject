@@ -40,7 +40,6 @@ texture = ExtResource( 6 )
 
 [node name="Celing" type="CSGBox" parent="."]
 transform = Transform( 152.369, 0, 0, 0, 0.130848, 0, 0, 0, -129.78, -3.68253, 3.90534, -3.1001 )
-visible = false
 use_collision = true
 collision_layer = 8
 collision_mask = 3
@@ -85,7 +84,6 @@ collision_mask = 12
 transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -9.20909, 0.791506, 7.4491 )
 
 [node name="Gameover" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="Button" type="Button" parent="Gameover"]
 margin_left = 266.585

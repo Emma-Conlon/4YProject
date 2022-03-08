@@ -19,9 +19,6 @@ margin_right = 6.5
 margin_bottom = -0.749146
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1027.0
@@ -31,21 +28,17 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
-margin_left = 253.144
-margin_top = 0.707123
-margin_right = 367.144
-margin_bottom = 26.7071
+margin_right = 208.0
+margin_bottom = 26.0
 rect_scale = Vector2( 4.93205, 6.2393 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" type="Label" parent="Panel/CenterContainer"]
-margin_right = 114.0
+margin_left = 7.0
+margin_right = 201.0
 margin_bottom = 26.0
 custom_colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "Lost Hope"
+text = "Don't Get Caught"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
