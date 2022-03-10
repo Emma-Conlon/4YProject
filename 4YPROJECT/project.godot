@@ -134,6 +134,7 @@ save={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="PathFindingAI"
 3d_physics/layer_4="World"
+3d_physics/layer_5="HideandSeek"
 
 [physics]
 

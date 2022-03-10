@@ -1,146 +1,55 @@
 extends KinematicBody
 
+var move_speed = 3.0
 
-enum {
-	IDLE,
-	PATROL,
-	ATTACK,
+enum STATE {IDLE, WANDER}
+var state = STATE.IDLE
 
-}
-var rng = RandomNumberGenerator.new()
-var state = GameManager.PATROL
-var time: float
-var tim:float
-var minTime=5
-var maxTime=10
-var count = 0
-var patorlTime=11
-var start = true
-var patrolMax=21
-var hi=false;
+onready var start_position = get_global_transform().origin
+onready var target_position = get_global_transform().origin
 
-func enter():
-	if 	state==GameManager.IDLE:
-		
-		if hi==true:
-				rng.randomize()
-				time=round(rng.randf_range(minTime,maxTime))
-		$IDLE.set_wait_time(time)		
-		$IDLE.start()
-		print(time,"IDLE")
-		time=time-1
-		if time<=0:
-				GameManager.love=GameManager.PATROL
-		hi=false
-		
-	elif state==GameManager.PATROL:
-			if hi==false:
-				rng.randomize()
-				tim=round(rng.randf_range(patorlTime,patrolMax))
-			hi=true
-			#$PATROL.set_wait_time(tim)
-			tim=tim-1
-			$PATROL.start()
-			if tim<=0:
-				$PATROL.stop()
-				state=GameManager.IDLE
-			
-			print("Patrol",tim)
-		#$IDLE.start()
-		
-		
-	
-func pat():
-	if 	GameManager.love==GameManager.PATROL: 
-		
-		print("PATROL",tim)
-		GameManager.love=GameManager.IDLE
-	#state=PATROL
-	
+var nav = null
+var path = []
+
+var stop_distance = 1.0
+
 func _ready():
-	enter()
+	nav = get_parent() # Navigation node is parent of enemy node in the scene tree during run-time
 
-
-func _on_ATTACK_body_entered(body):
-	if body.name=="Player":
-		state = ATTACK
-	
-	#elif #condition 3:
-		#state = CHASE
-	#elif #condition 3:
-		#state = ATTACK
-
-
-func _on_ATTACK_body_exited(body):
-	if body.name=="Player":
-		#state = IDLE
-		pass
-		
-func _on_Area_body_entered(body):
-		pass
-	
-func _on_Area_body_exited(body):
-	if body.name=="Player":
-		#state = IDLE
-		pass
-	
-		
-func _process(_delta):
-	var material = SpatialMaterial.new()
-	if 	state==GameManager.IDLE: 
-		material.albedo_color = Color(0, 0, 1)#Blue
-	if GameManager.love==GameManager.PATROL:
-		material.albedo_color = Color(1, 0, 1)#Blue
-	if state==ATTACK: 
-		print("ATTACK")
-		material.albedo_color = Color(1, 0, 0)#Red
-
-	
-	$MeshInstance.set_surface_material(0, material)
-	
-	
-#for IDLE 
-func _on_Timer_timeout():
-	enter()
-#
-func check():
-	pass
-
-
-func _on_PATROL_timeout():
-	enter()
-	
-
-
-func _on_MeshInstance_body_entered(body):
-	if body.name == "Player":
-		walking()
-		
-			
-			
-func walking():
-	if start:
-		count+=1
-	if !start:
-		count -=1
-	$walk/box.global_transform.origin = $walk/Position3D.global_transform.origin
-	if count == 0:
-		start = true
-		$walk/Position3D.global_transform.origin = Vector3(0,0,-7.952)
-	if count == 1:
-		$walk/Position3D.global_transform.origin = Vector3(8.391,0,-20.742)
-	elif count == 2:
-		$walk/Position3D.global_transform.origin = Vector3(8.391,0,-42.027)
-	elif count == 3:
-		$walk/Position3D.global_transform.origin = Vector3(2.09,0,-43.658)
-	elif count == 4:
-		$walk/Position3D.global_transform.origin = Vector3(2.09,0,-38.994)
-	elif count == 5:
-		$walk/Position3D.global_transform.origin = Vector3(-7.577,0,-38.994)
-	elif count == 6:
-		$walk/Position3D.global_transform.origin = Vector3(-7.577,0,-46.816)
-	elif count == 7:
-		$walk/Position3D.global_transform.origin = Vector3(2.09,0,-46.816)
-	elif count == 8:
-		start = false
-		$walk/Position3D.global_transform.origin = Vector3(16.012,0,-43.622)
+func _process(delta):
+	match state:
+		STATE.IDLE:
+			var next_waypoint = Vector3(rand_range(5, 20), translation.y, rand_range(5, 20))
+			target_position = start_position + next_waypoint
+			var p = nav.get_simple_path(start_position, target_position, true)
+			if not p.empty():
+				path = Array(p)
+				path.invert()
+				state = STATE.WANDER
+		STATE.WANDER:
+			var to_walk = delta * move_speed
+			var to_watch = Vector3.UP
+			while to_walk > 0 and path.size() >= 2:
+				var pfrom = path[path.size() - 1]
+				var pto = path[path.size() - 2]
+				to_watch = (pto - pfrom).normalized()
+				var d = pfrom.distance_to(pto)
+				if d <= to_walk:
+					path.remove(path.size() - 1)
+					to_walk -= d
+				else:
+					path[path.size() - 1] = pfrom.linear_interpolate(pto, to_walk / d)
+					to_walk = 0
+				var atpos = path[path.size() - 1]
+				var atdir = to_watch
+				atdir.y = 0
+				var t = Transform()
+				t.origin = atpos
+				t = t.looking_at(atpos + atdir, Vector3.UP)
+				set_transform(t)
+				if path.size() < 2:
+					path = []
+					set_process(false)
+			if (target_position - transform.origin).length() < stop_distance:
+				start_position = get_global_transform().origin
+				state = STATE.IDLE
