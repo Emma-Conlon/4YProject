@@ -19,9 +19,6 @@ margin_right = -1.87288
 margin_bottom = -1.12373
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -50.1934
@@ -34,8 +31,8 @@ __meta__ = {
 }
 
 [node name="Title" type="VBoxContainer" parent="."]
-anchor_left = -0.0204846
-anchor_top = 0.0936442
+anchor_left = -0.264625
+anchor_top = -0.00802251
 anchor_right = -0.264625
 anchor_bottom = -0.00802251
 margin_left = -9.0
@@ -48,15 +45,15 @@ __meta__ = {
 }
 
 [node name="CenterContainer2" type="CenterContainer" parent="Title"]
-margin_right = 181.0
+margin_right = 431.0
 margin_bottom = 26.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="Title/CenterContainer2"]
-margin_left = 18.0
-margin_right = 162.0
+margin_left = 143.0
+margin_right = 287.0
 margin_bottom = 26.0
 custom_colors/font_color = Color( 0.886275, 0.839216, 0.466667, 1 )
 custom_fonts/font = SubResource( 1 )

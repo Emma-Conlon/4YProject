@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://horror-game-floor-generator-free/source/Ladder.material" type="Material" id=1]
 [ext_resource path="res://horror-game-floor-generator-free/source/Door.material" type="Material" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://horror-game-floor-generator-free/textures/Material_metallic.jpg" type="Texture" id=22]
 [ext_resource path="res://TexturesCom_WoodPlanksBare0467_2_seamless_S.jpg" type="Texture" id=23]
 [ext_resource path="res://horror-game-floor-generator-free/textures/tile.jpg" type="Texture" id=24]
+[ext_resource path="res://horror-game-floor-generator-free/textures/orange floor.jpg" type="Texture" id=25]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -245,6 +246,9 @@ albedo_texture = ExtResource( 19 )
 [sub_resource type="SpatialMaterial" id=52]
 albedo_texture = ExtResource( 24 )
 
+[sub_resource type="SpatialMaterial" id=53]
+albedo_texture = ExtResource( 25 )
+
 [node name="Spatial" type="Spatial"]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 
@@ -403,4 +407,15 @@ material/0 = SubResource( 52 )
 [node name="StaticBody" type="StaticBody" parent="FloorTile5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="FloorTile5/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="FloorTile6" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, -99.98, 1.99825, 0, -1.99825, -99.98, 14.1454, -1.33899e-07, 3.1002 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 53 )
+
+[node name="StaticBody" type="StaticBody" parent="FloorTile6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FloorTile6/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 7.76832e-11, 0, -7.76832e-11, 1, 9.3015e-10, -1.91291e-11, -3.14827e-10 )
 shape = SubResource( 9 )
