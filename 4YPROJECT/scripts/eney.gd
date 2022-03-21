@@ -34,7 +34,7 @@ onready var pos31 = $Navigation/first_floor_pos/Position3D31
 onready var pos32 = $Navigation/first_floor_pos/Position3D32
 onready var pos33 = $Navigation/first_floor_pos/Position3D33
 onready var player = $Navigation/NavigationMeshInstance/GridMap/Player
-var first_floor_pos = []
+
 var floor_pos
 
 func _on_Timer_timeout():
@@ -44,13 +44,19 @@ func _on_Timer_timeout():
 	
 func _ready():
 	first_floor()
-	print(first_floor_pos)
+	
 
 
 func first_floor():
+	randomize()
+	var random_pos = randi() % 33 + 1
 	#add a random varible and check t osee if the neemy pos is equal to one of these pos if so randize again
-	floor_pos = pos1.global_transform.origin
-	floor_pos = pos2.global_transform.origin
+	if random_pos == 1:
+		floor_pos = pos1.global_transform.origin
+	if random_pos == 2:
+		floor_pos = pos2.global_transform.origin
+	
+	
 	floor_pos = pos3.global_transform.origin
 	floor_pos = pos4.global_transform.origin
 	floor_pos = pos5.global_transform.origin
