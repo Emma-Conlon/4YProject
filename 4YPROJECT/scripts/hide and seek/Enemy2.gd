@@ -21,10 +21,16 @@ onready var nav = get_parent()
 
 func _ready():
 	randomize()
-	random_pos = randi() % 33
+	random_pos = randi() % 2
 	print(random_pos)
 	
-func _physics_process(_delta):
+func _physics_process(_delta):	
+	if $RayCast.is_colliding():
+		var obj = $RayCast.get_collider()
+		print(obj.get_name())
+		if obj.get_name() == "Player":
+			print("dead")
+		
 	if path.size() > 0:
 		move_to_target()
 
@@ -40,8 +46,8 @@ func move_to_target():
 
 
 func get_target_path(target_pos):
-	print(target_pos[random_pos])
-	path = nav.get_simple_path(global_transform.origin, target_pos[random_pos])
+	path = nav.get_simple_path(global_transform.origin, target_pos)
+	
 	
 
 

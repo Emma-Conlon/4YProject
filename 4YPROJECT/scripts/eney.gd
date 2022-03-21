@@ -35,9 +35,10 @@ onready var pos32 = $Navigation/first_floor_pos/Position3D32
 onready var pos33 = $Navigation/first_floor_pos/Position3D33
 onready var player = $Navigation/NavigationMeshInstance/GridMap/Player
 var first_floor_pos = []
+var floor_pos
 
 func _on_Timer_timeout():
-	get_tree().call_group("first_floor_enemy", 'get_target_path', first_floor_pos)
+	get_tree().call_group("first_floor_enemy", 'get_target_path', floor_pos)
 	get_tree().call_group("PathFindingAI", 'get_target_path', player.global_transform.origin)
 
 	
@@ -47,39 +48,40 @@ func _ready():
 
 
 func first_floor():
-	first_floor_pos.push_back(pos1.global_transform.origin)
-	first_floor_pos.push_back(pos2.global_transform.origin) 
-	first_floor_pos.push_back(pos3.global_transform.origin)
-	first_floor_pos.push_back(pos4.global_transform.origin)
-	first_floor_pos.push_back(pos5.global_transform.origin)  
-	first_floor_pos.push_back(pos6.global_transform.origin)
-	first_floor_pos.push_back(pos7.global_transform.origin) 
-	first_floor_pos.push_back(pos8.global_transform.origin)
-	first_floor_pos.push_back(pos9.global_transform.origin)
-	first_floor_pos.push_back(pos10.global_transform.origin)  
+	#add a random varible and check t osee if the neemy pos is equal to one of these pos if so randize again
+	floor_pos = pos1.global_transform.origin
+	floor_pos = pos2.global_transform.origin
+	floor_pos = pos3.global_transform.origin
+	floor_pos = pos4.global_transform.origin
+	floor_pos = pos5.global_transform.origin
+	floor_pos = pos6.global_transform.origin
+	floor_pos = pos7.global_transform.origin
+	floor_pos = pos8.global_transform.origin
+	floor_pos = pos9.global_transform.origin
+	floor_pos = pos10.global_transform.origin 
 	
-	first_floor_pos.push_back(pos11.global_transform.origin)
-	first_floor_pos.push_back(pos12.global_transform.origin) 
-	first_floor_pos.push_back(pos13.global_transform.origin)
-	first_floor_pos.push_back(pos14.global_transform.origin)
-	first_floor_pos.push_back(pos15.global_transform.origin)  
-	first_floor_pos.push_back(pos16.global_transform.origin)
-	first_floor_pos.push_back(pos17.global_transform.origin) 
-	first_floor_pos.push_back(pos18.global_transform.origin)
-	first_floor_pos.push_back(pos19.global_transform.origin)
-	first_floor_pos.push_back(pos20.global_transform.origin)  
+	floor_pos = (pos11.global_transform.origin)
+	floor_pos = (pos12.global_transform.origin) 
+	floor_pos = (pos13.global_transform.origin)
+	floor_pos = (pos14.global_transform.origin)
+	floor_pos = (pos15.global_transform.origin)  
+	floor_pos = (pos16.global_transform.origin)
+	floor_pos = (pos17.global_transform.origin) 
+	floor_pos = (pos18.global_transform.origin)
+	floor_pos = (pos19.global_transform.origin)
+	floor_pos = (pos20.global_transform.origin)  
 	
-	first_floor_pos.push_back(pos21.global_transform.origin)
-	first_floor_pos.push_back(pos22.global_transform.origin) 
-	first_floor_pos.push_back(pos23.global_transform.origin)
-	first_floor_pos.push_back(pos24.global_transform.origin)
-	first_floor_pos.push_back(pos25.global_transform.origin)  
-	first_floor_pos.push_back(pos26.global_transform.origin)
-	first_floor_pos.push_back(pos27.global_transform.origin) 
-	first_floor_pos.push_back(pos28.global_transform.origin)
-	first_floor_pos.push_back(pos29.global_transform.origin)
-	first_floor_pos.push_back(pos30.global_transform.origin)
-	first_floor_pos.push_back(pos31.global_transform.origin)
-	first_floor_pos.push_back(pos32.global_transform.origin)
-	first_floor_pos.push_back(pos33.global_transform.origin)  
+	floor_pos = (pos21.global_transform.origin)
+	floor_pos = (pos22.global_transform.origin) 
+	floor_pos = (pos23.global_transform.origin)
+	floor_pos = (pos24.global_transform.origin)
+	floor_pos = (pos25.global_transform.origin)  
+	floor_pos = (pos26.global_transform.origin)
+	floor_pos = (pos27.global_transform.origin) 
+	floor_pos = (pos28.global_transform.origin)
+	floor_pos = (pos29.global_transform.origin)
+	floor_pos = (pos30.global_transform.origin)
+	floor_pos = (pos31.global_transform.origin)
+	floor_pos = (pos32.global_transform.origin)
+	floor_pos = (pos33.global_transform.origin)  
 	

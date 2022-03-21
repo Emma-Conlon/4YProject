@@ -32,8 +32,13 @@ onready var nav = get_parent()
 		
 
 func _physics_process(_delta):
+	if $RayCast.is_colliding():
+		var obj = $RayCast.get_collider()
+		print(obj.get_name())
+		
 	if path.size() > 0:
 		move_to_target()
+		
 		
 func move_to_target():	
 	if global_transform.origin.distance_to(path[cur_path_idx]) < threshold:
