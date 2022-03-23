@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Stairs_Indoor_Balcony_Handrail_Inner_Joint.obj-904570c44466985742c3e9c6e48a51a6.mesh"
+
+[deps]
+
+files=[ "res://.import/Stairs_Indoor_Balcony_Handrail_Inner_Joint.obj-904570c44466985742c3e9c6e48a51a6.mesh" ]
+
+source_file="res://House/Stairs_Indoor_Balcony_Handrail_Inner_Joint.obj"
+dest_files=[ "res://.import/Stairs_Indoor_Balcony_Handrail_Inner_Joint.obj-904570c44466985742c3e9c6e48a51a6.mesh", "res://.import/Stairs_Indoor_Balcony_Handrail_Inner_Joint.obj-904570c44466985742c3e9c6e48a51a6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

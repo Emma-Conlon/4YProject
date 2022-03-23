@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Kitchen_Cabinet_Base_Half.obj-ba79a57ed7d56b43c79fd380f2500c16.mesh"
+
+[deps]
+
+files=[ "res://.import/Kitchen_Cabinet_Base_Half.obj-ba79a57ed7d56b43c79fd380f2500c16.mesh" ]
+
+source_file="res://House/Kitchen_Cabinet_Base_Half.obj"
+dest_files=[ "res://.import/Kitchen_Cabinet_Base_Half.obj-ba79a57ed7d56b43c79fd380f2500c16.mesh", "res://.import/Kitchen_Cabinet_Base_Half.obj-ba79a57ed7d56b43c79fd380f2500c16.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

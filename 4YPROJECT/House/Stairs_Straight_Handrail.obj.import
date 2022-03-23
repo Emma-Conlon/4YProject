@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Stairs_Straight_Handrail.obj-95269bc1444973dc8d0a9a7620e5ad4e.mesh"
+
+[deps]
+
+files=[ "res://.import/Stairs_Straight_Handrail.obj-95269bc1444973dc8d0a9a7620e5ad4e.mesh" ]
+
+source_file="res://House/Stairs_Straight_Handrail.obj"
+dest_files=[ "res://.import/Stairs_Straight_Handrail.obj-95269bc1444973dc8d0a9a7620e5ad4e.mesh", "res://.import/Stairs_Straight_Handrail.obj-95269bc1444973dc8d0a9a7620e5ad4e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

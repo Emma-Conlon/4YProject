@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wall_Curved_Small_Base_Inner_Half.obj-536553a2a1e9492ff20d4e44930ab302.mesh"
+
+[deps]
+
+files=[ "res://.import/Wall_Curved_Small_Base_Inner_Half.obj-536553a2a1e9492ff20d4e44930ab302.mesh" ]
+
+source_file="res://House/Wall_Curved_Small_Base_Inner_Half.obj"
+dest_files=[ "res://.import/Wall_Curved_Small_Base_Inner_Half.obj-536553a2a1e9492ff20d4e44930ab302.mesh", "res://.import/Wall_Curved_Small_Base_Inner_Half.obj-536553a2a1e9492ff20d4e44930ab302.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

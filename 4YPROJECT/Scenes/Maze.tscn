@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathFindingAI.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://hy.PNG" type="Texture" id=10]
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Gameover.tscn" type="PackedScene" id=12]
+[ext_resource path="res://a1.tres" type="MeshLibrary" id=13]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 9 )
@@ -67,6 +68,7 @@ pause_mode = 2
 navmesh = SubResource( 3 )
 
 [node name="MainHall" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 3 )]
+mesh_library = ExtResource( 13 )
 collision_layer = 9
 collision_mask = 6
 data = {

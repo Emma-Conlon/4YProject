@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wall_Straight_Base.obj-4f62993b01d9d5a7eb9a1b8f49de7dae.mesh"
+
+[deps]
+
+files=[ "res://.import/Wall_Straight_Base.obj-4f62993b01d9d5a7eb9a1b8f49de7dae.mesh" ]
+
+source_file="res://House/Wall_Straight_Base.obj"
+dest_files=[ "res://.import/Wall_Straight_Base.obj-4f62993b01d9d5a7eb9a1b8f49de7dae.mesh", "res://.import/Wall_Straight_Base.obj-4f62993b01d9d5a7eb9a1b8f49de7dae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

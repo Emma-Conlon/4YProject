@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Roof_Main_Side.obj-c38f88e38b23ff9cd6072e9e678285aa.mesh"
+
+[deps]
+
+files=[ "res://.import/Roof_Main_Side.obj-c38f88e38b23ff9cd6072e9e678285aa.mesh" ]
+
+source_file="res://House/Roof_Main_Side.obj"
+dest_files=[ "res://.import/Roof_Main_Side.obj-c38f88e38b23ff9cd6072e9e678285aa.mesh", "res://.import/Roof_Main_Side.obj-c38f88e38b23ff9cd6072e9e678285aa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -10,7 +10,7 @@ signal animation_finish
 func _ready():
 	pass # Replace with function body.
 
-	emit_signal("","Doors_Open")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

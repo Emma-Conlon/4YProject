@@ -2,33 +2,36 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.stex"
+path.s3tc="res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.s3tc.stex"
+path.etc2="res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Brick_Wall_Geo_Piskas_new_max/Brick_Wall_Geo_Piskas/Textures/JPG/wall_NRM.jpg"
-dest_files=[ "res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.stex" ]
+dest_files=[ "res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.s3tc.stex", "res://.import/wall_NRM.jpg-240a4ce530917f26a36889ffa1bb025c.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
-flags/repeat=0
+compress/normal_map=1
+flags/repeat=true
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

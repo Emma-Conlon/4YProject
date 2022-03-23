@@ -11,7 +11,7 @@ var path = []
 var cur_path_idx = 0
 var velocity = Vector3.ZERO
 var threshold = .5
-
+var collided
 onready var nav = get_parent()
 
 

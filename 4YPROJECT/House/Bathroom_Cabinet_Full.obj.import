@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Bathroom_Cabinet_Full.obj-2403d0b29b3538f08ba2b3a3294dcb68.mesh"
+
+[deps]
+
+files=[ "res://.import/Bathroom_Cabinet_Full.obj-2403d0b29b3538f08ba2b3a3294dcb68.mesh" ]
+
+source_file="res://House/Bathroom_Cabinet_Full.obj"
+dest_files=[ "res://.import/Bathroom_Cabinet_Full.obj-2403d0b29b3538f08ba2b3a3294dcb68.mesh", "res://.import/Bathroom_Cabinet_Full.obj-2403d0b29b3538f08ba2b3a3294dcb68.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

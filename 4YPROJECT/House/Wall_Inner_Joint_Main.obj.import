@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wall_Inner_Joint_Main.obj-9d134e977b35904185b7c24aec1ccc0b.mesh"
+
+[deps]
+
+files=[ "res://.import/Wall_Inner_Joint_Main.obj-9d134e977b35904185b7c24aec1ccc0b.mesh" ]
+
+source_file="res://House/Wall_Inner_Joint_Main.obj"
+dest_files=[ "res://.import/Wall_Inner_Joint_Main.obj-9d134e977b35904185b7c24aec1ccc0b.mesh", "res://.import/Wall_Inner_Joint_Main.obj-9d134e977b35904185b7c24aec1ccc0b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

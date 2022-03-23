@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Floor_Curved_Large_Outer.obj-56208a2838db055d7b1baf2d74628345.mesh"
+
+[deps]
+
+files=[ "res://.import/Floor_Curved_Large_Outer.obj-56208a2838db055d7b1baf2d74628345.mesh" ]
+
+source_file="res://House/Floor_Curved_Large_Outer.obj"
+dest_files=[ "res://.import/Floor_Curved_Large_Outer.obj-56208a2838db055d7b1baf2d74628345.mesh", "res://.import/Floor_Curved_Large_Outer.obj-56208a2838db055d7b1baf2d74628345.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
