@@ -12,6 +12,7 @@ const DEACCEL= 16
 const MAX_SLOPE_ANGLE = 20
 onready var light = $follow/SpotLight
 var camera
+var move = true
 var vent = false
 var rotation_helper
 var crouch_height=0.5
@@ -33,68 +34,66 @@ func _physics_process(delta):
 
 
 func process_input(_delta):
-	MAX_SPEED=20
+	if move:
+		MAX_SPEED=20
 	# ----------------------------------
 	# Walking
-	var is_vent = false
-	var is_moving = false
-	dir = Vector3()
-	var cam_xform = camera.get_global_transform()
-
-	var input_movement_vector = Vector2()
-	
-	
-	if Input.is_action_pressed("crouch"):
-			#is_vent = true
-			$follow/AudioStreamPlayer3D.stop()
-			pcap.shape.height=crouch_speed*_delta
-			MAX_SPEED=crouch_speed
+		var is_vent = false
+		var is_moving = false
+		dir = Vector3()
+		var cam_xform = camera.get_global_transform()
+		var input_movement_vector = Vector2()
+		if Input.is_action_pressed("crouch"):
+				#is_vent = true
+				$follow/AudioStreamPlayer3D.stop()
+				pcap.shape.height=crouch_speed*_delta
+				MAX_SPEED=crouch_speed
 			
-	else:
-		pcap.shape.height+=crouch_speed*_delta
-		pcap.shape.height=clamp(pcap.shape.height,crouch_height,default_height)
+		else:
+			pcap.shape.height+=crouch_speed*_delta
+			pcap.shape.height=clamp(pcap.shape.height,crouch_height,default_height)
 	
-	if Input.is_action_pressed("move_forward"):
-		input_movement_vector.y += 0.05
-		is_moving = true
-		MAX_SPEED =20
+		if Input.is_action_pressed("move_forward"):
+			input_movement_vector.y += 0.05
+			is_moving = true
+			MAX_SPEED =20
 			
-	if Input.is_action_pressed("move_back"):
-		input_movement_vector.y -= 0.1
-		is_moving = true
-		MAX_SPEED =20
-	if Input.is_action_pressed("move_left"):
-		input_movement_vector.x -=0.1
-		is_moving = true
-		MAX_SPEED =20
-	if Input.is_action_pressed("move_right"):
-		input_movement_vector.x += 0.1
-		is_moving = true
-		MAX_SPEED =20
+		if Input.is_action_pressed("move_back"):
+			input_movement_vector.y -= 0.1
+			is_moving = true
+			MAX_SPEED =20
+		if Input.is_action_pressed("move_left"):
+			input_movement_vector.x -=0.1
+			is_moving = true
+			MAX_SPEED =20
+		if Input.is_action_pressed("move_right"):
+			input_movement_vector.x += 0.1
+			is_moving = true
+			MAX_SPEED =20
 
-	input_movement_vector = input_movement_vector.normalized()
-	sound(is_moving)
-	# Basis vectors are already normalized.
-	dir += -cam_xform.basis.z * input_movement_vector.y
-	dir += cam_xform.basis.x * input_movement_vector.x
+		input_movement_vector = input_movement_vector.normalized()
+		sound(is_moving)
+		# Basis vectors are already normalized.
+		dir += -cam_xform.basis.z * input_movement_vector.y
+		dir += cam_xform.basis.x * input_movement_vector.x
 	# ----------------------------------
-	torch()
+		torch()
 	# ----------------------------------
 	# Jumping
-	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
-			$follow/AudioStreamPlayer3D.stop()
-			vel.y = JUMP_SPEED
-			$follow/JUMP.play()
+		if is_on_floor():
+			if Input.is_action_just_pressed("jump"):
+				$follow/AudioStreamPlayer3D.stop()
+				vel.y = JUMP_SPEED
+				$follow/JUMP.play()
 	# ----------------------------------
 
 	# ----------------------------------
 	# Capturing/Freeing the cursor
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if Input.is_action_just_pressed("ui_cancel"):
+			if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
 func _get_save():
 	var file = File.new()
@@ -128,27 +127,27 @@ func get_load():
 	if Save.loadpos == 4 and file.file_exists(Save.path_four):
 		file.open(Save.path_four,File.READ)
 		result2 = file.get_var()
-		print(result2)
+		print("HIDE",result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
 		file.close()
 	if Save.loadpos == 3 and file.file_exists(Save.path_three):
 		file.open(Save.path_three,File.READ)
 		result2 = file.get_var()
-		print(result2)
+		print("HIDE",result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
 		file.close()
 		
 	if Save.loadpos == 2 and file.file_exists(Save.path_two):
 		file.open(Save.path_two,File.READ)
 		result2 = file.get_var()
-		print(result2)
+		print("HIDE",result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
 		file.close()
 		
 	if Save.loadpos == 1 and file.file_exists(Save.path_one):
 		file.open(Save.path_one,File.READ)
 		result2 = file.get_var()
-		print(result2)
+		print("HIDE",result2)
 		global_transform.origin = Vector3(result2["players_position.x"],result2["players_position.y"],result2["players_position.z"])
 		file.close()
 	

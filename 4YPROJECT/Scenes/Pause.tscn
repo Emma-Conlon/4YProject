@@ -68,19 +68,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Save" type="Button" parent="PauseScreen/buttons"]
+[node name="Exit" type="Button" parent="PauseScreen/buttons"]
 margin_top = 60.0
 margin_right = 96.0
 margin_bottom = 86.0
-text = "Save"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Exit" type="Button" parent="PauseScreen/buttons"]
-margin_top = 90.0
-margin_right = 96.0
-margin_bottom = 116.0
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,6 +103,5 @@ text = "Settings"
 
 [connection signal="pressed" from="PauseScreen/buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseScreen/buttons/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="PauseScreen/buttons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="PauseScreen/buttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Settings/Button" to="Settings" method="_on_Back_pressed"]

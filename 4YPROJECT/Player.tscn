@@ -65,16 +65,14 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.55378
 cull_mask = 1048573
 
 [node name="SpotLight" type="SpotLight" parent="follow"]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1.473, 0, 1.50996e-07, 0, -1, 1.41711, 4.50559, 3.08054 )
-visible = false
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.41711, 1.93869, 1.26443 )
 light_energy = 10.0
 shadow_enabled = true
-spot_range = 34.9
-spot_angle = 18.8
+spot_range = 47.0
+spot_angle = 30.0
 
 [node name="flashlight" type="MeshInstance" parent="follow/SpotLight"]
 transform = Transform( -0.03, 0, 3.01992e-09, 0, 0.03, 0, -4.52987e-09, 0, -0.02, 0.272492, 0.221238, 1.35118 )
-visible = false
 mesh = ExtResource( 6 )
 material/0 = SubResource( 2 )
 

@@ -18,7 +18,7 @@ var threshold = .5
 var collided= false
 onready var nav = get_parent()
 var boo 
-
+const ROTATE_SPEED = 0
 
 func randomizeing(random_pos):
 	randomize()
@@ -36,16 +36,18 @@ func _physics_process(_delta):
 	if $RayCast.is_colliding():
 		var obj = $RayCast.get_collider()
 #		print(obj.get_name())
-#		if obj.get_name() == "Player":
-#			print("dead")
-		
+		if obj.get_name() == "Player":#fff8b6
+			pass
+			#$spotLight.set_color("#fc2803")
+			
+			
 	if path.size() > 0:
-		move_to_target()
+		move_to_target(_delta)
 		
 func collision(ty):
 	  boo = ty
 
-func move_to_target():	
+func move_to_target(_delta):	
 	if global_transform.origin.distance_to(path[cur_path_idx]) < threshold:
 		
 		path.remove(0)
@@ -54,7 +56,14 @@ func move_to_target():
 		velocity = direction.normalized() * speed
 
 		move_and_slide(velocity, Vector3.UP)
-
+		var t = global_transform
+		var lp = t.origin + velocity.normalized()
+		var lookatpos = lp
+		var l = t.looking_at(lookatpos, Vector3(1,1,1))
+		var a = Quat(t.basis)
+		var b = Quat(l.basis)
+		var c = a.slerp(b, ROTATE_SPEED * _delta)
+		global_transform.basis = Basis(c)
 
 func get_target_path(target_pos):  
 	path = nav.get_simple_path(global_transform.origin, target_pos)

@@ -15,16 +15,20 @@ var collided
 onready var nav = get_parent()
 
 
-		
+func _ready():
+	if state==STAGE.IDLE: 
+		var random_color = Color(randf(), randf(), randf())
+		var material = SpatialMaterial.new()
+		material.albedo_color = Color(random_color)#Red
+		$MeshInstance.set_surface_material(0, material)
+	
+			
 func _physics_process(_delta):
 	if state==STAGE.ATTACK: 
 		var material = SpatialMaterial.new()
 		material.albedo_color = Color(1, 0, 0)#Red
 		$MeshInstance.set_surface_material(0, material)
-	if state==STAGE.IDLE: 
-		var material = SpatialMaterial.new()
-		material.albedo_color = Color(0, 0, 1)#Red
-		$MeshInstance.set_surface_material(0, material)
+	
 		
 	if path.size() > 0:
 		move_to_target()

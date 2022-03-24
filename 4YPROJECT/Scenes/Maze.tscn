@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathFindingAI.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Gameover.tscn" type="PackedScene" id=12]
 [ext_resource path="res://a1.tres" type="MeshLibrary" id=13]
+[ext_resource path="res://fog.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 9 )
@@ -40,8 +41,7 @@ axis = 1
 texture = ExtResource( 6 )
 
 [node name="Celing" type="CSGBox" parent="."]
-transform = Transform( 152.369, 0, 0, 0, 0.130848, 0, 0, 0, -129.78, -3.68253, 3.90534, -3.1001 )
-visible = false
+transform = Transform( 152.369, 0, 0, 0, 0.130848, 0, 0, 0, -129.78, -3.68253, 7.2603, -3.1001 )
 use_collision = true
 collision_layer = 8
 collision_mask = 3
@@ -86,6 +86,30 @@ collision_mask = 12
 [node name="PathFindingAI" parent="Navigation" instance=ExtResource( 2 )]
 transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -9.20909, 0.791506, 7.4491 )
 
+[node name="PathFindingAI2" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -122.468, 0.791506, 32.2404 )
+
+[node name="PathFindingAI3" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -9.20909, 0.791506, -83.5554 )
+
+[node name="PathFindingAI4" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 122.599, 0.791506, 15.7973 )
+
+[node name="PathFindingAI5" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -55.8513, 0.791506, -86.5086 )
+
+[node name="PathFindingAI6" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 28.3832, 0.791506, 113.581 )
+
+[node name="PathFindingAI7" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 76.7158, 0.791506, 99.2497 )
+
+[node name="PathFindingAI8" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, 121.221, 0.791506, 76.4712 )
+
+[node name="PathFindingAI9" parent="Navigation" instance=ExtResource( 2 )]
+transform = Transform( 0.391212, 0, 0, 0, 0.317699, 0, 0, 0, 0.342458, -122.517, 0.791506, 21.4767 )
+
 [node name="Gameover" parent="." instance=ExtResource( 12 )]
 visible = false
 
@@ -113,6 +137,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9134, 1.46274, -37.2674 )
 
 [node name="Position3D3" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4225, 1.46274, 0 )
+
+[node name="Spatial" parent="." instance=ExtResource( 14 )]
+transform = Transform( 35.5446, 0, 0, 0, 1, 0, 0, 0, 36.036, 0, 1, 2 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Gameover/Button" to="." method="_on_Button_pressed"]

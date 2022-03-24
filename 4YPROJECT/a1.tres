@@ -237,7 +237,7 @@ data = PoolVector3Array( 12.1824, 1.2639, 2.7251, 12.1915, 1.2639, 2.7431, 12.18
 [resource]
 item/0/name = "wall"
 item/0/mesh = SubResource( 1 )
-item/0/mesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/0/mesh_transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 item/0/shapes = [ SubResource( 5 ), Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/0/navmesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/0/preview = SubResource( 4 )
@@ -260,7 +260,7 @@ item/3/shapes = [ SubResource( 17 ), Transform( 1, 2.74503e-09, 0, -2.74503e-09,
 item/3/navmesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/4/name = "wall_Corner"
 item/4/mesh = SubResource( 18 )
-item/4/mesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/4/mesh_transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 item/4/shapes = [ SubResource( 21 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/4/navmesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/4/preview = SubResource( 20 )

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://a.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://nightTime.tres" type="Environment" id=2]
 [ext_resource path="res://BetterPixels.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/GridMap.gd" type="Script" id=7]
 [ext_resource path="res://Control.tscn" type="PackedScene" id=10]
@@ -34,7 +35,7 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Area" type="Area" parent="Door"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.41964e-09, 0 )
+transform = Transform( 2.48305, 0, 0, 0, 1, 0, 0, 0, 2.21448, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door/Area"]
 shape = SubResource( 2 )
@@ -63,6 +64,9 @@ script = ExtResource( 12 )
 visible = false
 margin_right = -805.0
 margin_bottom = -343.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
 
 [connection signal="body_entered" from="Door/Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Door/Area" to="." method="_on_Area_body_exited"]

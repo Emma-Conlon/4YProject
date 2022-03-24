@@ -16,9 +16,6 @@ margin_bottom = 1.78387
 rect_pivot_offset = Vector2( 1499.24, -61.5721 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -15.749

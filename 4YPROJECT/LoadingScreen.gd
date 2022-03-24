@@ -31,11 +31,40 @@ func _on_Timer_timeout():
 				save_maze()
 				get_tree().change_scene(MainHall)
 			if GameManager.loading==1:
+				_save()
 				get_tree().change_scene(entrance)
 			if GameManager.doorTwo==true:
+				save_hideseek()
 				get_tree().change_scene(hide_seek)
 				GameManager.completedGame0ne=true
 	pass # Replace with function body.
+func _save():
+	var path_one = "user://save_one.dat"
+	var path_two = "user://save_two.dat"
+	var path_three = "user://save_three.dat"
+	var path_four = "user://save_four.dat"
+	var file = File.new()
+	if Save.loadpos == 1 and file.file_exists(path_one):
+		file.open(path_one,File.WRITE)
+		Save.pos(-33.002,-4.238,13.976)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 2 and file.file_exists(path_two):
+		file.open(path_two,File.WRITE)
+		Save.pos(-33.002,-4.238,13.976)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 3 and file.file_exists(path_three):
+		file.open(path_two,File.WRITE)
+		Save.pos(-33.002,-4.238,13.976)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 4 and file.file_exists(path_four):
+		file.open(path_four,File.WRITE)
+		Save.pos(-33.002,-4.238,13.976)
+		file.store_var(Save.save_data)
+		file.close()
+
 
 func save_maze():
 	var path_one = "user://save_one.dat"
@@ -63,6 +92,39 @@ func save_maze():
 		Save.pos(39.652,2.125,-9.85)
 		file.store_var(Save.save_data)
 		file.close()
+		
+func save_hideseek():
+	var path_one = "user://save_one.dat"
+	var path_two = "user://save_two.dat"
+	var path_three = "user://save_three.dat"
+	var path_four = "user://save_four.dat"
+	var file = File.new()
+	if Save.loadpos == 1 and file.file_exists(path_one):
+		file.open(path_one,File.WRITE)
+		if GameManager.completedGame0ne:
+			Save.save_data["gems"] = 0
+		Save.pos(-30.797,4.566,6.538)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 2 and file.file_exists(path_two):
+		file.open(path_two,File.WRITE)
+		if GameManager.completedGame0ne:
+			Save.save_data["gems"] = 0
+		Save.pos(-30.797,4.566,6.538)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 3 and file.file_exists(path_three):
+		file.open(path_two,File.WRITE)
+		if GameManager.completedGame0ne:
+			Save.save_data["gems"] = 0
+		Save.pos(-30.797,4.566,6.538)
+		file.store_var(Save.save_data)
+		file.close()
+	if Save.loadpos == 4 and file.file_exists(path_four):
+		file.open(path_four,File.WRITE)
+		if GameManager.completedGame0ne:
+			Save.save_data["gems"] = 0
+		Save.pos(-30.797,4.566,6.538)
+		file.store_var(Save.save_data)
+		file.close()
 
-func Load():
-	pass

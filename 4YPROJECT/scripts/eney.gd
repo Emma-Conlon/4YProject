@@ -50,14 +50,12 @@ func _on_Timer_timeout():
 			member.get_target_path(floor_pos)
 			print(random_pos,floor_pos)
 
-
-	get_tree().call_group("PathFindingAI", 'get_target_path', player.global_transform.origin)
 #
 #			member.get_target_path(floor_pos)
 		
 
 func _ready():
-
+		_on_Timer_timeout()
 		print(random_pos)
 	
 
@@ -177,3 +175,9 @@ func _on_Area_body_entered(body):
 		first_floor()
 		body.get_target_path(floor_pos)
 		#hit=true
+
+
+func _on_Button_pressed():
+	print("died")
+	$Gameover.visible = false
+	player.global_transform.origin = Vector3(39.652,2.125,-9.85)

@@ -17,6 +17,7 @@ func loading():
 	if file.file_exists(Save.path_one) and Save.loadpos == 1:
 		file.open(Save.path_one,File.READ)
 		gems = file.get_var()
+		print(gems)
 		score.text=str(gems["gems"])
 		GameManager.redEmerladsCollected = gems["gems"]
 		file.close()

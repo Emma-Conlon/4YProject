@@ -17,12 +17,12 @@ func _input(event):
 				return
 			elif dead == true:
 				save()
-				print(Save.save_data["gem_x"])
+				print(Save.save_data["gems"])
 				
 func _on_Area_body_entered(body):
 	if body.name == "Player" and visible == true:
 			$Chime.play()
-			GameManager.redEmerladsCollected+=1
+			GameManager.redEmerladsCollected += 1
 			colleted = GameManager.redEmerladsCollected
 			GameManager.dead=true
 			dead=true

@@ -106,9 +106,6 @@ margin_top = 10.0433
 margin_right = 163.872
 margin_bottom = 178.043
 color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="OBJECTIVE" type="Label" parent="RED"]
 margin_left = 579.359

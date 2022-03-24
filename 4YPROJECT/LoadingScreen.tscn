@@ -14,13 +14,10 @@ font_data = ExtResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-MainHall = "res://Scenes/Maze.tscn"
+MainHall = "res://maze_Text.tscn"
 entrance = "res://test.tscn"
 racing = "res://Scenes/race.tscn"
-hide_seek = "res://Scenes/Hide&seek.tscn"
+hide_seek = "res://Scenes/HideAndSeekAI.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0

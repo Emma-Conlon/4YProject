@@ -10,19 +10,36 @@ var save_data = {
 		"player_name" : "",
 		"level" : "",
 		"gems" : 0,
-		"games_won" : 0,
+		"games_won" : "",
 		"players_position.x" : -33.002,
 		"players_position.y" : -4.238,
 		"players_position.z" : 13.976,
-		"gem_gone" : [],
+		"gem" : 0,
 		"red_gem_max" : 450,
 		"gem_x" : [],
 		"gem_y" : [],
 		"gem_z" :[],
+		"green_x" : [],
+		"green_y" : [],
+		"green_z" :[],
 		}# this is to save the game ^^
 
 func loading(var s):
 	loadpos = s
+
+func won(var c):
+	section = c
+	if section == "main_hall":
+		save_data["games_won"] = section
+	elif section == "maze":
+		save_data["games_won"] = section
+	elif section == "hide&seek":
+		save_data["games_won"] = section
+	elif section == "race":
+		save_data["games_won"] = section
+	elif section == "boss":
+		save_data["games_won"] = section
+	print(save_data["games_won"])	
 
 
 func loaded(var res):
@@ -32,7 +49,11 @@ func loaded(var res):
 func check(var c):
 	count = c 
 
-
+func green_position(var x,var y, var z):
+	save_data["green_x"].push_back(x)
+	save_data["green_y"].push_back(y)
+	save_data["green_z"].push_back(z)
+	
 func gem_position(var x,var y, var z):
 	save_data["gem_x"].push_back(x)
 	save_data["gem_y"].push_back(y)
@@ -75,7 +96,7 @@ func load_stage():
 	elif save_data["level"] == "maze":
 		var _l = get_tree().change_scene("res://Scenes/Maze.tscn")
 	elif save_data["level"] == "hide&seek":
-		var _l = get_tree().change_scene("res://Scenes/GridMap.tscn")
+		var _l = get_tree().change_scene("res://Scenes/HideAndSeekAI.tscn")
 	elif save_data["level"] == "race":
 		pass
 		#var l = get_tree().change_scene("res://test.tscn")
