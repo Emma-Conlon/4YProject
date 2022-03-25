@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PathFindingAI.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Gameover.tscn" type="PackedScene" id=12]
 [ext_resource path="res://a1.tres" type="MeshLibrary" id=13]
-[ext_resource path="res://fog.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 9 )
@@ -42,6 +41,7 @@ texture = ExtResource( 6 )
 
 [node name="Celing" type="CSGBox" parent="."]
 transform = Transform( 152.369, 0, 0, 0, 0.130848, 0, 0, 0, -129.78, -3.68253, 7.2603, -3.1001 )
+visible = false
 use_collision = true
 collision_layer = 8
 collision_mask = 3
@@ -137,9 +137,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9134, 1.46274, -37.2674 )
 
 [node name="Position3D3" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4225, 1.46274, 0 )
-
-[node name="Spatial" parent="." instance=ExtResource( 14 )]
-transform = Transform( 35.5446, 0, 0, 0, 1, 0, 0, 0, 36.036, 0, 1, 2 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Gameover/Button" to="." method="_on_Button_pressed"]

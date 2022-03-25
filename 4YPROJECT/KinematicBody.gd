@@ -153,8 +153,6 @@ func get_load():
 	
 	
 func torch():
-	if GameManager.pickup==1:
-		GameManager.pickup=1
 		torch_life();
 		if Input.is_action_just_pressed("toggle_flashlight") and light.visible == false:
 			 light.show()
@@ -164,7 +162,6 @@ func torch():
 			 light.hide()
 			 GameManager.lighting=0; #if flashlight is off 
 			
-	if GameManager.pickup==1 and GameManager.uv==1:
 #---------------------------FLASHLIGHT COLOUR 
 		torch_life()
 		if Input.is_action_just_pressed("change_lightcolour") and GameManager.red==0 and light.visible == true:

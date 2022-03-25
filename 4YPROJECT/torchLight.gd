@@ -4,7 +4,6 @@ extends Control
 var bar_green = preload("res://greem.png")
 onready var labeling=$RED/OBJECTIVE
 onready var torchLife=$ProgressBar
-
 onready var level2= $Green
 
 var score=10
@@ -31,10 +30,9 @@ func _process(_delta):
 		
 		
 func _on_Timer_timeout():
-	if GameManager.pickup==1:
-		torchLife.visible
-	if GameManager.pickup==1 and GameManager.lighting==1:
-			torchLife.value-=0.05
+	torchLife.visible
+	if GameManager.lighting==1:
+			torchLife.value-=0.25
 			GameManager.battery =torchLife.value
 			
 			

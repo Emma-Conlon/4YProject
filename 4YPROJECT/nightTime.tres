@@ -10,3 +10,11 @@ sun_angle_max = 20.47
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
+fog_enabled = true
+fog_color = Color( 0.392157, 0.411765, 0.431373, 0.12549 )
+fog_sun_color = Color( 0.00784314, 0.0588235, 0.223529, 0.556863 )
+fog_depth_enabled = false
+fog_depth_curve = 3.99999
+fog_transmit_curve = 2.07053
+fog_height_enabled = true
+fog_height_min = 5.0

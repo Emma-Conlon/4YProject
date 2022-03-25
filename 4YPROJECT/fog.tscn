@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://New folder/fog.png" type="Texture" id=1]
+[ext_resource path="res://New folder/index.jpg" type="Texture" id=1]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
@@ -27,25 +27,24 @@ color_ramp = SubResource( 2 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
-flags_vertex_lighting = true
-flags_do_not_receive_shadows = true
-vertex_color_use_as_albedo = true
 params_blend_mode = 1
 params_billboard_mode = 3
-particles_anim_h_frames = 4
-particles_anim_v_frames = 4
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
 particles_anim_loop = false
+albedo_color = Color( 1, 1, 1, 0.0313726 )
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="QuadMesh" id=7]
-material = SubResource( 6 )
+material = SubResource( 8 )
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Particles" type="Particles" parent="."]
 amount = 256
 speed_scale = 0.5
+visibility_aabb = AABB( -3.97021, -4, -4, 8, 8, 8 )
 process_material = SubResource( 5 )
 draw_pass_1 = SubResource( 7 )

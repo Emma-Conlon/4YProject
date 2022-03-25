@@ -122,7 +122,7 @@ func _on_Button_pressed():
 		file.close()
 		$PopupMenu.visible = false
 		_loading()
-		get_tree().change_scene("res://test.tscn");
+		get_tree().change_scene("res://intro.tscn");
 
 	if file.file_exists(Save.path_two) and Save.count == 2:
 		file.open(Save.path_two,File.WRITE)
@@ -131,7 +131,7 @@ func _on_Button_pressed():
 		file.close()
 		$PopupMenu.visible = false
 		_loading()
-		var _vale = get_tree().change_scene("res://test.tscn");
+		var _vale = get_tree().change_scene("res://intro.tscn");
 	
 	if file.file_exists(Save.path_three) and Save.count == 3:
 		file.open(Save.path_three,File.WRITE)
@@ -140,7 +140,7 @@ func _on_Button_pressed():
 		file.close()
 		$PopupMenu.visible = false
 		_loading()
-		get_tree().change_scene("res://test.tscn");
+		get_tree().change_scene("res://intro.tscn");
 	
 	if file.file_exists(Save.path_four) and Save.count == 4:
 		file.open(Save.path_four,File.WRITE)
@@ -149,7 +149,7 @@ func _on_Button_pressed():
 		file.close()
 		$PopupMenu.visible = false
 		_loading()
-		get_tree().change_scene("res://test.tscn");
+		get_tree().change_scene("res://intro.tscn");
 
 func _loading():
 	file = File.new()

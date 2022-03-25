@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/intro.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -6.29959
+margin_top = -7.55951
+margin_right = 33.7004
+margin_bottom = 32.4405
+rect_scale = Vector2( 25.885, 15.5417 )
+
+[node name="Voice" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -454.377
+margin_top = -133.322
+margin_right = -44.3769
+margin_bottom = -20.3224
+rect_scale = Vector2( 1.28471, 2.28601 )
+text = "Mystery Voice?
+HELLO...HELLLOOOOOO....WAKE UP!!!
+WAIT... I KNOW YOU FROM SOMEWHERE
+BUT WHERE?"
+
+[node name="yourname" type="Label" parent="."]
+margin_left = 55.4364
+margin_top = 241.275
+margin_right = 95.4364
+margin_bottom = 267.275
+rect_scale = Vector2( 2.94645, 2.27446 )
+
+[node name="yourname2" type="Label" parent="."]
+margin_left = 120.952
+margin_top = 303.641
+margin_right = 668.952
+margin_bottom = 416.641
+rect_scale = Vector2( 1.47618, 2.05194 )
+text = "...It will come to me later,so now that your
+stuck here with me, might as well enjoy it
+right. I heard you like to play games. SO LETS
+PLAY"
