@@ -33,5 +33,7 @@ func _ready():
 	#else:$yourname.text = "YOURNAME"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	if Input.is_action_pressed("enter"):
+		var v= get_tree().change_scene("res://test.tscn")
 #	pass
