@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sssa.tres" type="MeshLibrary" id=2]
 [ext_resource path="res://Control.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Cyan_Emerald.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/race.gd" type="Script" id=5]
-[ext_resource path="res://boids.tscn" type="PackedScene" id=6]
 
 [node name="GridMap" type="GridMap"]
 mesh_library = ExtResource( 2 )
@@ -23,18 +22,6 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77746, 2.52308, 13.7373 )
 
 [node name="Control" parent="." instance=ExtResource( 3 )]
-
-[node name="enemy" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.625611, 0, 0, 0, 0.629299, 0, 0, 0, 0.643404, -24.442, 1.77136, 24.2436 )
-
-[node name="enemy2" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.0120276, 0, -0.413773, 0, 0.396017, 0, 0.391204, 0, -0.0127214, 5.92982, 2.88607, 39.842 )
-
-[node name="enemy3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.244857, 0, 0, 0, 0.249213, 0, 0, 0, 0.266349, -26.5268, 3.58756, 49.8781 )
-
-[node name="enemy4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.452742, 0, 0, 0, 0.309456, 0, 0, 0, 0.32199, -9.3119, 1.95338, 39.7839 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 24.4264, 19.1396, 2.81369, 27.6414 )

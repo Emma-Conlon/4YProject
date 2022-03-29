@@ -49,7 +49,6 @@ transform = Transform( -1, 0, -3.72607e-08, 0, 4.03993, 0, 8.74228e-08, 0, -2.34
 
 [node name="SpotLight" type="SpotLight" parent="follow"]
 transform = Transform( -1, 0, -3.72607e-08, 0, 4.03993, 0, 8.74228e-08, 0, -2.34624, -0.539037, 0.925153, 0.881362 )
-visible = false
 light_energy = 10.0
 shadow_enabled = true
 spot_range = 34.9
@@ -61,11 +60,19 @@ mesh = ExtResource( 6 )
 material/0 = SubResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="follow/SpotLight/flashlight"]
+transform = Transform( 1, 0, 7.10543e-15, 0, 1, 0, 0, 0, 1, -2.06737, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="follow/SpotLight/flashlight/StaticBody"]
 transform = Transform( 1, 0, -8.69899e-15, 0, 1, 0, -4.47327e-15, 0, 1, 2.16674, 0.467032, 0.244881 )
 shape = SubResource( 3 )
 disabled = true
+
+[node name="RayCast" type="RayCast" parent="follow/SpotLight"]
+transform = Transform( 1, 0, -6.18792e-09, 0, 1, 0, -6.18792e-09, 0, 1.16607, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -30 )
+debug_shape_custom_color = Color( 1, 0, 0, 1 )
+debug_shape_thickness = 5
 
 [node name="torchswitch" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
