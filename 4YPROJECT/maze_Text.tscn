@@ -75,6 +75,9 @@ rect_scale = Vector2( 1.02204, 1.13863 )
 rect_pivot_offset = Vector2( 1441.2, 39.1204 )
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 16.2898
@@ -103,6 +106,9 @@ as in the name you must collect
 all  the  450 gems within the 
 maze"
 percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="Label" parent="Panel"]
 margin_left = -286.106

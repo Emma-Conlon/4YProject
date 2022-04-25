@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://raceingText.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 16.2898
+margin_top = -1.04442
+margin_right = 56.2898
+margin_bottom = 38.9556
+rect_scale = Vector2( 25.1093, 13.2105 )
+
+[node name="NAME" type="Label" parent="Panel"]
+margin_left = 0.802801
+margin_top = 13.1654
+margin_right = 168.803
+margin_bottom = 39.1654
+rect_scale = Vector2( 0.0613041, 0.275628 )
+text = "Mystery Voice"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 7.42279
+margin_top = 16.6742
+margin_right = 395.423
+margin_bottom = 158.674
+rect_scale = Vector2( 0.0672115, 0.132725 )
+text = "
+this game is a bit diffrent than all the 
+others, doesnt mean it isnt any easier
+though!"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = -286.106
+margin_top = 99.0181
+margin_right = 99.8943
+margin_bottom = 241.018
+rect_scale = Vector2( 0.0600455, 0.154104 )
+rect_pivot_offset = Vector2( 313.317, -99.2964 )
+text = "
+All of my birds have stolen your gems for
+this game and they mixed themselves among
+normal birds. they attack humans but are
+very shy agianst other birds "
+percent_visible = 0.0
+
+[node name="Label3" type="Label" parent="Panel"]
+margin_left = 8.55229
+margin_top = 16.4917
+margin_right = 416.552
+margin_bottom = 158.492
+rect_scale = Vector2( 0.053552, 0.121453 )
+text = "
+the only way is  to enter their home  in with a 
+remote controlled bird. the Camera is a little 
+broken, so it is in a BIRDS EYE VIEW perspetive
+
+I HOPE THATS OKAY"
+percent_visible = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 411.382
+margin_top = 24.3711
+margin_right = 481.382
+margin_bottom = 50.3711
+rect_scale = Vector2( 3.94073, 3.30486 )
+text = "Tag"
