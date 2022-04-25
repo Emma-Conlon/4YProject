@@ -12,9 +12,9 @@ func _on_Timer_timeout():
 
 
 func _process(_delta):	
-	if Save.save_data["games_won"] == "maze":
+	if Save.save_data["games_won"] == "maze" or GameManager.completedGame0ne == true:
 		doneOne.show()
-	if Save.save_data["games_won"] == "hide&seek":
+	if Save.save_data["games_won"] == "hide&seek" or GameManager.completedGameTwo == true:
 		doneOne.show()
 		$game2Done.show()
 	if GameManager.completedGame0ne==true and $dull/progress.visible==true:

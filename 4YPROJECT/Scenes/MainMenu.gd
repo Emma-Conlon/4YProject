@@ -1,7 +1,7 @@
 extends Control
 
 onready var clo=get_node(".")
-const Scene2=preload("res://LEVEL.tscn")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

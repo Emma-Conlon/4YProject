@@ -48,6 +48,9 @@ margin_bottom = -13.0892
 rect_scale = Vector2( 0.995685, 0.149185 )
 theme = ExtResource( 4 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -3.75987e-08

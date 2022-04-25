@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://New folder (2)/boids_assets/scripts/Flock.gd" type="Script" id=1]
+[ext_resource path="res://New folder (2)/boids_assets/scenes/Boid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://New folder (2)/boids_assets/sprites/boid.png" type="Texture" id=3]
+[ext_resource path="res://New folder (2)/boids_assets/scripts/Predator.gd" type="Script" id=4]
+[ext_resource path="res://New folder (2)/boids_assets/scripts/Cursor.gd" type="Script" id=5]
+[ext_resource path="res://New folder (2)/boids_assets/sprites/cursor.png" type="Texture" id=6]
+[ext_resource path="res://New folder (2)/boids_assets/scenes/Trail.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TIMER.tscn" type="PackedScene" id=8]
+[ext_resource path="res://New folder (2)/boids_assets/scripts/timer.gd" type="Script" id=9]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.821192, 1 )
+colors = PoolColorArray( 0.729412, 0.117647, 0.117647, 0, 0.729412, 0.117647, 0.117647, 0.521569, 0.729412, 0.117647, 0.117647, 1 )
+
+[node name="Root" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Control" parent="." instance=ExtResource( 8 )]
+margin_bottom = 0.0
+
+[node name="Flock" type="Node2D" parent="."]
+script = ExtResource( 1 )
+boidScene = ExtResource( 2 )
+numberOfBoids = 300
+predator = NodePath("../Predator")
+
+[node name="Predator" type="Node2D" parent="."]
+position = Vector2( 960, 540 )
+script = ExtResource( 4 )
+acceleration = 1000.0
+maxSpeed = 300.0
+
+[node name="Sprite" type="Sprite" parent="Predator"]
+modulate = Color( 0.870588, 0.105882, 0.105882, 1 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="Trail" parent="Predator" instance=ExtResource( 7 )]
+width = 6.0
+gradient = SubResource( 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = false
+
+[node name="Cursor" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

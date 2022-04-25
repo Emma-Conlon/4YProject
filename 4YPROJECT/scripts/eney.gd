@@ -40,6 +40,7 @@ var collided2 = false
 var floor_pos
 var floor_pos2
 var c
+var sec
 var random_pos = 1
 
 
@@ -168,8 +169,15 @@ func first_floor():
 		
 		hit = true
 
-
-
+func _process(delta):
+	if GameManager.greenEmerladsCollected >= 2:
+			GameManager.completedGame0ne = true
+			GameManager.completedGameTwo = true
+			var sce = "hide&seek"
+			Save.won(sce)
+			var _R= get_tree().change_scene("res://test.tscn")
+			Save.save_data["games_won"] = sec
+			print("HIDE AAND SEEK WON")
 func _on_Area_body_entered(body):
 	if body.is_in_group("first_floor_enemy"):
 		first_floor()

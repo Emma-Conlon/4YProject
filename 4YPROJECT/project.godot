@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Boid",
+"language": "GDScript",
+"path": "res://New folder (2)/boids_assets/scripts/Boid.gd"
+} ]
+_global_script_class_icons={
+"Boid": ""
+}
+
 [application]
 
 config/name="4YPROJECT"
@@ -18,6 +28,10 @@ config/icon="res://cred.png"
 
 GameManager="*res://gameManager.gd"
 Save="*res://scripts/game_save.gd"
+
+[display]
+
+window/dpi/allow_hidpi=true
 
 [editor_plugins]
 

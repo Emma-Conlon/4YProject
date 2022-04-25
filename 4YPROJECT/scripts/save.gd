@@ -122,7 +122,7 @@ func _on_Button_pressed():
 		file.close()
 		$PopupMenu.visible = false
 		_loading()
-		get_tree().change_scene("res://intro.tscn");
+		get_tree().change_scene("res://test.tscn");
 
 	if file.file_exists(Save.path_two) and Save.count == 2:
 		file.open(Save.path_two,File.WRITE)

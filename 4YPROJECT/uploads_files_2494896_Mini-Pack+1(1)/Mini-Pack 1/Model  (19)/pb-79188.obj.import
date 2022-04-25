@@ -16,4 +16,5 @@ dest_files=[ "res://.import/pb-79188.obj-8a877982a60c28b2f7c4b0c7436ee869.mesh",
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
 offset_mesh=Vector3( 0, 0, 0 )
-optimize_mesh=true
+octahedral_compression=true
+optimize_mesh_flags=4286
