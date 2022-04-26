@@ -15,6 +15,9 @@ func _process(_delta):
 	if GameManager.doorTwo==true: # game 2 loading 
 		$TextureProgress.tint_progress=  Color( 0.98, 0.5, 0.45, 1 )
 		$ColorRect.color=Color( 1, 0.63, 0.48, 1 )
+	if GameManager.doorThree==true: # game 2 loading 
+		$TextureProgress.tint_progress=  Color( 153, 0, 204, 1 )
+		$ColorRect.color=Color( 204, 51, 255, 1 )
 	
 	
 
@@ -37,6 +40,8 @@ func _on_Timer_timeout():
 				save_hideseek()
 				get_tree().change_scene(hide_seek)
 				GameManager.completedGame0ne=true
+			if GameManager.doorThree == true:
+				get_tree().change_scene(racing)
 	pass # Replace with function body.
 func _save():
 	var path_one = "user://save_one.dat"

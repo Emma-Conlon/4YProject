@@ -170,7 +170,7 @@ func first_floor():
 		hit = true
 
 func _process(delta):
-	if GameManager.greenEmerladsCollected >= 2:
+	if GameManager.greenEmerladsCollected >= 25:
 			GameManager.completedGame0ne = true
 			GameManager.completedGameTwo = true
 			var sce = "hide&seek"
