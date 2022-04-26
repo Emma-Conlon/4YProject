@@ -34,7 +34,7 @@ func _process(_delta):
 		var _va = get_tree().change_scene("res://LoadingScreen.tscn");
 		
 	if (Input.is_action_just_pressed("CLICK"))and GameManager.doorFour:
-		var _va = get_tree().change_scene("res://LoadingScreen.tscn");
+		var _va = get_tree().change_scene("res://gamecompleted.tscn");
 		
 
 #Maze-----------------
@@ -88,7 +88,7 @@ func _on_Area_mouse_exited_Game3():
 func _on_Area_mouse_entered_Game4():
 	if GameManager.completedGame0ne==true and GameManager.completedGameTwo==true and GameManager.completedGameThree==true:
 		GameManager.doorFour=true
-		finally.text=" Begin Final Game"
+		finally.text="FINALLY"
 		finally.show()
 	else:
 		finally.text="LOCKED: Play all other games to unlock"

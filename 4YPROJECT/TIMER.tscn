@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Label2.gd" type="Script" id=2]
+[ext_resource path="res://Labesl.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Gameover.tscn" type="PackedScene" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -15,10 +18,33 @@ __meta__ = {
 margin_right = 212.0
 margin_bottom = 26.0
 rect_scale = Vector2( 1.52395, 1.7439 )
-text = "TIME REMAINING: 	0"
+text = "TIME REMAINING: 	600"
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="Label"]
+autostart = true
+
+[node name="Gameover" parent="Label/Timer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="Button" type="Button" parent="Label/Timer/Gameover"]
+margin_left = 251.0
+margin_top = 410.0
+margin_right = 291.0
+margin_bottom = 436.0
+rect_scale = Vector2( 2.6261, 2.54379 )
+text = "yes"
+
+[node name="Button2" type="Button" parent="Label/Timer/Gameover"]
+margin_left = 610.0
+margin_top = 411.0
+margin_right = 650.0
+margin_bottom = 437.0
+rect_scale = Vector2( 2.6261, 2.54379 )
+text = "no"
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 781.0
@@ -27,6 +53,11 @@ margin_right = 933.0
 margin_bottom = 32.0
 rect_scale = Vector2( 1.44392, 1.7439 )
 text = "Boids:0/500"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="timeout" from="Label/Timer" to="Label" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Label/Timer/Gameover/Button" to="Label" method="_on_Button_pressed"]
+[connection signal="pressed" from="Label/Timer/Gameover/Button2" to="Label" method="_on_Button2_pressed"]

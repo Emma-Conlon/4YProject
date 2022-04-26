@@ -24,8 +24,10 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 1027.0
-margin_bottom = 614.0
+margin_left = 0.5
+margin_top = 1.74915
+margin_right = 1027.5
+margin_bottom = 615.749
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
 margin_right = 208.0

@@ -21,6 +21,9 @@ func _process(_delta):
 		$dull/progress.hide()
 	if GameManager.completedGameTwo==true and $dull2/progress.visible==true:
 		$dull2/progress.hide()
+	if GameManager.completedGameThree==true and $dull3/progress.visible==true:
+		$dull3/progress.hide()
+		$Game3Done.show()
 		
 
 	

@@ -64,7 +64,7 @@ enabled = true
 cast_to = Vector3( 10, 0, 0 )
 collision_mask = 2
 debug_shape_custom_color = Color( 0, 0.0862745, 1, 1 )
-debug_shape_thickness = 5
+debug_shape_thickness = 5.0
 
 [node name="RayCast2" type="RayCast" parent="."]
 transform = Transform( 0.988615, 0, -0.119764, 0, 0.999999, 0, 0.189042, 0, 0.988614, 1.10221, 1.40142, 1.62982 )
@@ -72,7 +72,7 @@ enabled = true
 cast_to = Vector3( 10, 0, 0 )
 collision_mask = 2
 debug_shape_custom_color = Color( 0.0352941, 0.027451, 1, 1 )
-debug_shape_thickness = 5
+debug_shape_thickness = 5.0
 
 [node name="RayCast3" type="RayCast" parent="."]
 transform = Transform( 0.986331, 0, 0.13115, 0, 0.999999, 0, -0.207014, 0, 0.986331, 1.02159, 1.38483, 1.73049 )
@@ -80,4 +80,4 @@ enabled = true
 cast_to = Vector3( 10, 0, 0 )
 collision_mask = 2
 debug_shape_custom_color = Color( 0.0509804, 0.027451, 1, 1 )
-debug_shape_thickness = 5
+debug_shape_thickness = 5.0

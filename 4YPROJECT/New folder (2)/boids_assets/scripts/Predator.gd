@@ -1,8 +1,8 @@
-extends Node2D
+extends KinematicBody2D
 
 export (float) var acceleration
 export (float) var maxSpeed
-
+var count = 0
 var _vel = Vector2.ZERO
 
 func _process(delta):
@@ -15,3 +15,12 @@ func _process(delta):
 		
 		look_at(position + _vel)
 		rotation += PI / 2
+
+
+func _on_Area2D_body_entered(body):
+		if body.is_in_group("Boids"):
+			print("bodyHIT")
+			body.hide()
+			GameManager.boids +=1
+			count = GameManager.boids
+			print(count)

@@ -18,6 +18,7 @@ var plus=0;
 var doorOpen=0;
 var  battery=100;
 var loading=0
+var boids=0
 var doorOne=false
 var doorTwo=false
 var doorThree=false

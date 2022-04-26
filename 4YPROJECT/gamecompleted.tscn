@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/themes/menu_theme.tres" type="Theme" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 11.7858
+margin_right = 1043.79
+margin_bottom = 628.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 331.014
+margin_top = 17.2043
+margin_right = 459.014
+margin_bottom = 46.2043
+rect_scale = Vector2( 2.50296, 3.492 )
+text = "COMPLETED"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 206.0
+margin_top = 212.0
+margin_right = 592.0
+margin_bottom = 325.0
+rect_scale = Vector2( 1.74379, 2.36898 )
+text = "Mystery Voice:
+Congrats you have completed all
+of my games and collected all
+of my emeralds :). "
+percent_visible = 0.0
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 206.0
+margin_top = 212.0
+margin_right = 592.0
+margin_bottom = 325.0
+rect_scale = Vector2( 1.74379, 2.36898 )
+text = "Mystery Voice:
+But you are not finished there are
+more trials i need you to do.
+much harder versions of these ones 
+and newer ones aswell!"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 206.0
+margin_top = 212.0
+margin_right = 592.0
+margin_bottom = 325.0
+rect_scale = Vector2( 1.74379, 2.36898 )
+text = "Mystery Voice:
+READY FOR ROUND 2!!!!!"
+percent_visible = 0.0

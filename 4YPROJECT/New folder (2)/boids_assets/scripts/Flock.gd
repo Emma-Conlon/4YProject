@@ -2,7 +2,7 @@ extends Node2D
 
 # General configuration
 export (PackedScene) var boidScene : PackedScene
-export (int) var numberOfBoids = 140
+export (int) var numberOfBoids = 500
 export (float) var visualRange = 130
 export (float) var separationDistance = 80
 export (NodePath) var predator
@@ -130,6 +130,7 @@ func _escapePredator():
 			var dir = (boid.get_position() - _predatorRef.get_position()).normalized()
 			var multiplier = sqrt(1 - (dist / predatorMinDist))
 			boid.acceleration += dir * multiplier * predatorWeight
+		
 
 
 func _calculateColor():

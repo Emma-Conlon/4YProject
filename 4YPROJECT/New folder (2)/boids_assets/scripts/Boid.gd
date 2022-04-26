@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 class_name Boid
 
@@ -50,3 +50,8 @@ func _process(delta):
 			var nextColor = modulate
 			nextColor.a = gradient.colors[i].a
 			gradient.set_color(i, nextColor)
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == "Predator":
+		print("HI")
