@@ -325,6 +325,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5798, 4.49366, -8.13141 )
 [node name="WanderAI7" parent="Navigation" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3627, 4.49366, 4.69021 )
 
+[node name="WanderAI8" parent="Navigation" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.2409, 2.50175, -2.4172 )
+
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
